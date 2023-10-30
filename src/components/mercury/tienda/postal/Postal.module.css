@@ -1,0 +1,158 @@
+.section {
+  position: relative;
+  /* margin-top: 5em; */
+  width: 100%;
+  height: 30vh;
+}
+
+.imgContainer {
+  /* height: 50vh; */
+  width: 100%;
+  height: 100%;
+}
+
+.imgContainer img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.absolute {
+  width: 90%;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  margin: auto;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5em;
+  /* background-color: orange; */
+}
+
+.absolute h3 {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-size: 18px;
+  color: red;
+  /* background-color: red; */
+}
+
+.absolute h4 {
+  margin: 0;
+  /* background-color: rebeccapurple; */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 32px;
+  font-size: 10px;
+  color: black;
+  font-weight: 500;
+}
+
+.absolute .inputCont {
+  display: flex;
+  align-items: flex-start;
+  align-items: center;
+  justify-content: flex-start;
+  width: 70%;
+  padding: 0.4em 0;
+  background-color: #ffffffa4;
+  border: 1px solid #6e6e6e;
+}
+
+.icon {
+  padding-left: 1em;
+}
+
+input:focus,
+input:active {
+  outline: none;
+  /* Elimina el contorno al recibir foco */
+  /* Añade otros estilos personalizados para el input cuando es clickeado */
+}
+
+.inputCont input {
+  border: none;
+  padding-bottom: 2%;
+  padding: 1.5em 0 1.5em 1em;
+  padding: 0;
+  padding-left: 1em;
+  width: 100%;
+  background-color: #ffffff00;
+}
+
+.inputCont input::placeholder {
+  border: none;
+  font-size: 21px;
+  font-size: 8px;
+}
+
+.absolute span {
+  color: #fff;
+  font-size: 18px;
+  font-size: 8px;
+  font-family: sans-serif;
+}
+
+.absolute button {
+  border: none;
+  background-color: #df0404;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0.6em 0;
+  font-size: 24px;
+  font-size: 12px;
+  font-weight: bold;
+  width: 30%;
+}
+
+@media (min-width: 768px) {
+  .section {
+    height: 50vh;
+  }
+
+  .absolute {
+    width: 80%;
+  }
+
+  .absolute h3 {
+    font-size: 32px;
+
+  }
+
+  .absolute h4 {
+    font-size: 32px;
+  }
+
+  .absolute span {
+    font-size: 18px;
+  }
+
+  .absolute button {
+    font-size: 0.632rem;
+    font-size: 24px;
+
+  }
+
+  .inputCont input {
+    padding: 1.5em 0 1.5em 1em;
+    border: none;
+    width: 100%;
+  }
+
+  .inputCont input::placeholder {
+    border: none;
+    font-size: 21px;
+
+  }
+
+  .icon {
+    padding-left: 0.3em;
+    font-size: 3em;
+  }
+}

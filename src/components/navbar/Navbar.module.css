@@ -1,0 +1,166 @@
+.navbar {
+  height: 12vh;
+  box-shadow: 0px 2px 4px #FF3A2D;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  /* background-color: orange; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+}
+.navbarNoScroll {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  /* background-color: orange; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+  box-shadow: 0 0.5px 10px black;
+  background-color: #FFFFFF;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: blue; */
+  width: 90%;
+  padding: 0.5em 0;
+}
+
+.imgContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgContainer img {
+  /* width: 50%; */
+  max-width: 60%;
+  object-fit: cover;
+}
+
+.contenedorLupa {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  padding: 0.2em;
+}
+
+.iconLupa {
+  color: #fff;
+}
+
+.navWeb {
+  padding: 0.5em 0;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.mercuryLogo {
+  width: 20%;
+}
+
+.mercuryLogo img {
+  width: 100%;
+}
+
+.secciones {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2em;
+}
+
+.secciones span:hover {
+  /* width: 100%; */
+  color: #DF0404;
+  cursor: pointer;
+}
+
+.espacio {
+  height: 20vh;
+}
+.espacioScroll {
+  height: 12vh;
+  background-color: blue;
+}
+
+.navMobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .espacio {
+    height: 25vh;
+  }
+  .navWeb {
+    display: none;
+  }
+  .navbarNoScroll {
+    height: auto;
+  }
+  .navbar {
+    height: auto;
+  }
+  .navMobile {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+
+  .sliderContainer {
+    width: 100%;
+    height: 100%;
+    background-color: #EDF0F2;
+  }
+
+  .slider {
+    padding: 0;
+    
+  }
+
+  .slider .fondoText {
+    font-size: 8px;
+    text-align: center;
+    width: 90px;
+    height: 30.34px;
+    padding: 1em 0;
+  }
+  
+    .slider .texto {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: #fff;
+      width: 90%;
+      height: 100%;
+      color: #DF0404;
+    }
+}

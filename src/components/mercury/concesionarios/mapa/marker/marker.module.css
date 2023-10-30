@@ -1,0 +1,30 @@
+.marcador {
+    background-color: white;
+    width: 500px;
+    border-radius: 5%;
+    z-index: 5000000;
+}
+.marcadorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 0.5em;
+    padding: 1em;
+}
+.marcador h3 {
+    font-size: 20px;
+    font-weight: bold;
+    /* padding: 0.5em 0; */
+    margin: 0;
+    color: #DF0404;;
+}
+.marcador div {
+    font-size: 20px;
+    width: 90%;
+}
+.marcador div span {
+    width: 100%;
+    padding-left: 1em;
+}

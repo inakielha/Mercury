@@ -1,0 +1,27 @@
+.selectContainer {
+    width: 100%;
+}
+.sliderContainer {
+    width: 100%;
+    height: 100%;
+    background-color: #EDF0F2;
+  }
+
+  .fondoText {
+    font-size: 8px;
+    text-align: center;
+    width: 90px;
+    height: 30.34px;
+    padding: 1em 0;
+  }
+
+  .texto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #fff;
+    width: 90%;
+    height: 100%;
+    color: #DF0404;
+  }
