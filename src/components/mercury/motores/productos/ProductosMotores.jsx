@@ -11,7 +11,7 @@ import { cuatroTemposInfo, dosTemposInfo, racinInfo, seaProInfo, veradoInfo } fr
 import Racing from "./subCategorias/racing/Racing";
 import DosTempos from "./subCategorias/dosTempos/DosTempos";
 
-export default function ProductosMotores({ isMobile }) {
+export default function ProductosMotores() {
   const [category, setCategory] = useState("cuatro tiempos");
   const handleCategory = (e) => {
     let category = e.target.innerText.toLowerCase();
@@ -27,7 +27,6 @@ export default function ProductosMotores({ isMobile }) {
     slidesToScroll: 1,
     adaptiveHeight: true,
   };
-  console.log(category)
   return (
     <div className={s.section}>
       <div className={s.textCont}>

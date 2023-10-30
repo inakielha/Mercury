@@ -1,14 +1,15 @@
 import whatsapp from "../../../assets/mercury/whatsapp.svg"
 import s from "./Footer.module.css"
-import {BsCurrencyDollar,BsLinkedin,BsInstagram, BsYoutube} from "react-icons/bs"
+import { BsCurrencyDollar, BsLinkedin, BsInstagram, BsYoutube } from "react-icons/bs"
 
-export default function Footer({color}) {
+export default function Footer({ color, setMobileMenu, mobileMenu }) {
 
   return (
     <footer id={s.contacto}>
+      {mobileMenu === "show" && <div onClick={() => setMobileMenu("hide")} style={{ zIndex: "2", position: "absolute", width: "100%", height: "100%", backgroundColor: "#000000a3" }}></div>}
       <div className={s.footerContainer}>
         <div className={s.info}>
-          <p className={s.text} style={color ? {color:color} : {color:"#DF0404"}}>EXPOSICIÓN, VENTAS Y SHOWROOM</p>
+          <p className={s.text} style={color ? { color: color } : { color: "#DF0404" }}>EXPOSICIÓN, VENTAS Y SHOWROOM</p>
           <p>Av. del Libertador 701, Vicente López, Buenos Aires</p>
           <p>info@navalmotor.com</p>
           <div className={s.numero}>
@@ -34,7 +35,7 @@ export default function Footer({color}) {
                 href="https://www.youtube.com/channel/UCT1SJPaMSOsG1_3H0tflf0A"
                 target="_blank"
               >
-                <BsYoutube size={"2.5em"} color={"#707070"}/>
+                <BsYoutube size={"2.5em"} color={"#707070"} />
               </a>
             </div>
             {/* <div>

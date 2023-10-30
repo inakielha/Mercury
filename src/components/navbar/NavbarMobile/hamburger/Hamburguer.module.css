@@ -1,0 +1,144 @@
+
+.nav_mobile {
+  display: flex;
+  list-style: none;
+  position: absolute;
+  background-color: #FFFFFF;
+  width: 35%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-around;
+
+  align-items: start;
+  z-index: 502;
+  overflow-x: hidden;
+  transition: 1.2s ease;
+  /* box-shadow: 0 0 10px 10px #ffffff; */
+  /* gap: 1em; */
+  padding: 3em 0 0 0;
+  display: none;
+}
+
+.hide {
+  left: -100em;
+}
+
+.closeLogos {
+  display: none;
+}
+
+.containerLogos {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logoMenu {
+  width: 100%;
+}
+
+.logoMenu img {
+  width: 100%;
+}
+
+.closeContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .closeContainer img {
+  width: 45%;
+} */
+
+.nav_mobile li {
+  width: 100%;
+}
+
+.nav_mobile a {
+  font-family: "Segoe UI", "Open Sans";
+  font-size: 0.842rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #000000;
+  text-transform: uppercase;
+  /* padding: 20px; */
+  display: block;
+  /* background-color: red; */
+  margin: 0;
+  padding: 0;
+  padding-left: 2em;
+}
+
+.nav_mobile li:hover a::after {
+  transform: translate(-50%, -50%) scale(1);
+  letter-spacing: initial;
+}
+
+.nav_mobile li:hover a {
+  color: #014492;
+}
+.mobile{
+  display: none;
+}
+.web {
+  display: block;
+}
+@media (max-width: 768px) {
+  .web {
+    display: none;
+  }
+  .mobile{
+    display: block;
+  }
+  .nav_mobile {
+    z-index: 1000;
+    display: flex;
+    width: 70%;
+    gap: 1.5em;
+    padding: 1em 0;
+    height: auto;
+    justify-content: center;
+
+  }
+
+  .hide {
+    left: -50em;
+  }
+
+  .nav_mobile a {
+    font-size: 1.125rem;
+  }
+  .closeLogos {
+    display: flex;
+    cursor: pointer;
+    /* width: 20%; */
+    align-self: center;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .containerLogos{
+    width: 20%;
+  }
+  .closeContainer{
+    width: 100%;
+  }
+  .logoMenu {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logoMenu img {
+    object-fit: cover;
+    width: 100%;
+  }
+}

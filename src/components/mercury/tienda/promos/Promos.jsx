@@ -6,14 +6,13 @@ import producto from "../../../../assets/mercury/producto.svg";
 import producto1 from "../../../../assets/mercury/promo/Enmascarar grupo 247.png";
 import producto2 from "../../../../assets/mercury/promo/Enmascarar grupo 248.png";
 
-export default function Promos({ isMobile }) {
-  console.log(isMobile)
+export default function Promos() {
   const settings = {
     // dots: true,
     infinite: true,
     speed: 1000,
     arrows: false,
-    slidesToShow: isMobile ? 3.2 : 3.02,
+    slidesToShow: 3.02,
     centerMode: true,
     centerPadding: "0",
     // autoplay: true,

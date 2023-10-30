@@ -3,9 +3,10 @@ import s from "./Motores.module.css";
 import img from "../../../assets/mercury/Imagen 318.jpg";
 import ProductosMotores from "./productos/ProductosMotores";
 
-export default function Motores({isMobile}) {
+export default function Motores({mobileMenu, setMobileMenu}) {
   return (
-    <>
+    <div style={{position:"relative"}}>
+      {mobileMenu === "show" && <div onClick={() => setMobileMenu("hide")} style={{zIndex:"2",position:"absolute",width:"100%",height:"100%",backgroundColor:"#000000a3"}}></div>}
       <section className={s.section}>
         <div className={s.imgContainer}>
           <img src={img} alt="barco" />
@@ -25,7 +26,7 @@ export default function Motores({isMobile}) {
           </span>
         </div>
       </section>
-      <ProductosMotores isMobile={isMobile}/>
-    </>
+      <ProductosMotores/>
+    </div>
   );
 }

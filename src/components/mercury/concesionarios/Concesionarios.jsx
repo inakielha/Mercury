@@ -7,7 +7,7 @@ import MapaArgentina from "./mapa/mapa";
 import Card from "./cardConcesionario/card";
 import MapaDos from "./mapa/mapados";
 
-export default function Concesionarios() {
+export default function Concesionarios({mobileMenu, setMobileMenu}) {
   const inputRef = useRef(null);
   const inputRefTwo = useRef(null);
 
@@ -17,6 +17,7 @@ export default function Concesionarios() {
 
   return (
     <section className={s.section}>
+      {mobileMenu === "show" && <div onClick={() => setMobileMenu("hide")} style={{ zIndex: "2", position: "absolute", width: "100%", height: "100%", backgroundColor: "#000000a3" }}></div>}
       <div className={s.imgContainer}>
         <img src={img} alt="barco" />
       </div>

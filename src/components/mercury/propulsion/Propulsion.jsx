@@ -4,9 +4,10 @@ import img2 from "../../../assets/mercury/2022-07-MR-Bass-Boat-29 (1).jpg"
 import img3 from "../../../assets/mercury/MM_V10_400hp_Ranger_FW095A1537.jpg"
 import img4 from "../../../assets/mercury/MM-FreshwaterBoating_DontBlink_ET_DSC4468.jpg"
 
-export default function Propulsion() {
+export default function Propulsion({mobileMenu,setMobileMenu}) {
   return (
     <div className={s.section}>
+      {mobileMenu === "show" && <div onClick={() => setMobileMenu("hide")} style={{ zIndex: "2", position: "absolute", width: "100%", height: "107%", backgroundColor: "#000000a3" }}></div>}
       <div className={s.container}>
         <h3>SELECCIONE SU MANUAL</h3>
         <div className={s.grid}>
