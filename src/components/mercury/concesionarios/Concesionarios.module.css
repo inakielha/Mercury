@@ -110,7 +110,9 @@ input:active {
     gap: 1em;
     padding-bottom: 2em;
 }
-
+.map div {
+    width: 100%;
+}
 .botones {
     width: 100%;
     display: flex;
@@ -131,10 +133,12 @@ input:active {
     padding: 0.7em 0;
     width: 35%;
     margin-top: 1em;
+    cursor: pointer;
 }
 .web {
     display: none;
 }
+
 
 @media (min-width: 768px) {
     .mobile {
@@ -151,7 +155,7 @@ input:active {
     .texto span {
         font-size: 24px;
     }
-
+   
     .tienda h3 {
         font-size: 32px;
     }

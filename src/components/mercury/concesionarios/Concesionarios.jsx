@@ -2,18 +2,111 @@ import s from "./Concesionarios.module.css";
 import img from "../../../assets/mercury/Imagen 318.jpg";
 import { IconContext } from "react-icons";
 import { BiSearch } from "react-icons/bi";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import MapaArgentina from "./mapa/mapa";
 import Card from "./cardConcesionario/card";
 import MapaDos from "./mapa/mapados";
+import jsonCordenadas from "./mapa/coordenadas/mercury_concesionarios.json"
+import InfiniteScroll from "react-infinite-scroll-component";
 
-export default function Concesionarios({mobileMenu, setMobileMenu}) {
+export default function Concesionarios({ mobileMenu, setMobileMenu }) {
+  let coordinates = Object.values(jsonCordenadas);
+  const [ordenConcesionarios, setOrdenConcesionarios] = useState(coordinates)
+  const [colorBtn, setColorBtn] = useState("all")
   const inputRef = useRef(null);
   const inputRefTwo = useRef(null);
+  const [items, setItems] = useState()
+  const [page, setPage] = useState(0)
+  const [filterZone, setFilterZone] = useState("");
+  const [filterName, setFilterName] = useState("");
 
-  const handleClick = (input) => {
-    input.current.focus();
+  const handleInputChange = (event) => {
+    const inputValue = event.target.value;
+    let type = event.target.id
+    if (type === "zona") {
+      setFilterZone(inputValue);
+
+      if (colorBtn === "all") {
+        // Filtrar la lista de elementos en base a la entrada del usuario
+        const filteredItems = coordinates.filter((item) =>
+          item.ciudad.toLowerCase().includes(inputValue.toLowerCase())
+        );
+        setOrdenConcesionarios(filteredItems);
+
+      } else if (colorBtn === "concesionarios") {
+        const filteredItems = coordinates.filter((item) => {
+          if (item.ciudad.toLowerCase().includes(inputValue.toLowerCase()) && item.concesionario == 1) return 1
+        }
+        );
+        setOrdenConcesionarios(filteredItems);
+      } else {
+        const filteredItems = coordinates.filter((item) => {
+          if (item.ciudad.toLowerCase().includes(inputValue.toLowerCase()) && item.servicio == 1) return 1
+        }
+        );
+        setOrdenConcesionarios(filteredItems);
+      }
+    } else {
+      setFilterName(inputValue);
+
+      if (colorBtn === "all") {
+        // Filtrar la lista de elementos en base a la entrada del usuario
+        const filteredItems = coordinates.filter((item) =>
+          item.nombre.toLowerCase().includes(inputValue.toLowerCase())
+        );
+        setOrdenConcesionarios(filteredItems);
+
+      } else if (colorBtn === "concesionarios") {
+        const filteredItems = coordinates.filter((item) => {
+          if (item.nombre.toLowerCase().includes(inputValue.toLowerCase()) && item.concesionario == 1) return 1
+        }
+        );
+        setOrdenConcesionarios(filteredItems);
+      } else {
+        const filteredItems = coordinates.filter((item) => {
+          if (item.nombre.toLowerCase().includes(inputValue.toLowerCase()) && item.servicio == 1) return 1
+        }
+        );
+        setOrdenConcesionarios(filteredItems);
+      }
+    }
+
   };
+
+
+  const handleConcesionarios = (type) => {
+    setColorBtn(type)
+    if (type === "all") {
+      setOrdenConcesionarios(coordinates)
+    }
+    else if (type === "concesionarios") {
+      let concesionarios = coordinates.filter(concesionaria => concesionaria.concesionario === "1" && concesionaria.ciudad.toLowerCase().includes(filterZone) && concesionaria.nombre.toLowerCase().includes(filterName))
+      setOrdenConcesionarios(concesionarios)
+    }
+    else if (type === "servicios") {
+      let servicio = coordinates.filter(concesionaria => concesionaria.servicio === "1" && concesionaria.ciudad.toLowerCase().includes(filterZone) && concesionaria.nombre.toLowerCase().includes(filterName))
+      setOrdenConcesionarios(servicio)
+    }
+  }
+
+  function chunkArray(arr, chunkSize) {
+    return Array.from({ length: Math.ceil(arr.length / chunkSize) }, (_, index) =>
+      arr.slice(index * chunkSize, (index + 1) * chunkSize)
+    );
+  }
+
+
+  console.log(ordenConcesionarios)
+  const fetchMoreData = () => {
+    // a fake async api call like which sends
+    // 20 more records in 1.5 secs
+    setItems(chunkArray[page])
+    setPage((prev) => prev++)
+  };
+
+  useEffect(() => {
+    const chunked = chunkArray(ordenConcesionarios, 3);
+  }, [ordenConcesionarios])
 
   return (
     <section className={s.section}>
@@ -44,6 +137,9 @@ export default function Concesionarios({mobileMenu, setMobileMenu}) {
               ref={inputRef}
               type="text"
               placeholder=" Ingrese la zona"
+              onChange={(e) => handleInputChange(e)}
+              value={filterZone}
+              id="zona"
             />
           </div>
 
@@ -55,6 +151,9 @@ export default function Concesionarios({mobileMenu, setMobileMenu}) {
               ref={inputRefTwo}
               type="text"
               placeholder=" Ingrese el nombre"
+              id="nombre"
+              onChange={(e) => handleInputChange(e)}
+              value={filterName}
             />
           </div>
         </div>
@@ -64,11 +163,19 @@ export default function Concesionarios({mobileMenu, setMobileMenu}) {
             <button>Concesionarios</button>
             <button>Servicios</button>
           </div>
-          {/* <MapaArgentina /> */}
           <MapaDos />
-          <Card email={"iwanpatagonia@gmail.com"} telefono={"294-4901004"} direccion={"Isla Victoria 725"} nombre={"Iwan Patagonia"} />
-          <Card email={"jtrdesign@hotmail.com"} telefono={"116044 5484"} direccion={"Rio Sarmiento 342"} nombre={"JTR DESIGN"} />
-          <Card email={"info@questyachts.com"} telefono={"4897 6935"} direccion={"Santa Rosa 33"} nombre={"QUEST YACHTS"} />
+          <InfiniteScroll
+            dataLength={chunkArray.length}
+            next={fetchMoreData}
+            hasMore={true}
+            height={"50vh"}
+          >
+            {ordenConcesionarios?.length && ordenConcesionarios.map((concecionario) => {
+              return (
+                <Card email={concecionario.email} telefono={concecionario.tel1} direccion={concecionario.direccion} nombre={concecionario.nombre} />
+              )
+            })}
+          </InfiniteScroll>
         </div>
       </div>
 
@@ -85,6 +192,9 @@ export default function Concesionarios({mobileMenu, setMobileMenu}) {
                   ref={inputRef}
                   type="text"
                   placeholder=" Ingrese la zona"
+                  onChange={(e) => handleInputChange(e)}
+                  value={filterZone}
+                  id="zona"
                 />
               </div>
 
@@ -96,20 +206,33 @@ export default function Concesionarios({mobileMenu, setMobileMenu}) {
                   ref={inputRefTwo}
                   type="text"
                   placeholder=" Ingrese el nombre"
+                  id="nombre"
+                  onChange={(e) => handleInputChange(e)}
+                  value={filterName}
                 />
               </div>
-              <Card email={"iwanpatagonia@gmail.com"} telefono={"294-4901004"} direccion={"Isla Victoria 725"} nombre={"Iwan Patagonia"} />
-              <Card email={"jtrdesign@hotmail.com"} telefono={"116044 5484"} direccion={"Rio Sarmiento 342"} nombre={"JTR DESIGN"} />
-              <Card email={"info@questyachts.com"} telefono={"4897 6935"} direccion={"Santa Rosa 33"} nombre={"QUEST YACHTS"} />
+              <InfiniteScroll
+                dataLength={chunkArray.length}
+                next={fetchMoreData}
+                hasMore={true}
+                // loader={<h4>Loading...</h4>}
+                height={"50vh"}
+              >
+                {ordenConcesionarios?.length && ordenConcesionarios.map((concecionario) => {
+                  return (
+                    <Card email={concecionario.email} telefono={concecionario.tel1} direccion={concecionario.direccion} nombre={concecionario.nombre} />
+                  )
+                })}
+              </InfiniteScroll>
             </div>
             <div className={s.map}>
               <div className={s.botones}>
-                <button>Toda la red</button>
-                <button>Concesionarios</button>
-                <button>Servicios</button>
+                <button onClick={() => handleConcesionarios("all")} style={colorBtn === "all" ? { color: "#FFFFFF", backgroundColor: "#DF0404" } : {}}>Toda la red</button>
+                <button onClick={() => handleConcesionarios("concesionarios")} style={colorBtn === "concesionarios" ? { color: "#FFFFFF", backgroundColor: "#DF0404" } : {}}>Concesionarios</button>
+                <button onClick={() => handleConcesionarios("servicios")} style={colorBtn === "servicios" ? { color: "#FFFFFF", backgroundColor: "#DF0404" } : {}}>Servicios</button>
               </div>
               {/* <MapaArgentina /> */}
-              <MapaDos />
+              <MapaDos concesionarios={ordenConcesionarios} />
 
             </div>
           </div>

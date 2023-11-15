@@ -10,7 +10,7 @@ import motor1 from "../../../../../../assets/mercury/motores/cuatroTempos/detall
 import Card from "../card/card";
 import SelectMotor from "../selectMotor/Selectmotor";
 import { cuatroTemposInfo } from "../helper";
-export default function CuatroTempos({info}) {
+export default function CuatroTempos({ info }) {
   const [detalle, setDetalle] = useState(false)
   const settings = {
     // dots: true,
@@ -67,56 +67,58 @@ export default function CuatroTempos({info}) {
         </div>
       }
       {/* WEB------------------------------------------------ */}
-      <div className={s.web}>
-        <div className={s.container}>
-          <Slider className={s.test}  {...settings}>
-            <div className={s.test}>
-              <div className={s.borde}>
-                <div className={s.imgContainer}>
-                  <img src={img1} alt="promo" />
-                </div>
-                <div className={s.MotoresInfo}>
-                  <h4>3.5-60 hp</h4>
-                  <span>
-                    El fueraborda más popular en el agua. Sin comparación.
-                  </span>
-                  <button>VER MÁS</button>
+      {detalle === false &&
+        <div className={s.web}>
+          <div className={s.container}>
+            <Slider className={s.test}  {...settings}>
+              <div className={s.test}>
+                <div className={s.borde}>
+                  <div className={s.imgContainer}>
+                    <img src={img1} alt="promo" />
+                  </div>
+                  <div className={s.MotoresInfo}>
+                    <h4>3.5-60 hp</h4>
+                    <span>
+                      El fueraborda más popular en el agua. Sin comparación.
+                    </span>
+                    <button onClick={() => setDetalle(true)}>VER MÁS</button>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className={s.test}>
-              <div className={s.borde}>
-                <div className={s.imgContainer}>
-                  <img src={img2} alt="promo" />
-                </div>
-                <div className={s.MotoresInfo}>
-                  <h4>75-150 hp</h4>
-                  <span>
-                    Innova constantemente y establece las pautas para lograr un rendimiento silencioso y un bajo consumo de combustible.
-                  </span>
-                  <button>VER MÁS</button>
-                </div>
-              </div>
-            </div>
-            <div className={s.test}>
-              <div className={s.borde}>
-                <div className={s.imgContainer}>
-                  <img src={img3} alt="promo" />
-                </div>
-                <div className={s.MotoresInfo}>
-                  <h4>200-300 hp</h4>
-                  <span>
-                    Fiabilidad, flexibilidad, potencia y eficiencia. Todo a tu alcance.
-                  </span>
-                  <button>VER MÁS</button>
+              <div className={s.test}>
+                <div className={s.borde}>
+                  <div className={s.imgContainer}>
+                    <img src={img2} alt="promo" />
+                  </div>
+                  <div className={s.MotoresInfo}>
+                    <h4>75-150 hp</h4>
+                    <span>
+                      Innova constantemente y establece las pautas para lograr un rendimiento silencioso y un bajo consumo de combustible.
+                    </span>
+                    <button onClick={() => setDetalle(true)}>VER MÁS</button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Slider>
+              <div className={s.test}>
+                <div className={s.borde}>
+                  <div className={s.imgContainer}>
+                    <img src={img3} alt="promo" />
+                  </div>
+                  <div className={s.MotoresInfo}>
+                    <h4>200-300 hp</h4>
+                    <span>
+                      Fiabilidad, flexibilidad, potencia y eficiencia. Todo a tu alcance.
+                    </span>
+                    <button onClick={() => setDetalle(true)}>VER MÁS</button>
+                  </div>
+                </div>
+              </div>
+            </Slider>
+          </div>
         </div>
-      </div>
-      {detalle && <SelectMotor info = {info}/>}
+      }
+      {detalle && <SelectMotor info={info} />}
     </>
   );
 }

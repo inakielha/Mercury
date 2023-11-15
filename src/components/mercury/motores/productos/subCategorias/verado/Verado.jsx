@@ -53,6 +53,7 @@ export default function Verado({info}) {
           </div>
         </div>
       }
+      {!detalle &&
       <div className={s.web}>
         <div className={s.container}>
           <Slider className={s.test} {...settings}>
@@ -66,7 +67,7 @@ export default function Verado({info}) {
                   <span>
                     Ofrece una experiencia fueraborda de primer nivel.
                   </span>
-                  <button>VER MÁS</button>
+                  <button onClick={() => setDetalle(true)}>VER MÁS</button>
                 </div>
               </div>
             </div>
@@ -81,7 +82,7 @@ export default function Verado({info}) {
                   <span>
                     El rendimiento de los fuera de bordas para ofrecer la mejor experiencia de navegación de lujo.
                   </span>
-                  <button>VER MÁS</button>
+                  <button onClick={() => setDetalle(true)}>VER MÁS</button>
                 </div>
               </div>
             </div>
@@ -89,6 +90,7 @@ export default function Verado({info}) {
           </Slider>
         </div>
       </div>
+      }
       {detalle && <SelectMotor info={info} />}
       {/* </div> */}
     </>

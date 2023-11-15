@@ -10,6 +10,7 @@ import Verado from "./subCategorias/verado/Verado";
 import { cuatroTemposInfo, dosTemposInfo, racinInfo, seaProInfo, veradoInfo } from "./subCategorias/helper";
 import Racing from "./subCategorias/racing/Racing";
 import DosTempos from "./subCategorias/dosTempos/DosTempos";
+import VeradoTest from "./subCategorias/verado/VeradoTest";
 
 export default function ProductosMotores() {
   const [category, setCategory] = useState("cuatro tiempos");
@@ -97,7 +98,8 @@ export default function ProductosMotores() {
         
         {category === "cuatro tiempos" && <CuatroTempos info = {cuatroTemposInfo} />}
         {category === "sea pro" && <Seapro info = {seaProInfo} />}
-        {category === "verado" && <Verado info = {veradoInfo} />}
+        {/* {category === "verado" && <Verado info = {veradoInfo} />} */}
+        {category === "verado" && <VeradoTest info = {veradoInfo} />}
         {category === "dos tiempos" && <DosTempos info = {dosTemposInfo} />}
         {category === "racing" && <Racing info = {racinInfo} />}
       </div>

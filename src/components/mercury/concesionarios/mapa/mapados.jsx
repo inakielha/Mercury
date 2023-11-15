@@ -1,9 +1,8 @@
 import GoogleMap from 'google-maps-react-markers'
 import Marker from './marker/marker'
 import { useRef, useState } from 'react'
-// import coordinates from './coordenadas/coordenadas.js'
 import jsonCordenadas from "./coordenadas/mercury_concesionarios.json"
-const App = () => {
+const MapaDos = ({concesionarios}) => {
     const mapRef = useRef(null)
     const [mapReady, setMapReady] = useState(false)
 
@@ -19,7 +18,7 @@ const App = () => {
         mapRef.current.setCenter({ lat, lng })
         // ref. https://developers.google.com/maps/documentation/javascript/reference?hl=it
     }
-    let coordinates =  Object.values(jsonCordenadas);
+
 
     return (
         <>
@@ -33,7 +32,7 @@ const App = () => {
                 onGoogleApiLoaded={onGoogleApiLoaded}
                 onChange={(map) => console.log('Map moved', map)}
             >
-                {coordinates.length && coordinates.map(({ latitude, longitude, nombre, email, tel1,direccion }, index) =>
+                {concesionarios?.length && concesionarios.map(({ latitude, longitude, nombre, email, tel1,direccion }, index) =>
                 (
                     <Marker
                         key={index}
@@ -56,4 +55,4 @@ const App = () => {
     )
 }
 
-export default App
+export default MapaDos

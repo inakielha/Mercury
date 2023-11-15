@@ -6,15 +6,18 @@
     padding: 2em;
     /* background-color: green; */
 }
+
 .card h4 {
     font-size: 21px;
     font-weight: bold;
     padding: 0;
     margin: 0;
 }
+
 .imgContainer {
     width: 100%;
 }
+
 .info {
     width: 100%;
     display: flex;
@@ -25,12 +28,14 @@
     gap: 1em;
     height: 100%;
 }
+
 .caracteristicasConatiner {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
     font-size: 8px;
 }
+
 .info button {
     background-color: #DF0404;
     border: none;
@@ -40,15 +45,80 @@
     height: 30px;
     /* width: 89px; */
 }
+
 .imgContainer {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 /* .imgContainer img {
     width: 100%;
     width: 86px;
     height: 198px;
     object-fit: cover;
 } */
+.cardMobile {
+    display: none;
+}
+@media (min-width: 768px) {
+    .card {
+        display: none;
+    }
+
+    .cardMobile {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        width: 90%;
+        padding: 2em;
+    }
+    .cardMobile h4 {
+        font-size: 21px;
+        font-weight: bold;
+        padding: 0;
+        margin: 0;
+    }
+
+    .modelos {
+        display: flex;
+        flex-direction: column;
+        font-size: 24px;
+        font-weight: 400;
+        width: 50%;
+        gap: 0.5em;
+    }
+    .modelos span {
+        cursor: pointer;
+
+    }
+    .modelos span:hover {
+        color: #DF0404;
+    }
+    .imgContainer {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+    }
+    .imgContainer img {
+        /* width: 50%; */
+        object-fit: cover;
+    }
+    .info {
+        /* gap: 0; */
+        padding-left: 2em;
+    }
+    .info h4 {
+        font-size: 32px;
+    }
+    .info button {
+        font-size: 21px;
+        height: 58px;
+        width: 30%;
+    }
+    .caracteristicasConatiner {
+        font-size: 18px;
+    }
+}

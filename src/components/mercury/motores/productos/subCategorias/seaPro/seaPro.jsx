@@ -9,9 +9,9 @@ import { useState } from "react";
 import SelectMotor from "../selectMotor/Selectmotor";
 import { seaProInfo } from "../helper";
 
-export default function Seapro({info}) {
+export default function Seapro({ info }) {
   const [detalle, setDetalle] = useState(false)
-  
+
   const settings = {
     // dots: true,
     infinite: true,
@@ -26,96 +26,98 @@ export default function Seapro({info}) {
   return (
     // <div className={s.componentCont}>
     <>
-    { !detalle &&
-      <div className={s.mobile}>
-        <div className={s.borde}>
-          <div className={s.imgContainer}>
-            <img src={img1} alt="promo" />
+      {!detalle &&
+        <div className={s.mobile}>
+          <div className={s.borde}>
+            <div className={s.imgContainer}>
+              <img src={img1} alt="promo" />
+            </div>
+            <div className={s.MotoresInfo}>
+              <h4>60-150 hp</h4>
+              <span>
+                Un motor que trabaja tan duro como lo haces tú.
+              </span>
+              <button onClick={() => setDetalle(true)}>VER MÁS</button>
+            </div>
           </div>
-          <div className={s.MotoresInfo}>
-            <h4>60-150 hp</h4>
-            <span>
-              Un motor que trabaja tan duro como lo haces tú.
-            </span>
-            <button onClick={() => setDetalle(true)}>VER MÁS</button>
+          <div className={s.borde}>
+            <div className={s.imgContainer}>
+              <img src={img2} alt="promo" />
+            </div>
+            <div className={s.MotoresInfo}>
+              <h4>200 hp</h4>
+              <span>
+                El motor fiable y constante que necesitas cuando estás en el agua.
+              </span>
+              <button onClick={() => setDetalle(true)}>VER MÁS</button>
+            </div>
           </div>
-        </div>
-        <div className={s.borde}>
-          <div className={s.imgContainer}>
-            <img src={img2} alt="promo" />
+          <div className={s.borde}>
+            <div className={s.imgContainer}>
+              <img src={img2} alt="promo" />
+            </div>
+            <div className={s.MotoresInfo}>
+              <h4>500 hp</h4>
+              <span>
+                Es nuestro fuera de borda comercial más potente y competente hasta el momento.
+              </span>
+              <button onClick={() => setDetalle(true)}>VER MÁS</button>
+            </div>
           </div>
-          <div className={s.MotoresInfo}>
-            <h4>200 hp</h4>
-            <span>
-              El motor fiable y constante que necesitas cuando estás en el agua.
-            </span>
-            <button onClick={() => setDetalle(true)}>VER MÁS</button>
-          </div>
-        </div>
-        <div className={s.borde}>
-          <div className={s.imgContainer}>
-            <img src={img2} alt="promo" />
-          </div>
-          <div className={s.MotoresInfo}>
-            <h4>500 hp</h4>
-            <span>
-              Es nuestro fuera de borda comercial más potente y competente hasta el momento.
-            </span>
-            <button onClick={() => setDetalle(true)}>VER MÁS</button>
-          </div>
-        </div>
-      </div>}
-      <div className={s.web}>
-        <div className={s.container}>
-          <Slider className={s.test} {...settings}>
-            <div className={s.test}>
-              <div className={s.borde}>
-                <div className={s.imgContainer}>
-                  <img src={img1} alt="promo" />
-                </div>
-                <div className={s.MotoresInfo}>
-                  <h4>60-150 hp</h4>
-                  <span>
-                    Un motor que trabaja tan duro como lo haces tú.
-                  </span>
-                  <button>VER MÁS</button>
+        </div>}
+      {!detalle &&
+        <div className={s.web}>
+          <div className={s.container}>
+            <Slider className={s.test} {...settings}>
+              <div className={s.test}>
+                <div className={s.borde}>
+                  <div className={s.imgContainer}>
+                    <img src={img1} alt="promo" />
+                  </div>
+                  <div className={s.MotoresInfo}>
+                    <h4>60-150 hp</h4>
+                    <span>
+                      Un motor que trabaja tan duro como lo haces tú.
+                    </span>
+                    <button onClick={() => setDetalle(true)}>VER MÁS</button>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className={s.test}>
-              <div className={s.borde}>
-                <div className={s.imgContainer}>
-                  <img src={img2} alt="promo" />
-                </div>
-                <div className={s.MotoresInfo}>
-                  <h4>200 hp</h4>
-                  <span>
-                    El motor fiable y constante que necesitas cuando estás en el agua.
-                  </span>
-                  <button>VER MÁS</button>
+              <div className={s.test}>
+                <div className={s.borde}>
+                  <div className={s.imgContainer}>
+                    <img src={img2} alt="promo" />
+                  </div>
+                  <div className={s.MotoresInfo}>
+                    <h4>200 hp</h4>
+                    <span>
+                      El motor fiable y constante que necesitas cuando estás en el agua.
+                    </span>
+                    <button onClick={() => setDetalle(true)}>VER MÁS</button>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className={s.test}>
-              <div className={s.borde}>
-                <div className={s.imgContainer}>
-                  <img src={img3} alt="promo" />
-                </div>
-                <div className={s.MotoresInfo}>
-                  <h4>500 hp</h4>
-                  <span>
-                    Es nuestro fuera de borda comercial más potente y competente hasta el momento.
-                  </span>
-                  <button>VER MÁS</button>
+              <div className={s.test}>
+                <div className={s.borde}>
+                  <div className={s.imgContainer}>
+                    <img src={img3} alt="promo" />
+                  </div>
+                  <div className={s.MotoresInfo}>
+                    <h4>500 hp</h4>
+                    <span>
+                      Es nuestro fuera de borda comercial más potente y competente hasta el momento.
+                    </span>
+                    <button onClick={() => setDetalle(true)}>VER MÁS</button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Slider>
+            </Slider>
+          </div>
         </div>
-      </div>
-      {detalle && <SelectMotor info = {info} />}
+      }
+      {detalle && <SelectMotor info={info} />}
     </>
   );
 }
