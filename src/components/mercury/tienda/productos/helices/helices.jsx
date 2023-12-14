@@ -9,9 +9,13 @@ import img4 from "../../../../../assets/mercury/helices/Imagen 297.png"
 import img5 from "../../../../../assets/mercury/helices/Imagen 298.png"
 
 import { useState } from "react";
+import { helicesComp, helicesSport, helicesElite } from "../info";
+import Producto from "../controles/producto/Producto";
+import DetalleProducto from "../detalleProducto/DetalleProducto";
 
 export default function Helices() {
     const [category, setCategory] = useState("Serie Sport")
+    const [product, setProduct] = useState("None")
   const settings = {
     // dots: true,
     infinite: true,
@@ -24,7 +28,9 @@ export default function Helices() {
   };
   function handleCategory (e){
     setCategory(e.target.innerText)
+    setProduct("None")
   } 
+  console.log(product)
   return (
      
       <div className={s.productos}>
@@ -34,7 +40,7 @@ export default function Helices() {
             <button onClick={(e)=>handleCategory(e)} style={category === "Serie Comp" ? {color:"#FFFFFF",backgroundColor:"#DF0404"}: {}}>Serie Comp</button>
         </div>
         <div className={s.webProducts}>
-          <div className={s.borde}>
+          {/* <div className={s.borde}>
             <div className={s.imgContainer}>
               <img src={img5} alt="promo" />
             </div>
@@ -63,11 +69,27 @@ export default function Helices() {
               <img src={img1} alt="promo" />
             </div>
             <span>Vengeance</span>
-          </div>
+          </div> */}
+           {
+          category === "Serie Sport" ?
+          helicesSport.map(({img, titulo, subtitulo},index)=>(
+            <Producto subtitulo={subtitulo} titulo={titulo} img={img} setProduct = {setProduct} index= {index} />
+          ))
+          :
+          category === "Serie Elite" ? 
+          helicesElite.map(({img, titulo, subtitulo},index)=>(
+            <Producto subtitulo={subtitulo} titulo={titulo} img={img} setProduct = {setProduct} index= {index}  />
+          ))
+          :
+          category === "Serie Comp" &&
+          helicesComp.map(({img, titulo, subtitulo},index)=>(
+            <Producto subtitulo={subtitulo} titulo={titulo} img={img} setProduct = {setProduct} index= {index}  />
+          ))
+        }
           
         </div>
         <Slider {...settings} className={s.slider}>
-          <div className={s.borde}>
+          {/* <div className={s.borde}>
             <div className={s.imgContainer}>
               <img src={img5} alt="promo" />
             </div>
@@ -96,8 +118,43 @@ export default function Helices() {
               <img src={img1} alt="promo" />
             </div>
             <span>Vengeance</span>
-          </div>
+          </div> */}
+
+
+
+
+          {
+          category === "Serie Sport" ?
+          helicesSport.map(({img, titulo, subtitulo},index)=>(
+            <Producto subtitulo={subtitulo} titulo={titulo} img={img} setProduct = {setProduct} index= {index} />
+          ))
+          :
+          category === "Serie Elite" ? 
+          helicesElite.map(({img, titulo, subtitulo},index)=>(
+            <Producto subtitulo={subtitulo} titulo={titulo} img={img} setProduct = {setProduct} index= {index}  />
+          ))
+          :
+          category === "Serie Comp" &&
+          helicesComp.map(({img, titulo, subtitulo},index)=>(
+            <Producto subtitulo={subtitulo} titulo={titulo} img={img} setProduct = {setProduct} index= {index}  />
+          ))
+        }
         </Slider>
+
+
+        {
+          (category === "Serie Sport" && product !== "None" )?
+        <DetalleProducto caracteristicas={helicesSport[product].caracteristicas} detalles={helicesSport[product].detalles} descripcion={helicesSport[product].descripcion} titulo={helicesSport[product].titulo} imagen = {helicesSport[product].img}/>
+         
+          :
+          (category === "Serie Elite" && product !== "None" ) ? 
+        <DetalleProducto caracteristicas={helicesElite[product].caracteristicas} detalles={helicesElite[product].detalles} descripcion={helicesElite[product].descripcion} titulo={helicesElite[product].titulo} imagen = {helicesElite[product].img}/>
+
+          :
+          (category === "Serie Comp" &&  product !== "None" ) &&
+        <DetalleProducto caracteristicas={helicesComp[product].caracteristicas} detalles={helicesComp[product].detalles} descripcion={helicesComp[product].descripcion} titulo={helicesComp[product].titulo} imagen = {helicesComp[product].img}/>
+
+        }
       </div>
   );
 }

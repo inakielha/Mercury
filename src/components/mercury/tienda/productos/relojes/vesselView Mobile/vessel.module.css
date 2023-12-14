@@ -1,0 +1,157 @@
+.titleText {
+    width: 100%;
+}
+
+.titleSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    width: 100%;
+}
+
+.titleText h3 {
+    padding: 0;
+    margin: 0;
+    color: #DF0404;
+    font-size: 12px;
+}
+
+.titleText h5 {
+    padding: 0;
+    margin: 0;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.btnCont {
+    width: 100%;
+    padding: 1em 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.btn {
+    margin-right: 10%;
+    border: none;
+    background-color: #df0404;
+    color: #fff;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0.6em 0;
+    font-size: 0.75rem;
+    font-weight: bold;
+    width: 30%;
+    list-style: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.imgCont {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .sectionWeb {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .primerSection {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 100px 0;
+        gap: 2em;
+    }
+
+    .imgGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+        gap: 1em;
+    }
+
+    .imgCont {
+        width: 100%;
+        align-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .imgCont img {
+        width: 100%;
+        align-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .titleText h3 {
+        font-size: 32px;
+    }
+
+    .titleText h5 {
+        font-size: 24px;
+        padding-bottom: 1em;
+    }
+    .imgContainer {
+        width: 100%;
+    }
+    .filas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5em;
+    }
+
+    .imgContDetalles {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 500px;
+    }
+    .infoCont {
+        width: 100%;
+        justify-self: start;
+        align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 2em;
+    }
+    .infoCont h6{
+        font-size: 24px;
+        font-weight: bold;
+        padding: 0;
+        margin: 0;
+    }
+    .infoCont span{
+        font-size: 21px;
+    }
+    .btnCont {
+        text-align: center;
+    }
+    .infoCont .btn {
+        text-align: center;
+        border: none;
+        background-color: #df0404;
+        color: #fff;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        padding: 0.6em 0;
+        font-size: 21px;
+        font-weight: bold;
+        width: 20%;
+    }
+
+}

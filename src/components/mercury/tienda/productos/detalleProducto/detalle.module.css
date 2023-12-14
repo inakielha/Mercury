@@ -1,0 +1,100 @@
+.detalleProducto {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alinear {
+    width: 94%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+.portada {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.imgContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.txtContainer {
+    width: 100%;
+}
+
+.txtContainer h3{
+    margin: 0;
+    padding: 0;
+    color: #DF0404;
+    font-size: 12px;
+}
+
+.txtContainer span{
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.detallles {
+    width: 100%;
+    font-size: 9px;
+}
+
+.table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+.rows {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1.5px solid black;
+    /* gap: 5em; */
+}
+.bold {
+    font-weight: bold;
+    font-size: 9px;
+}
+.info {
+    font-size: 9px;
+}
+@media (min-width: 768px) {
+    .detalleProducto {
+        width: 85%;
+        padding-top: 5em;
+    }
+    .txtContainer h3{
+        font-size: 24px;
+    }
+    
+    .txtContainer span{
+        font-size: 18px;
+    }
+    .detallles {
+        font-size: 18px;
+        padding: 3em 0;
+    }
+    
+    .bold {
+        font-size: 24px;
+    }
+    .info {
+        font-size: 18px;
+    }
+    .imgContainer img{
+        width: 20%;
+        object-fit: cover;
+    }   
+
+}

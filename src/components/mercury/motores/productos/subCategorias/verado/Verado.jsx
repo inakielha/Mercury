@@ -8,7 +8,7 @@ import SelectMotor from "../selectMotor/Selectmotor";
 import { veradoInfo } from "../helper";
 import { useState } from "react";
 
-export default function Verado({info}) {
+export default function Verado({ info }) {
   const [detalle, setDetalle] = useState(false)
 
   const settings = {
@@ -39,6 +39,22 @@ export default function Verado({info}) {
               <button onClick={() => setDetalle(true)}>VER MÁS</button>
             </div>
           </div>
+
+          <div className={s.test}>
+                <div className={s.borde}>
+                  <div className={s.imgContainer}>
+                    <img src={img2} alt="promo" />
+                  </div>
+                  <div className={s.MotoresInfo}>
+                    <h4>350-400 hp</h4>
+                    <span>
+                      Potenciando la excelencia acuática con motores fuera de borda, brindando una experiencia inigualable.
+                    </span>
+                    <button onClick={() => setDetalle(true)}>VER MÁS</button>
+                  </div>
+                </div>
+              </div>
+
           <div className={s.borde}>
             <div className={s.imgContainer}>
               <img src={img2} alt="promo" />
@@ -54,42 +70,57 @@ export default function Verado({info}) {
         </div>
       }
       {!detalle &&
-      <div className={s.web}>
-        <div className={s.container}>
-          <Slider className={s.test} {...settings}>
-            <div className={s.test}>
-              <div className={s.borde}>
-                <div className={s.imgContainer}>
-                  <img src={img1} alt="promo" />
-                </div>
-                <div className={s.MotoresInfo}>
-                  <h4>250 - 300 HP</h4>
-                  <span>
-                    Ofrece una experiencia fueraborda de primer nivel.
-                  </span>
-                  <button onClick={() => setDetalle(true)}>VER MÁS</button>
-                </div>
-              </div>
-            </div>
-
-            <div className={s.test}>
-              <div className={s.borde}>
-                <div className={s.imgContainer}>
-                  <img src={img2} alt="promo" />
-                </div>
-                <div className={s.MotoresInfo}>
-                  <h4>600 hp</h4>
-                  <span>
-                    El rendimiento de los fuera de bordas para ofrecer la mejor experiencia de navegación de lujo.
-                  </span>
-                  <button onClick={() => setDetalle(true)}>VER MÁS</button>
+        <div className={s.web}>
+          <div className={s.container}>
+            <Slider className={s.test} {...settings}>
+              <div className={s.test}>
+                <div className={s.borde}>
+                  <div className={s.imgContainer}>
+                    <img src={img1} alt="promo" />
+                  </div>
+                  <div className={s.MotoresInfo}>
+                    <h4>250 - 300 HP</h4>
+                    <span>
+                      Ofrece una experiencia fueraborda de primer nivel.
+                    </span>
+                    <button onClick={() => setDetalle(true)}>VER MÁS</button>
+                  </div>
                 </div>
               </div>
-            </div>
 
-          </Slider>
+              <div className={s.test}>
+                <div className={s.borde}>
+                  <div className={s.imgContainer}>
+                    <img src={img2} alt="promo" />
+                  </div>
+                  <div className={s.MotoresInfo}>
+                    <h4>350-400 hp</h4>
+                    <span>
+                      Potenciando la excelencia acuática con motores fuera de borda, brindando una experiencia inigualable.
+                    </span>
+                    <button onClick={() => setDetalle(true)}>VER MÁS</button>
+                  </div>
+                </div>
+              </div>
+
+              <div className={s.test}>
+                <div className={s.borde}>
+                  <div className={s.imgContainer}>
+                    <img src={img2} alt="promo" />
+                  </div>
+                  <div className={s.MotoresInfo}>
+                    <h4>600 hp</h4>
+                    <span>
+                      El rendimiento de los fuera de bordas para ofrecer la mejor experiencia de navegación de lujo.
+                    </span>
+                    <button onClick={() => setDetalle(true)}>VER MÁS</button>
+                  </div>
+                </div>
+              </div>
+
+            </Slider>
+          </div>
         </div>
-      </div>
       }
       {detalle && <SelectMotor info={info} />}
       {/* </div> */}

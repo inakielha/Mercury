@@ -96,7 +96,7 @@ export default function Concesionarios({ mobileMenu, setMobileMenu }) {
   }
 
 
-  console.log(ordenConcesionarios)
+  // console.log(ordenConcesionarios)
   const fetchMoreData = () => {
     // a fake async api call like which sends
     // 20 more records in 1.5 secs
@@ -184,6 +184,13 @@ export default function Concesionarios({ mobileMenu, setMobileMenu }) {
           <h3>Bienvenidos a la tienda Mercury.</h3>
           <div className={s.tiendaContainer}>
             <div className={s.concesionarioInfo}>
+              <div className={s.botones}>
+                <button onClick={() => handleConcesionarios("all")} style={colorBtn === "all" ? { color: "#FFFFFF", backgroundColor: "#DF0404" } : {}}>Toda la red</button>
+                <button onClick={() => handleConcesionarios("concesionarios")} style={colorBtn === "concesionarios" ? { color: "#FFFFFF", backgroundColor: "#DF0404" } : {}}>Concesionarios</button>
+                <button onClick={() => handleConcesionarios("servicios")} style={colorBtn === "servicios" ? { color: "#FFFFFF", backgroundColor: "#DF0404" } : {}}>Servicios</button>
+              </div>
+
+
               <div className={s.inputCont} onClick={() => inputRef.current.focus()}>
                 <IconContext.Provider value={{ className: s.icon, size: "0.7em" }}>
                   <BiSearch />
@@ -226,11 +233,11 @@ export default function Concesionarios({ mobileMenu, setMobileMenu }) {
               </InfiniteScroll>
             </div>
             <div className={s.map}>
-              <div className={s.botones}>
+              {/* <div className={s.botones}>
                 <button onClick={() => handleConcesionarios("all")} style={colorBtn === "all" ? { color: "#FFFFFF", backgroundColor: "#DF0404" } : {}}>Toda la red</button>
                 <button onClick={() => handleConcesionarios("concesionarios")} style={colorBtn === "concesionarios" ? { color: "#FFFFFF", backgroundColor: "#DF0404" } : {}}>Concesionarios</button>
                 <button onClick={() => handleConcesionarios("servicios")} style={colorBtn === "servicios" ? { color: "#FFFFFF", backgroundColor: "#DF0404" } : {}}>Servicios</button>
-              </div>
+              </div> */}
               {/* <MapaArgentina /> */}
               <MapaDos concesionarios={ordenConcesionarios} />
 

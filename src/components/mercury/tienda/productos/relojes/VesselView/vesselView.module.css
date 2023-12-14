@@ -1,0 +1,153 @@
+.section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1em;
+}
+
+.titleSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.titleText h3 {
+    padding: 0;
+    margin: 0;
+    color: #DF0404;
+    font-size: 12px;
+}
+
+.titleText h5 {
+    padding: 0;
+    margin: 0;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.section p {
+    padding: 0;
+    margin: 0;
+    font-size: 9px;
+}
+
+.text {
+    align-self: center;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.section span {
+    font-size: 8px;
+}
+
+.imgCont {
+    width: 100%;
+}
+
+.imgCont img {
+    width: 100%;
+}
+
+.sectionWeb {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .section {
+        display: none;
+    }
+
+    .sectionWeb {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5em;
+    }
+
+    .titleText {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imgCont {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* gap: 2em; */
+        width: auto;
+
+    }
+    /* .btnCont{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        width: 30%;
+    } */
+    .btn {
+        border: none;
+        background-color: #df0404;
+        color: #fff;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        padding: 0.6em 0;
+        font-size: 21px;
+        font-weight: bold;
+        width: 20%;
+    }
+
+    .titulos {
+        padding: 1em 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .titleText h3 {
+        font-size: 32px;
+    }
+
+    .titleText h5 {
+        font-size: 24px;
+    }
+
+    .sectionWeb p {
+        font-size: 21px;
+    }
+    .sectionWeb span {
+        font-size: 21px;
+    }
+    .sectionWeb h6 {
+        padding: 0;
+        margin: 0;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .velocimetroSection {
+        padding-top: 2em;
+        width: 100%;
+    }
+
+    .titleSection {
+        padding-top: 2em;
+        width: 100%;
+    }
+    .imgTxt {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        width: 100%;
+        gap: 2em;
+    }
+    .imgCont img{
+        width: 360px;
+        height: auto;
+    }
+}

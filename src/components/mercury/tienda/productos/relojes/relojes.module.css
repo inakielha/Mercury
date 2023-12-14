@@ -132,3 +132,10 @@
 
 }
 
+@media (min-width: 768px) {
+    .productos {
+        flex-direction: column;
+    }
+
+
+}

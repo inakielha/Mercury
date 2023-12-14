@@ -1,7 +1,18 @@
 import { useState } from "react"
 import s from "./card.module.css"
 
-export default function Card({ nombre, caracteristicas, imagen, imagenDimension, motores, handleCategory, modelo }) {
+export default function Card({ nombre, caracteristicas, imagen, imagenDimension, motores, handleCategory, modelo, pdf }) {
+
+    const handleDownload = () => {
+        const fileName = `${nombre} Ficha Tecnica.pdf`
+        // Crear un enlace temporal para la descarga
+        const link = document.createElement('a');
+        link.href = pdf;
+        link.target = '_blank'; // Abrir el enlace en una nueva pestaña (opcional)
+        link.download = fileName;
+        link.click();
+      };
+
     return (
         <>
             <div className={s.card}>
@@ -13,7 +24,7 @@ export default function Card({ nombre, caracteristicas, imagen, imagenDimension,
                             <span>{line}</span>
                         ))}
                     </div>
-                    <button>FICHA TECNICA</button>
+                    <button onClick={()=> handleDownload()}>FICHA TECNICA</button>
                 </div>
             </div>
             <div className={s.cardMobile}>
@@ -30,7 +41,7 @@ export default function Card({ nombre, caracteristicas, imagen, imagenDimension,
                             <span>{line}</span>
                         ))}
                     </div>
-                    <button>FICHA TECNICA</button>
+                    <button onClick={()=> handleDownload()}>FICHA TECNICA</button>
                 </div>
             </div>
         </>

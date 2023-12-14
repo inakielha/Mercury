@@ -26,6 +26,7 @@ import seapro90 from "../../../../../assets/mercury/motores/seaPro/detalles/90-e
 import seapro1 from "../../../../../assets/mercury/motores/seaPro/detalles/Imagen 313.png"
 import seapro2 from "../../../../../assets/mercury/motores/seaPro/detalles/Imagen -1.png"
 import verado from "../../../../../assets/mercury/motores/verado/detalle/verado.png"
+import verado2 from "../../../../../assets/mercury/motores/verado/detalle/NoPath - copia.png"
 // import dosTempos from "../../../../../assets/mercury/motores/dosTempos/detalles/NoPath - copia (3).png"
 import dosTempos33m from "../../../../../assets/mercury/motores/dosTempos/detalles/3.3-m.png"
 import dosTempos5mml from "../../../../../assets/mercury/motores/dosTempos/detalles/5-m-ml.png"
@@ -39,6 +40,60 @@ import dosTempos50elpto from "../../../../../assets/mercury/motores/dosTempos/de
 import dosTempos2 from "../../../../../assets/mercury/motores/dosTempos/detalles/NoPath - copia (4).png"
 import racing from "../../../../../assets/mercury/motores/racing/detalles/motor.png"
 
+import fichaTresPuntoCinco from "../../../../../assets/mercury/motores/cuatroTempos/fichas/3.5-m-ml-4s.pdf"
+import fichaCincom from "../../../../../assets/mercury/motores/cuatroTempos/fichas/5m-ml-4s.pdf"
+import fichaNuevePuntoNueve from "../../../../../assets/mercury/motores/cuatroTempos/fichas/9.9-m-ml-4s.pdf"
+import fichaQuinceE from "../../../../../assets/mercury/motores/cuatroTempos/fichas/15-e-el-4s.pdf"
+import fichaQuinceM from "../../../../../assets/mercury/motores/cuatroTempos/fichas/15-m-ml-4s.pdf"
+import fichaVeinteM from "../../../../../assets/mercury/motores/cuatroTempos/fichas/20-m-ml-4s.pdf"
+import fichaCuarentaEl from "../../../../../assets/mercury/motores/cuatroTempos/fichas/40-elpt-4s-efi.pdf"
+import fichaCincuentaElpt from "../../../../../assets/mercury/motores/cuatroTempos/fichas/50-elpt-4s-efi.pdf"
+import fichaSesentaCt from "../../../../../assets/mercury/motores/cuatroTempos/fichas/60-elpt-4s-efi-ct.pdf"
+import fichaSesenta from "../../../../../assets/mercury/motores/cuatroTempos/fichas/60-elpt-4s-efi.pdf"
+
+import ficha_cuatroTiempos_Setenta from "../../../../../assets/mercury/motores/cuatroTempos/fichas/75-150 hp/75-elpt-4s-efi.pdf"
+import ficha_cuatroTiempos_Noventaelpt from "../../../../../assets/mercury/motores/cuatroTempos/fichas/75-150 hp/90-elpt-4s-efi.pdf"
+import ficha_cuatroTiempos_CientoQuinceCt from "../../../../../assets/mercury/motores/cuatroTempos/fichas/75-150 hp/115-elpt-4s-efi-ct.pdf"
+import ficha_cuatroTiempos_CientoQuince_efiproxs from "../../../../../assets/mercury/motores/cuatroTempos/fichas/75-150 hp/115-elpt-4s-efi-pro-xs.pdf"
+import ficha_cuatroTiempos_CientoQuince_elpt_s from "../../../../../assets/mercury/motores/cuatroTempos/fichas/75-150 hp/115-elpt-4s-efi.pdf"
+import ficha_cuatroTiempos_CientoCincuenta_lx_efi from "../../../../../assets/mercury/motores/cuatroTempos/fichas/75-150 hp/150-l-lx-4s-efi.pdf"
+import ficha_cuatroTiempos_CientoCincuenta_xl_efi_pro from "../../../../../assets/mercury/motores/cuatroTempos/fichas/75-150 hp/150-l-xl-4s-efi-pro-xs.pdf"
+import ficha_cuatroTiempos_DoscientosCincuenta from "../../../../../assets/mercury/motores/cuatroTempos/fichas/200-300 hp/250-l-lx-4s-efi.pdf"
+import ficha_cuatroTiempos_Tresientos from "../../../../../assets/mercury/motores/cuatroTempos/fichas/200-300 hp/300-l-xl-4s-efi.pdf"
+import ficha_cuatroTiempos_Doscientos from "../../../../../assets/mercury/motores/cuatroTempos/fichas/200-300 hp/Diptico-Mercury-V6-200hp.pdf"
+
+
+import ficha_seapro_sesenta_elpcuatro from "../../../../../assets/mercury/motores/seaPro/fichas/60 -150 hp/60-elpt-4s-sp (1).pdf"
+import ficha_seapro_sesenta_elptcuatros from "../../../../../assets/mercury/motores/seaPro/fichas/60 -150 hp/60-elpt-4s-sp.pdf"
+import ficha_seapro_setentaCinco from "../../../../../assets/mercury/motores/seaPro/fichas/60 -150 hp/75-elpt-4s-sp (1).pdf"
+import ficha_seapro_setentaCincoCopia from "../../../../../assets/mercury/motores/seaPro/fichas/60 -150 hp/75-elpt-4s-sp.pdf"
+import ficha_seapro_NoventaElpt from "../../../../../assets/mercury/motores/seaPro/fichas/60 -150 hp/90-elpt-4s-sp (1).pdf"
+import ficha_seapro_Noventa_elpt from "../../../../../assets/mercury/motores/seaPro/fichas/60 -150 hp/90-elpt-4s-sp.pdf"
+import ficha_seapro_cientoQuince_elpt from "../../../../../assets/mercury/motores/seaPro/fichas/60 -150 hp/115-elpt-4s-sp (1).pdf"
+import ficha_seapro_ciento_quince from "../../../../../assets/mercury/motores/seaPro/fichas/60 -150 hp/115-elpt-4s-sp.pdf"
+import ficha_seapro_ciento_cincuenta from "../../../../../assets/mercury/motores/seaPro/fichas/60 -150 hp/150-l-xl-4s-sp.pdf"
+import ficha_seapro_doscientos_unico from "../../../../../assets/mercury/motores/seaPro/fichas/200 hp/200-l-lx-4s-sp.pdf"
+import ficha_seapro_quinientos_unico from "../../../../../assets/mercury/motores/seaPro/fichas/500 hp/seapro-500.pdf"
+
+import ficha_verado_doscincuenta from "../../../../../assets/mercury/motores/verado/fichas/200-300 hp/250-hp.pdf"
+import ficha_verado_trescientos from "../../../../../assets/mercury/motores/verado/fichas/200-300 hp/300-hp.pdf"
+
+import ficha_verado_seiscientos from "../../../../../assets/mercury/motores/verado/fichas/600/verado-600.pdf"
+import ficha_verado_tresCincuenta_and_cuatrocientos from "../../../../../assets/mercury/motores/verado/fichas/350/V10_Verado_350 Y 400 HP.pdf"
+
+import ficha_dosTiempos_tres_tres from "../../../../../assets/mercury/motores/dosTempos/fichas/3.3 90/3.3-m.pdf"
+import ficha_dosTiempos_cinco from "../../../../../assets/mercury/motores/dosTempos/fichas/3.3 90/5-m-ml.pdf"
+import ficha_dosTiempos_quince from "../../../../../assets/mercury/motores/dosTempos/fichas/3.3 90/15-m-super.pdf"
+import ficha_dosTiempos_veinticinco from "../../../../../assets/mercury/motores/dosTempos/fichas/3.3 90/25-m-ml-sea-pro.pdf"
+import ficha_dosTiempos_treinta from "../../../../../assets/mercury/motores/dosTempos/fichas/3.3 90/30-m-ml-super.pdf"
+import ficha_dosTiempos_cuarenta_elpto from "../../../../../assets/mercury/motores/dosTempos/fichas/3.3 90/40-elpto.pdf"
+import ficha_dosTiempos_cuarenta_elo_super from "../../../../../assets/mercury/motores/dosTempos/fichas/3.3 90/40-eo-elo-super.pdf"
+import ficha_dosTiempos_cuarenta_ml_super from "../../../../../assets/mercury/motores/dosTempos/fichas/3.3 90/40-m-ml-super.pdf"
+import ficha_dosTiempos_cincuenta_elpto from "../../../../../assets/mercury/motores/dosTempos/fichas/3.3 90/50-elpto.pdf"
+
+import ficha_racing_cuatrocientoscincuenta from "../../../../../assets/mercury/motores/racing/fichas/450/racing-450hp.pdf"
+
+
 
 export const cuatroTemposInfo = [
     [
@@ -49,7 +104,8 @@ export const cuatroTemposInfo = [
             caracteristicas: `hp / kW: 3.5 / 2.6\n Tipo de motor: 1 cilindro\nDesplazamiento (CID/ CC): 	5.2 / 85\nEmpuje total (RPM): 5000-6000\nLongitud de pata: 15" / 381 mm | 20" / 508 mm\nProporción de la caja de engranajes: 2.15:1`,
             imagen: motor1,
             imagenDimension: "80%",
-            slides: 3
+            slides: 3,
+            pdf: fichaTresPuntoCinco
         },
         {
             id: "5M/ ML 4S",
@@ -62,7 +118,8 @@ export const cuatroTemposInfo = [
         Proporción de la caja de engranajes: 2.15:1\n
         `,
             imagen: motor2,
-            imagenDimension: "80%"
+            imagenDimension: "80%",
+            pdf: fichaCincom
         },
         {
             id: "9.9 M/ ML 4S",
@@ -75,7 +132,8 @@ export const cuatroTemposInfo = [
         Proporción de la caja de engranajes: 2.15:1\n
         `,
             imagen: motor2,
-            imagenDimension: "80%"
+            imagenDimension: "80%",
+            pdf: fichaNuevePuntoNueve
         },
         {
             id: "15 M/ ML 4S",
@@ -88,7 +146,8 @@ export const cuatroTemposInfo = [
         Proporción de la caja de engranajes: 2.15:1\n
         `,
             imagen: motor2,
-            imagenDimension: "80%"
+            imagenDimension: "80%",
+            pdf: fichaQuinceM
         },
     ],
     [
@@ -112,7 +171,8 @@ export const cuatroTemposInfo = [
             Diámetro y carrera	2.16 x 1.42" / 55 x 36 mm\n
             `,
                 imagen: motor3m,
-                imagenDimension: "45%"
+                imagenDimension: "45%",
+                pdf: fichaTresPuntoCinco
 
             },
             {
@@ -133,7 +193,8 @@ export const cuatroTemposInfo = [
             Diámetro y carrera	2.32 x 1.77" / 59.45mm\n
             `,
                 imagen: m54s,
-                imagenDimension: "45%"
+                imagenDimension: "45%",
+                pdf: fichaCincom
 
             },
             {
@@ -154,8 +215,8 @@ export const cuatroTemposInfo = [
             Diámetro y carrera	2.16 x 1.73" / 55 x 44 mm
             `,
                 imagen: m994s,
-                imagenDimension: "30%"
-
+                imagenDimension: "30%",
+                pdf: fichaNuevePuntoNueve    
             },
             {
 
@@ -175,7 +236,8 @@ export const cuatroTemposInfo = [
             Diámetro y carrera	2.40 x 2.36" / 61 x 60mm\n
             `,
                 imagen: m15ml,
-                imagenDimension: "32%"
+                imagenDimension: "32%",
+                pdf: fichaQuinceM
             },
             {
 
@@ -194,7 +256,8 @@ export const cuatroTemposInfo = [
             Diámetro y carrera	2.40 x 2.36" / 61 x 60mm\n
             `,
                 imagen: el1545,
-                imagenDimension: "32%"
+                imagenDimension: "32%",
+                pdf: fichaQuinceE
             },
             {
 
@@ -214,7 +277,8 @@ export const cuatroTemposInfo = [
             Diámetro y carrera	2.40 x 2.36" / 61 x 60mm\n
             `,
                 imagen: ml20,
-                imagenDimension: "32%"
+                imagenDimension: "32%",
+                pdf: fichaVeinteM
             },
             {
 
@@ -234,7 +298,8 @@ export const cuatroTemposInfo = [
             Diámetro y carrera	2.56 x 2.95" / 65 x 75mm\n
             `,
                 imagen: elpt40,
-                imagenDimension: "28%"
+                imagenDimension: "28%",
+                pdf: fichaCuarentaEl
             },
             {
 
@@ -254,7 +319,8 @@ export const cuatroTemposInfo = [
             Diámetro y carrera	2.56 x 2.95" / 65 x 75mm\n
             `,
                 imagen: elpt50,
-                imagenDimension: "28%"
+                imagenDimension: "28%",
+                pdf: fichaCincuentaElpt
             },
             {
 
@@ -274,7 +340,8 @@ export const cuatroTemposInfo = [
             Diámetro y carrera	2.56 x 2.95" / 65 x 75mm
             `,
                 imagen: elpt60,
-                imagenDimension: "28%"
+                imagenDimension: "28%",
+                pdf: fichaSesenta
             },
             {
 
@@ -294,7 +361,8 @@ export const cuatroTemposInfo = [
             Diámetro y carrera	2.56 x 2.95" / 65 x 75mm\n
             `,
                 imagen: elpt60,
-                imagenDimension: "28%"
+                imagenDimension: "28%",
+                pdf: fichaSesentaCt
             }
 
         ],
@@ -317,7 +385,8 @@ export const cuatroTemposInfo = [
                     Diámetro y carrera	3.5 x 3.2" / 90 x 81mm\n
         `,
                 imagen: cuatroTempos75elpt,
-                imagenDimension: "28%"
+                imagenDimension: "28%",
+                pdf: ficha_cuatroTiempos_Setenta
             },
             {
 
@@ -337,7 +406,8 @@ export const cuatroTemposInfo = [
                     Diámetro y carrera	3.5 x 3.2" / 90 x 81mm
         `,
                 imagen: cuatroTempos90elptefi,
-                imagenDimension: "28%"
+                imagenDimension: "28%",
+                pdf: ficha_cuatroTiempos_Noventaelpt
             },
             {
 
@@ -357,7 +427,8 @@ export const cuatroTemposInfo = [
                 Diámetro y carrera	3.5 x 3.2" / 90 x 81mm
         `,
                 imagen: cuatroTempos115elpt,
-                imagenDimension: "28%"
+                imagenDimension: "28%",
+                pdf: ficha_cuatroTiempos_CientoQuince_elpt_s
             },
             {
 
@@ -377,7 +448,8 @@ export const cuatroTemposInfo = [
                 Diámetro y carrera	3.5 x 3.2" / 90 x 81mm
         `,
                 imagen: cuatroTempos115elptct,
-                imagenDimension: "28%"
+                imagenDimension: "28%",
+                pdf: ficha_cuatroTiempos_CientoQuinceCt
             },
             {
 
@@ -396,7 +468,8 @@ export const cuatroTemposInfo = [
                 Diámetro y carrera	3.5 x 3.2" / 90 x 81mm
         `,
                 imagen: cuatroTempos115elptpro,
-                imagenDimension: "28%"
+                imagenDimension: "28%",
+                pdf: ficha_cuatroTiempos_CientoQuince_efiproxs
             },
             {
 
@@ -416,7 +489,8 @@ export const cuatroTemposInfo = [
                 Diámetro y carrera	4.0 x 3.6" / 102 x 92mm
         `,
                 imagen: cuatroTempos150xl,
-                imagenDimension: "28%"
+                imagenDimension: "28%",
+                pdf: ficha_cuatroTiempos_CientoCincuenta_lx_efi
             },
             {
 
@@ -436,7 +510,8 @@ export const cuatroTemposInfo = [
                 Diámetro y carrera	4.0 x 3.6" / 102 x 92mm
         `,
                 imagen: cuatroTempos150xl4sefipro,
-                imagenDimension: "28%"
+                imagenDimension: "28%",
+                pdf: ficha_cuatroTiempos_CientoCincuenta_xl_efi_pro
             },
         ],
         [
@@ -458,7 +533,8 @@ export const cuatroTemposInfo = [
                 Dirección	Hidráulico
         `,
                 imagen: elpt60,
-                imagenDimension: "28%"
+                imagenDimension: "28%",
+                pdf: ficha_cuatroTiempos_Doscientos
             },
             {
 
@@ -478,7 +554,8 @@ export const cuatroTemposInfo = [
                 Dirección	Hidráulico
         `,
                 imagen: elpt60,
-                imagenDimension: "28%"
+                imagenDimension: "28%",
+                pdf: ficha_cuatroTiempos_DoscientosCincuenta
             },
             {
 
@@ -498,7 +575,8 @@ export const cuatroTemposInfo = [
                 Dirección	Hidráulico
         `,
                 imagen: elpt60,
-                imagenDimension: "28%"
+                imagenDimension: "28%",
+                pdf: ficha_cuatroTiempos_Tresientos
             }
         ]
     ],
@@ -517,7 +595,7 @@ export const cuatroTemposInfo = [
         }
     ]
 ]
-
+// -------------------------------------------------------SEA PRO-------------------------------------------------
 export const seaProInfo = [
     [
 
@@ -533,7 +611,8 @@ export const seaProInfo = [
             imagen: seapro2
             ,
             imagenDimension: "50%",
-            slides: 2.9
+            slides: 2.9,
+            pdf: ficha_seapro_sesenta_elpcuatro
         },
         {
             id: "60 ELPT 4S BT SP",
@@ -546,7 +625,8 @@ export const seaProInfo = [
         Proporción de la caja de engranajes: 2.33:1\n
         `,
             imagen: seapro1,
-            imagenDimension: "50%"
+            imagenDimension: "50%",
+            pdf: ficha_seapro_sesenta_elptcuatros
         },
         {
             id: "75 ELPT 4S SP",
@@ -559,7 +639,8 @@ export const seaProInfo = [
         Proporción de la caja de engranajes: 2.38:1
         `,
             imagen: seapro,
-            imagenDimension: "50%"
+            imagenDimension: "50%",
+            pdf: ficha_seapro_setentaCinco
         },
         {
             id: "75 ELPT 4S SP",
@@ -572,7 +653,8 @@ export const seaProInfo = [
         Proporción de la caja de engranajes: 2.38:1
         `,
             imagen: seapro,
-            imagenDimension: "50%"
+            imagenDimension: "50%",
+            pdf: ficha_seapro_setentaCincoCopia
         },
     ],
     [
@@ -595,7 +677,8 @@ export const seaProInfo = [
             Diámetro y carrera	2.56 x 2.95" / 65 x 75mm
             `,
             imagen: seapro60elpt,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_seapro_sesenta_elpcuatro
 
         },
         {
@@ -617,7 +700,8 @@ export const seaProInfo = [
             Diámetro y carrera	2.56 x 2.95" / 65 x 75mm
             `,
             imagen: seapro60elpt,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_seapro_sesenta_elptcuatros
 
         },
         {
@@ -638,7 +722,8 @@ export const seaProInfo = [
             Diámetro y carrera	3.5 x 3.2" / 90 x 81mm
             `,
             imagen: seapro75,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_seapro_setentaCinco
 
         },
         {
@@ -659,7 +744,8 @@ export const seaProInfo = [
             Diámetro y carrera	3.5 x 3.2" / 90 x 81mm
             `,
             imagen: seapro90,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_seapro_Noventa_elpt
 
         },
         {
@@ -680,7 +766,8 @@ export const seaProInfo = [
             Diámetro y carrera	3.5 x 3.2" / 90 x 81mm
             `,
             imagen: seapro90,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_seapro_NoventaElpt
 
         },
         {
@@ -701,7 +788,8 @@ export const seaProInfo = [
             Diámetro y carrera	3.5 x 3.2" / 90 x 81mm
             `,
             imagen: seapro115,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_seapro_ciento_quince
 
         },
         {
@@ -722,7 +810,8 @@ export const seaProInfo = [
             Diámetro y carrera	3.5 x 3.2" / 90 x 81mm
             `,
             imagen: seapro115,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_seapro_cientoQuince_elpt
 
         },
         {
@@ -743,7 +832,8 @@ export const seaProInfo = [
             Diámetro y carrera	4.0 x 3.6" / 102 x 92mm\n
             `,
             imagen: seapro150sp,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_seapro_ciento_cincuenta
 
         },
     ],
@@ -767,7 +857,8 @@ export const seaProInfo = [
             Dirección	Hydraulic/ Electro-Hydraulic
             `,
             imagen: seapro150sp,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_seapro_doscientos_unico
 
         },
     ],[
@@ -791,7 +882,8 @@ export const seaProInfo = [
             Desplazamiento (L)	7.6L
             `,
             imagen: seapro150sp,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_seapro_quinientos_unico
 
         },
     ]
@@ -813,47 +905,45 @@ export const seaProInfo = [
 
 ]
 
-
+// -------------------------------VERADO--------------------------------------
 export const veradoInfo = [
     [
         {
-            id: "250 Hp",
-            nombre: "60 ELPT 4S SP",
-            caracteristicas: `hp / kW: 250 / 186\n
-        Tipo de motor: V8\n
-        Desplazamiento (CID/ CC): 279 CID/ 4.6 L\n
-        Empuje total (RPM): 5200 - 6000\n
-        Longitud de pata:20" / 508mm | 25" / 635mm | 30"\n 
-        Proporción de la caja de engranajes: 1.85:1`,
-            imagen: verado
+            id: "250-300 Hp",
+            nombre: "250-300 Hp",
+            caracteristicas: `hp / kW: 250 Hp\n
+            Tipo de motor: V8\n
+            Desplazamiento (CID/ CC): 279 CID/ 4.6 L\n
+            Empuje total (RPM): 5200 - 6000\n
+            Longitud de pata:20" /508mm |25" /635mm  30" /762mm\n
+            Proporción de la caja de engranajes:	1.85:1`,
+            imagen: verado2
             ,
             imagenDimension: "50%",
             slides: 2.9
         },
         {
-            id: "300 Hp",
-            nombre: "60 ELPT 4S BT SP",
-            caracteristicas: `hp / kW: 60 / 45\n
-        Tipo de motor: en línea 4\n
-        Desplazamiento (CID/ CC): 	61 / 995\n
-        Empuje total (RPM): 4500 - 5500\n
-        Longitud de pata: 20" / 508mm | 22.5" 572mm\n
-        Proporción de la caja de engranajes: 2.33:1\n
+            id: "350-400 Hp",
+            nombre: "350-400 Hp",
+            caracteristicas: `hp / kW: 350\n
+            Empuje total RPM: 5300-5900\n
+            Tipo de motor: V10\n
+            Amperaje: 150 amp\n
+            Longitud de Pata: 20" / 508 mm | 25" / 635 mm |  30" / 762 mm | 35" / 889mm
         `,
-            imagen: verado,
+            imagen: verado2,
             imagenDimension: "50%",
         },
         {
             id: "600 Hp",
-            nombre: "75 ELPT 4S SP",
-            caracteristicas: `hp / kW: 75 / 56\n
-        Tipo de motor: en línea 4\n
-        Desplazamiento (CID/ CC): 	2.1 L\n
-        Empuje total (RPM): 5000 - 5500\n
-        Longitud de pata: 20" / 508mm\n
-        Proporción de la caja de engranajes: 2.38:1
+            nombre: "600 HP",
+            caracteristicas: `hp / kW: 600'n
+            Tipo de motor: V12'n
+            Desplazamiento (CID/ CC): 461'n
+            Empuje total (RPM): 5600-6400'n
+            Longitud de pata: 20" / 508 mm | 25" / 635 mm | 30" / 762 mm | 35" / 889mm
         `,
-            imagen: verado,
+            imagen: verado2,
             imagenDimension: "50%"
         },
     ],
@@ -875,8 +965,9 @@ export const veradoInfo = [
             Encendido: SmartStart Electric	\n
             SmartStart Electric: Power Trim and Tilt
         `,
-            imagen: verado,
-            imagenDimension: "28%"
+            imagen: verado2,
+            imagenDimension: "28%",
+            pdf: ficha_verado_doscincuenta
         },
         {
             id: "300 Hp",
@@ -894,10 +985,56 @@ export const veradoInfo = [
             Sistema de corte	Power Trim and Tilt\n
             Dirección	Integrated Electro-Hydraulic
         `,
-            imagen: verado,
-            imagenDimension: "28%"
+            imagen: verado2,
+            imagenDimension: "28%",
+            pdf: ficha_verado_trescientos
         },
     ],
+
+    [
+        {
+            id: "350 hp",
+            nombre: "Verado 350 hp",
+            caracteristicas: `hp / kW: 350\n
+            Empuje total RPM: 5300-5900\n
+            Tipo de motor: V10\n
+            Cilindrada: 5,7L (349 CID)\n
+            Arranque: Eléctrico con protección SmartStart\n
+            Relación de caja de engranaje: 2.08:1\n
+            Amperaje: 150 amp\n
+            Sistema de corte: Power trim y tilt\n
+            Peso en seco: 316 kg (695 lbs)\n
+            Dirección: Dirección electrohidráulica\n
+            Longitud de Pata: 20" / 508 mm | 25" / 635 mm |  30" / 762 mm | 35" / 889mm
+        `,
+            imagen: verado2,
+            imagenDimension: "28%",
+            pdf: ficha_verado_tresCincuenta_and_cuatrocientos
+        },
+
+        {
+            id: "400 hp",
+            nombre: "Verado 400 hp",
+            caracteristicas: `hp / kW: 400\n
+            Empuje total RPM: 5300-5900\n
+            Tipo de motor: V10\n
+            Cilindrada: 5,7L (349 CID)\n
+            Inducción: Colector de admisión mejorado de aspiración natural\n
+            Arranque: Eléctrico con protección SmartStart\n
+            Relación de caja de engranaje: 2.08:1\n
+            Amperaje: 150 amp\n
+            Sistema de corte: Power trim y tilt\n
+            Peso en seco: 316 kg (695 lbs)\n
+            Dirección: Dirección electrohidráulica\n
+            Longitud eje xxl / cxxl: 762 mm (30 in)\n
+        `,
+            imagen: verado2,
+            imagenDimension: "28%",
+            pdf: ficha_verado_tresCincuenta_and_cuatrocientos
+        },
+
+    ],
+
     [
         {
             id: "Verado 600hp",
@@ -916,19 +1053,21 @@ export const veradoInfo = [
             Dirección	Integrated Electro-Hydraulic Power-Steering\n
             Desplazamiento (L)	7.6L
         `,
-            imagen: verado,
-            imagenDimension: "28%"
+            imagen: verado2,
+            imagenDimension: "28%",
+            pdf: ficha_verado_seiscientos
         },
     ]
     ],
     [
         { name: "250-300 Hp" ,id: "uno"},
-        { name: "600 Hp", id: "dos" }
+        { name: "350-400 Hp" ,id: "dos"},
+        { name: "600 Hp", id: "tres" }
 
     ]
 ]
 
-
+// --------------------------------DOS TEMPOS-------------------
 export const dosTemposInfo = [
     [
         {
@@ -942,7 +1081,8 @@ export const dosTemposInfo = [
         Proporción de la caja de engranajes: 2.15:1`,
             imagen: dosTempos33m,
             imagenDimension: "50%",
-            slides: 2
+            slides: 2,
+            pdf: ficha_dosTiempos_tres_tres
         },
         {
             id: "5M/ ML",
@@ -954,7 +1094,8 @@ export const dosTemposInfo = [
         Longitud de pata: 15" / 381mm | 20" / 508mm\n
         Proporción de la caja de engranajes: 2.15:1`,
             imagen: dosTempos2,
-            imagenDimension: "50%"
+            imagenDimension: "50%",
+            pdf: ficha_dosTiempos_cinco
         },
     ],
     [
@@ -971,7 +1112,8 @@ export const dosTemposInfo = [
             Inyección de Aceite	pre-mezcla\n
             Encendido	manual`,
             imagen: dosTempos33m,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_dosTiempos_tres_tres
         },
         {
             id: "5 M/ML",
@@ -986,7 +1128,8 @@ export const dosTemposInfo = [
             Inyección de Aceite	pre-mezcla\n
             Encendido	manual`,
             imagen: dosTempos5mml,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_dosTiempos_cinco
         },
         {
             id: "15 M Super",
@@ -1001,7 +1144,8 @@ export const dosTemposInfo = [
             Inyección de Aceite	pre-mezcla\n
             Encendido	manual`,
             imagen: dosTempos15mSuper,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_dosTiempos_quince
         },
         {
             id: "25 M/ML Sea Pro",
@@ -1016,7 +1160,8 @@ export const dosTemposInfo = [
             Inyección de Aceite	pre-mezcla\n
             Encendido	Eléctrico y Manual`,
             imagen: dosTempos25ml,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_dosTiempos_veinticinco
         },
         {
             id: "30 M/ML Super",
@@ -1031,7 +1176,8 @@ export const dosTemposInfo = [
             Inyección de Aceite	pre-mezcla\n
             Encendido	Eléctrico y Manual`,
             imagen: dosTempos30ml,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_dosTiempos_treinta
         },
         {
             id: "40 M/ML Super",
@@ -1046,7 +1192,8 @@ export const dosTemposInfo = [
             Inyección de Aceite	Estándar y pre-mezcla\n
             Encendido	Eléctrico y Manual`,
             imagen: dosTempos40ml,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_dosTiempos_cuarenta_ml_super
         },
         {
             id: "40 EO/ ELO Super",
@@ -1061,7 +1208,8 @@ export const dosTemposInfo = [
             Inyección de Aceite	Estándar\n
             Encendido	Eléctrico`,
             imagen: dosTempos40eoelo,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_dosTiempos_cuarenta_elo_super
         },
         {
             id: "40 ELPTO",
@@ -1076,7 +1224,8 @@ export const dosTemposInfo = [
             Inyección de Aceite	Estándar\n
             Encendido	Eléctrico`,
             imagen: dosTempos40elpto,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_dosTiempos_cuarenta_elpto
         },
         {
             id: "50 ELPTO",
@@ -1091,7 +1240,8 @@ export const dosTemposInfo = [
             Inyección de Aceite	Estándar\n
             Encendido	Eléctrico`,
             imagen: dosTempos50elpto,
-            imagenDimension: "28%"
+            imagenDimension: "28%",
+            pdf: ficha_dosTiempos_cincuenta_elpto
         },
     ],
     ],
@@ -1117,7 +1267,8 @@ export const racinInfo = [
         Encendido: SmartStart Electric`,
             imagen: racing,
             imagenDimension: "50%",
-            slides: 1
+            slides: 1,
+            pdf: ficha_racing_cuatrocientoscincuenta
         }
     ],
     [
@@ -1137,7 +1288,8 @@ export const racinInfo = [
         Sistema de inducción	Supercharged with Charge Air Cooling and Electronic Boost Control\n
         Pata de transmisión	450R: 5.44” HD | 450R Sport Master`,
             imagen: dosTempos50elpto,
-            imagenDimension: "30%"
+            imagenDimension: "30%",
+            pdf: ficha_racing_cuatrocientoscincuenta
         },
     ]
     ],

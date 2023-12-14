@@ -25,6 +25,7 @@ export default function SelectMotor({ info }) {
         slidesToScroll: 1,
     };
 
+
     return (
         <>
             <div className={s.mobile}>
@@ -48,7 +49,7 @@ export default function SelectMotor({ info }) {
                             </div>
                     }
                     {info[0].map((line, index) => (
-                        (category === line.id || (!category && index === 0)) && <Card imagen={line.imagen} nombre={line.nombre} caracteristicas={line.caracteristicas} imagenDimension={line.imagenDimension} />
+                        (category === line.id || (!category && index === 0)) && <Card imagen={line.imagen} pdf={line.pdf} nombre={line.nombre} caracteristicas={line.caracteristicas} imagenDimension={line.imagenDimension} />
                     ))}
                 </div>
             </div>
@@ -70,15 +71,15 @@ export default function SelectMotor({ info }) {
                         category == "dos" ?
 
                             info[1][1].map((line, index) => (
-                                (modelo === line.id || (!modelo && index === 0)) && <Card imagen={line.imagen} nombre={line.nombre} caracteristicas={line.caracteristicas} imagenDimension={line.imagenDimension} motores={category == "dos" ? info[1][1] : category == "tres" ? info[1][2] : info[1][0]} handleCategory={handleModelo} modelo={modelo} />
+                                (modelo === line.id || (!modelo && index === 0)) && <Card imagen={line.imagen} pdf={line.pdf} nombre={line.nombre} caracteristicas={line.caracteristicas} imagenDimension={line.imagenDimension} motores={category == "dos" ? info[1][1] : category == "tres" ? info[1][2] : info[1][0]} handleCategory={handleModelo} modelo={modelo} />
                             ))
                             : category == "tres" ?
                                 info[1][2].map((line, index) => (
-                                    (modelo === line.id || (!modelo && index === 0)) && <Card imagen={line.imagen} nombre={line.nombre} caracteristicas={line.caracteristicas} imagenDimension={line.imagenDimension} motores={category == "dos" ? info[1][1] : category == "tres" ? info[1][2] : info[1][0]} handleCategory={handleModelo} modelo={modelo} />
+                                    (modelo === line.id || (!modelo && index === 0)) && <Card imagen={line.imagen} pdf={line.pdf} nombre={line.nombre} caracteristicas={line.caracteristicas} imagenDimension={line.imagenDimension} motores={category == "dos" ? info[1][1] : category == "tres" ? info[1][2] : info[1][0]} handleCategory={handleModelo} modelo={modelo} />
                                 ))
 
                                 : info[1][0].map((line, index) => (
-                                    (modelo === line.id || (!modelo && index === 0)) && <Card imagen={line.imagen} nombre={line.nombre} caracteristicas={line.caracteristicas} imagenDimension={line.imagenDimension} motores={category == "dos" ? info[1][1] : category == "tres" ? info[1][2] : info[1][0]} handleCategory={handleModelo} modelo={modelo} />
+                                    (modelo === line.id || (!modelo && index === 0)) && <Card imagen={line.imagen} pdf={line.pdf} nombre={line.nombre} caracteristicas={line.caracteristicas} imagenDimension={line.imagenDimension} motores={category == "dos" ? info[1][1] : category == "tres" ? info[1][2] : info[1][0]} handleCategory={handleModelo} modelo={modelo} />
                                 ))
                     }
                 </div>

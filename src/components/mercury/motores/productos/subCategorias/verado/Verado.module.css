@@ -89,7 +89,9 @@
       }
     
       .imgContainer img {
-        width: 100%;
+        max-width: 100%;
+        width: 223px;
+        height: 245px;
       }
     .MotoresInfo {
         justify-content: space-around;
