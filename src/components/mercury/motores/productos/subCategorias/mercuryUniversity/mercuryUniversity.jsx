@@ -12,14 +12,14 @@ export default function MercuryUniversity() {
             <li>. Teléfono de contacto permanente.</li>
             <li>. Dirección de taller y localización en Google Maps.</li>
             <li>. Indicar taller propio o de terceros</li>
-            <li>. Antiguedad en la zona</li>
+            <li>. Antigüedad en la zona</li>
             <li>
               . Aceptación de Tarifas Oficiales establecidas por el Fabricante
             </li>
             <li>. Indicar si es Monotributista o Sociedad (indicar CUIT)</li>
             <li>. Puesto dentro de la organización.</li>
             <li>
-              A: En relación de dependencia ( indicar empleador y Antiguedade
+              A: En relación de dependencia ( indicar empleador y Antigüedades
               con el mismo )
             </li>
             <li>B : Por cuenta propia indicar antigüedad</li>

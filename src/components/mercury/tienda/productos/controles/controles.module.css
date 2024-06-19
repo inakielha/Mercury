@@ -139,7 +139,8 @@
         /* height: 20vh; */
         gap: 2em;
         padding: 1em 0;
-
+        width: 321px;
+        height: 272px;
     }
  
     .imgContainer{

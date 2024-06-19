@@ -6,7 +6,7 @@ import Accordion from '../test/test';
 
 export default function Sidebar({ open, close }) {
     const [isOpen, setIsOpen] = React.useState("");
-    let embarcaciones = [{ text: "searay", url: "https://www.navalmotor.com/searay" }, { text: "jeanneau", url: "https://www.navalmotor.com/jeanneau" },{text:"chriscraft",url:"https://www.navalmotor.com/chriscraft" },{text:"williams",url:"https://www.navalmotor.com/williams" },{text:"yacht-club",url:"https://www.navalmotor.com/yacht-club" },{text:"zodiac",url:"https://www.navalmotor.com/zodiac" },{text:"levefort",url:"https://www.navalmotor.com/levefort" },{text:"lowe",url:"https://www.navalmotor.com/lowe" },{text:"bostonwhaler",url:"https://www.navalmotor.com/bostonwhaler" }]
+    let embarcaciones = [{ text: "searay", url: "https://www.navalmotor.com/searay" },{ text: "zar formenti", url: "https://www.navalmotor.com/zar-formenti" }, { text: "jeanneau", url: "https://www.navalmotor.com/jeanneau" },{text:"chriscraft",url:"https://www.navalmotor.com/chriscraft" },{text:"williams",url:"https://www.navalmotor.com/williams" },{text:"yacht-club",url:"https://www.navalmotor.com/yacht-club" },{text:"zodiac",url:"https://www.navalmotor.com/zodiac" },{text:"levefort",url:"https://www.navalmotor.com/levefort" },{text:"lowe",url:"https://www.navalmotor.com/lowe" },{text:"bostonwhaler",url:"https://www.navalmotor.com/bostonwhaler" }]
 
 
     const list = () => (
@@ -15,11 +15,11 @@ export default function Sidebar({ open, close }) {
 
             <Accordion style={isOpen === 2 ? { backgroundColor: "#CCCCCC" } : {}} id={2} isOpen={isOpen} setIsOpen={setIsOpen} titulo={"PROPULSIÓN INTERNA"} arrlink={[{ text: "VOLVO PENTA", url: "https://www.navalmotor.com/volvo-penta-propulsion" }, { text: "MITSUBISHI", url: "https://www.navalmotor.com/mitsubishi" }, { text: "kongsberg", url: "https://www.kongsberg.com/" }]} />
 
-            <Accordion style={isOpen === 3 ? { backgroundColor: "#CCCCCC" } : {}} id={3} isOpen={isOpen} setIsOpen={setIsOpen} titulo={"MOVILIDAD"} arrlink={[{ text: "POLARIS", url: "https://www.navalmotor.com/polaris" }, { text: "CLUB CAR", url: "https://www.navalmotor.com/clubcar" }]} />
+            <Accordion style={isOpen === 3 ? { backgroundColor: "#CCCCCC" } : {}} id={3} isOpen={isOpen} setIsOpen={setIsOpen} titulo={"MOVILIDAD"} arrlink={[{ text: "POLARIS", url: "https://www.navalmotor.com/polaris" },{ text: "ECOOTER", url: "https://www.navalmotor.com/ecooter" }, { text: "CLUB CAR", url: "https://www.navalmotor.com/clubcar" }]} />
 
             <Accordion style={isOpen === 4 ? { backgroundColor: "#CCCCCC" } : {}} id={4} isOpen={isOpen} setIsOpen={setIsOpen} titulo={"EMBARCACIONES"} arrlink={embarcaciones} />
 
-            <div className={s.tituloText} onClick={() => window.location.href = "https://www.clubdeyatesnaval.com/"}>CLUB YATES</div>
+            <div className={s.tituloText} onClick={() => window.open("https://www.clubdeyatesnaval.com/","_blank")}>CLUB YATES</div>
             <div className={s.tituloText} onClick={() => window.location.href = "https://www.navalmotor.com/novedades"}>NOVEDADES</div>
             <div className={s.tituloText} onClick={() => window.location.href = "https://www.navalmotor.com/#soluciones"}>SOLUCIONES</div>
             <div className={s.tituloText} onClick={() => window.location.href = "https://www.navalmotor.com/#garantias"}>GARANTIA</div>

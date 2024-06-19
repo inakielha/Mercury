@@ -17,10 +17,11 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<><Navbar setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} /><Tienda setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} /><Footer setMobileMenu={setMobileMenu} mobileMenu={mobileMenu}/></>} />
-        <Route path='/motores' element={<><Navbar setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} /><Motores  setMobileMenu={setMobileMenu} mobileMenu={mobileMenu}/> <Footer setMobileMenu={setMobileMenu} mobileMenu={mobileMenu}/></>} />
-        <Route path='/propulsion' element={<><Navbar setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} /><Propulsion setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} /> <Footer setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} /></>} />
-        <Route path='/concesionarios' element={<><Navbar setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} /><Concesionarios  setMobileMenu={setMobileMenu} mobileMenu={mobileMenu}/> <Footer setMobileMenu={setMobileMenu} mobileMenu={mobileMenu}/></>} />
+        {/* <Route path='/' element={<><Navbar setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} /><Tienda setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} /><Footer setMobileMenu={setMobileMenu} mobileMenu={mobileMenu}/></>} /> */}
+        <Route path='/mercury/' element={<><Navbar setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} /><Motores  setMobileMenu={setMobileMenu} mobileMenu={mobileMenu}/><Footer setMobileMenu={setMobileMenu} mobileMenu={mobileMenu}/></>} />
+        <Route path='/mercury/motores' element={<><Navbar setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} /><Motores  setMobileMenu={setMobileMenu} mobileMenu={mobileMenu}/> <Footer setMobileMenu={setMobileMenu} mobileMenu={mobileMenu}/></>} />
+        <Route path='/mercury/propulsion' element={<><Navbar setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} /><Propulsion setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} /> <Footer setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} /></>} />
+        <Route path='/mercury/concesionarios' element={<><Navbar setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} /><Concesionarios  setMobileMenu={setMobileMenu} mobileMenu={mobileMenu}/> <Footer setMobileMenu={setMobileMenu} mobileMenu={mobileMenu}/></>} />
       </Routes>
 
     </>

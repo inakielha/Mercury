@@ -37,7 +37,7 @@ export default function ProductosMotores() {
             style={
               category === "cuatro tiempos"
                 ? {
-                  color: "#DF0404",
+                  color: "#0c4c6b",
                 }
                 : {}
             }
@@ -49,7 +49,7 @@ export default function ProductosMotores() {
             style={
               category === "sea pro"
                 ? {
-                  color: "#DF0404",
+                  color: "#0c4c6b",
                 }
                 : {}
             }
@@ -61,7 +61,7 @@ export default function ProductosMotores() {
             style={
               category === "verado"
                 ? {
-                  color: "#DF0404",
+                  color: "#0c4c6b",
                 }
                 : {}
             }
@@ -73,7 +73,7 @@ export default function ProductosMotores() {
             style={
               category === "dos tiempos"
                 ? {
-                  color: "#DF0404",
+                  color: "#0c4c6b",
                 }
                 : {}
             }
@@ -85,7 +85,7 @@ export default function ProductosMotores() {
             style={
               category === "racing"
                 ? {
-                  color: "#DF0404",
+                  color: "#0c4c6b",
                 }
                 : {}
             }

@@ -1,4 +1,5 @@
 import whatsapp from "../../../assets/mercury/whatsapp.svg"
+import { pathImages } from "../../../pathImages";
 import s from "./Footer.module.css"
 import { BsCurrencyDollar, BsLinkedin, BsInstagram, BsYoutube } from "react-icons/bs"
 
@@ -9,12 +10,12 @@ export default function Footer({ color, setMobileMenu, mobileMenu }) {
       {mobileMenu === "show" && <div onClick={() => setMobileMenu("hide")} style={{ zIndex: "2", position: "absolute", width: "100%", height: "100%", backgroundColor: "#000000a3" }}></div>}
       <div className={s.footerContainer}>
         <div className={s.info}>
-          <p className={s.text} style={color ? { color: color } : { color: "#DF0404" }}>EXPOSICIÓN, VENTAS Y SHOWROOM</p>
+          <p className={s.text} style={color ? { color: color } : { color: "#0c4c6b" }}>EXPOSICIÓN, VENTAS Y SHOWROOM</p>
           <p>Av. del Libertador 701, Vicente López, Buenos Aires</p>
           <p>info@navalmotor.com</p>
           <div className={s.numero}>
             <div className={s.wspContainer}>
-              <img src={whatsapp} alt="contact" />
+              <img src={pathImages+whatsapp} alt="contact" />
             </div>
             <span>+541126661777</span>
           </div>

@@ -32,7 +32,7 @@ footer {
 }
 
 footer .text {
-  color: #DF0404;
+  color: #0c4c6b;
   font-family: "Segoe UI", "Open Sans";
   font-weight: bold;
   font-size: 24px;
@@ -152,7 +152,7 @@ footer .text {
 
   .redes p {
     display: none;
-    background-color: #DF0404;
+    background-color: #0c4c6b;
   }
   footer .text {
     font-size: 1.31rem;

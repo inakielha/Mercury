@@ -37,7 +37,7 @@ export default function Carrusel() {
               className={s.borde}
               style={
                 category === "motores" ? {
-                  backgroundColor: "#DF0404",
+                  backgroundColor: "#0c4c6b",
                   color: "#fff",
                 } : {}
               }
@@ -53,7 +53,7 @@ export default function Carrusel() {
               className={s.borde}
               style={
                 category === "sist. integral de propulsión" ? {
-                  backgroundColor: "#DF0404",
+                  backgroundColor: "#0c4c6b",
                   color: "#fff",
                 } : {}
               }
@@ -68,7 +68,7 @@ export default function Carrusel() {
             <div
               style={
                 category === "repuestos y accesorios" ? {
-                  backgroundColor: "#DF0404",
+                  backgroundColor: "#0c4c6b",
                   color: "#fff",
                 } : {}
               }
@@ -85,7 +85,7 @@ export default function Carrusel() {
               className={s.borde}
               style={
                 category === "concesionarios y servicios" ? {
-                  backgroundColor: "#DF0404",
+                  backgroundColor: "#0c4c6b",
                   color: "#fff",
                 } : {}
               }
@@ -101,7 +101,7 @@ export default function Carrusel() {
               className={s.borde}
               style={
                 category === "contacto" ? {
-                  backgroundColor: "#DF0404",
+                  backgroundColor: "#0c4c6b",
                   color: "#fff",
                 } : {}
               }

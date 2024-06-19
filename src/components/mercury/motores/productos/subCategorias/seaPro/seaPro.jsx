@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import { useState } from "react";
 import SelectMotor from "../selectMotor/Selectmotor";
 import { seaProInfo } from "../helper";
+import { pathImages } from "../../../../../../pathImages";
 
 export default function Seapro({ info }) {
   const [detalle, setDetalle] = useState(false)
@@ -30,38 +31,38 @@ export default function Seapro({ info }) {
         <div className={s.mobile}>
           <div className={s.borde}>
             <div className={s.imgContainer}>
-              <img src={img1} alt="promo" />
+              <img src={pathImages+img1} alt="promo" />
             </div>
             <div className={s.MotoresInfo}>
               <h4>60-150 hp</h4>
               <span>
                 Un motor que trabaja tan duro como lo haces tú.
               </span>
-              <button onClick={() => setDetalle(true)}>VER MÁS</button>
+              <button onClick={() => setDetalle(1)}>VER MÁS</button>
             </div>
           </div>
           <div className={s.borde}>
             <div className={s.imgContainer}>
-              <img src={img2} alt="promo" />
+              <img src={pathImages+img2} alt="promo" />
             </div>
             <div className={s.MotoresInfo}>
               <h4>200 hp</h4>
               <span>
                 El motor fiable y constante que necesitas cuando estás en el agua.
               </span>
-              <button onClick={() => setDetalle(true)}>VER MÁS</button>
+              <button onClick={() => setDetalle(2)}>VER MÁS</button>
             </div>
           </div>
           <div className={s.borde}>
             <div className={s.imgContainer}>
-              <img src={img2} alt="promo" />
+              <img src={pathImages+img2} alt="promo" />
             </div>
             <div className={s.MotoresInfo}>
               <h4>500 hp</h4>
               <span>
                 Es nuestro fuera de borda comercial más potente y competente hasta el momento.
               </span>
-              <button onClick={() => setDetalle(true)}>VER MÁS</button>
+              <button onClick={() => setDetalle(3)}>VER MÁS</button>
             </div>
           </div>
         </div>}
@@ -72,14 +73,14 @@ export default function Seapro({ info }) {
               <div className={s.test}>
                 <div className={s.borde}>
                   <div className={s.imgContainer}>
-                    <img src={img1} alt="promo" />
+                    <img src={pathImages+img1} alt="promo" />
                   </div>
                   <div className={s.MotoresInfo}>
                     <h4>60-150 hp</h4>
                     <span>
                       Un motor que trabaja tan duro como lo haces tú.
                     </span>
-                    <button onClick={() => setDetalle(true)}>VER MÁS</button>
+                    <button onClick={() => setDetalle(1)}>VER MÁS</button>
                   </div>
                 </div>
               </div>
@@ -87,14 +88,14 @@ export default function Seapro({ info }) {
               <div className={s.test}>
                 <div className={s.borde}>
                   <div className={s.imgContainer}>
-                    <img src={img2} alt="promo" />
+                    <img src={pathImages+img2} alt="promo" />
                   </div>
                   <div className={s.MotoresInfo}>
                     <h4>200 hp</h4>
                     <span>
                       El motor fiable y constante que necesitas cuando estás en el agua.
                     </span>
-                    <button onClick={() => setDetalle(true)}>VER MÁS</button>
+                    <button onClick={() => setDetalle(2)}>VER MÁS</button>
                   </div>
                 </div>
               </div>
@@ -102,14 +103,14 @@ export default function Seapro({ info }) {
               <div className={s.test}>
                 <div className={s.borde}>
                   <div className={s.imgContainer}>
-                    <img src={img3} alt="promo" />
+                    <img src={pathImages+img3} alt="promo" />
                   </div>
                   <div className={s.MotoresInfo}>
                     <h4>500 hp</h4>
                     <span>
                       Es nuestro fuera de borda comercial más potente y competente hasta el momento.
                     </span>
-                    <button onClick={() => setDetalle(true)}>VER MÁS</button>
+                    <button onClick={() => setDetalle(3)}>VER MÁS</button>
                   </div>
                 </div>
               </div>
@@ -117,7 +118,7 @@ export default function Seapro({ info }) {
           </div>
         </div>
       }
-      {detalle && <SelectMotor info={info} />}
+      {detalle && <SelectMotor info={info} modeloSelected = {detalle} setDetalle = {setDetalle}/>}
     </>
   );
 }

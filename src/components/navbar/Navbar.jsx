@@ -11,11 +11,12 @@ import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Hamburger from "./NavbarMobile/hamburger/Hamburger";
+import { pathImages } from "../../pathImages";
 
 
 export default function Navbar({setMobileMenu,mobileMenu}) {
   const [scroll, setScroll] = useState(false)
-  const [category, setCategory] = useState("repuestos")
+  const [category, setCategory] = useState("motores")
   // const [mobileMenu, setMobileMenu] = useState("hide")
 
   const navigate = useNavigate()
@@ -31,7 +32,9 @@ export default function Navbar({setMobileMenu,mobileMenu}) {
   const handleCategory = (e) => {
     let value = e.target.id
     setCategory(value)
-    value === "repuestos" ? navigate("/") : navigate("/" + value)
+    value === "repuestos" ? window.location.href = "https://navalmotor.net/repuestos/mercury" : navigate("/mercury/" + value)
+    // value === "repuestos" ? navigate("/navalmotor.net/repuestos/mercury") : navigate("/mercury/" + value)
+    // value === "repuestos" ? navigate("/") : navigate("/" + value)
   }
 
   useEffect(() => {
@@ -56,38 +59,38 @@ export default function Navbar({setMobileMenu,mobileMenu}) {
           {mobileMenu === "show" &&
             <Hamburger setMobileMenu={setMobileMenu} show={mobileMenu} />
           }
-          <div className={style.imgContainer}>
-            <img src={logo} alt="logo" />
+          <div className={style.imgContainer} onClick={() => window.location.href = "https://www.navalmotor.com/"}>
+            <img  src={pathImages+logo} alt="logo" />
           </div>
           <div>
-            <div className={style.contenedorLupa}>
+            {/* <div className={style.contenedorLupa}>
               <IconContext.Provider value={{ className: style.iconLupa, size: "1.5em" }}>
                 <BiSearch />
               </IconContext.Provider>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className={style.navWeb}>
-          <div className={style.mercuryLogo}><img src={logoMercury} alt="logoMercury" /></div>
+          <div className={style.mercuryLogo}><img onClick={() => window.location.href = "https://www.navalmotor.com/"} src={pathImages+logoMercury} alt="logoMercury" /></div>
           <div className={style.secciones}>
-            <span style={category === "motores" ? { color: "#FF3A2D" } : {}} onClick={(e) => handleCategory(e)} id={"motores"}>Motores</span>
-            <span style={category === "propulsion" ? { color: "#FF3A2D" } : {}} onClick={(e) => handleCategory(e)} id={"propulsion"}>Sist. Integral de Propulsión</span>
-            <span style={category === "repuestos" ? { color: "#FF3A2D" } : {}} onClick={(e) => handleCategory(e)} id={"repuestos"}>Repuestos y  Accesorios</span>
-            <span style={category === "concesionarios" ? { color: "#FF3A2D" } : {}} onClick={(e) => handleCategory(e)} id={"concesionarios"}>Concesionarios y Servicios</span>
-            <span style={category === "contacto" ? { color: "#FF3A2D" } : {}} onClick={(e) => handleCategory(e)} id={"contacto"}>Contacto</span>
+            <span style={category === "motores" ? { color: "#0c4c6b" } : {}} onClick={(e) => handleCategory(e)} id={"motores"}>Motores</span>
+            <span style={category === "propulsion" ? { color: "#0c4c6b" } : {}} onClick={(e) => handleCategory(e)} id={"propulsion"}>Sist. Integral de Propulsión</span>
+            <span style={category === "repuestos" ? { color: "#0c4c6b" } : {}} onClick={(e) => handleCategory(e)} id={"repuestos"}>Repuestos y  Accesorios</span>
+            <span style={category === "concesionarios" ? { color: "#0c4c6b" } : {}} onClick={(e) => handleCategory(e)} id={"concesionarios"}>Concesionarios y Servicios</span>
+            <span style={category === "contacto" ? { color: "#0c4c6b" } : {}} onClick={(e) => window.open("https://www.navalmotor.com/contacto", '_blank')} id={"contacto"}>Contacto</span>
           </div>
         </div>
         <div className={style.navMobile} >
           <Header />
           <div className={style.sliderContainer}>
             <Slider className={style.slider}  {...settings}>
-              <div className={style.fondoText}><div style={category === "motores" ? { backgroundColor: "#FF3A2D", color: "#ffffff" } : {}} className={style.texto} id={"motores"} onClick={(e) => handleCategory(e)}>Motores</div></div>
-              <div className={style.fondoText}><div style={category === "propulsion" ? { backgroundColor: "#FF3A2D", color: "#ffffff" } : {}} className={style.texto} id={"propulsion"} onClick={(e) => handleCategory(e)}>Sist. Integral de Propulsión</div></div>
-              <div className={style.fondoText}><div style={category === "repuestos" ? { backgroundColor: "#FF3A2D", color: "#ffffff" } : {}} className={style.texto} id={"repuestos"} onClick={(e) => handleCategory(e)}>Repuestos y
+              <div className={style.fondoText}><div style={category === "motores" ? { backgroundColor: "#0c4c6b", color: "#ffffff" } : {}} className={style.texto} id={"motores"} onClick={(e) => handleCategory(e)}>Motores</div></div>
+              <div className={style.fondoText}><div style={category === "propulsion" ? { backgroundColor: "#0c4c6b", color: "#ffffff" } : {}} className={style.texto} id={"propulsion"} onClick={(e) => handleCategory(e)}>Sist. Integral de Propulsión</div></div>
+              <div className={style.fondoText}><div style={category === "repuestos" ? { backgroundColor: "#0c4c6b", color: "#ffffff" } : {}} className={style.texto} id={"repuestos"} onClick={(e) => handleCategory(e)}>Repuestos y
                 Accesorios</div></div>
-              <div className={style.fondoText}><div style={category === "concesionarios" ? { backgroundColor: "#FF3A2D", color: "#ffffff" } : {}} className={style.texto} id={"concesionarios"} onClick={(e) => handleCategory(e)}>Concesionarios y
+              <div className={style.fondoText}><div style={category === "concesionarios" ? { backgroundColor: "#0c4c6b", color: "#ffffff" } : {}} className={style.texto} id={"concesionarios"} onClick={(e) => handleCategory(e)}>Concesionarios y
                 Servicios</div></div>
-              <div className={style.fondoText}><div style={category === "contacto" ? { backgroundColor: "#FF3A2D", color: "#ffffff" } : {}} className={style.texto} id={"contacto"} onClick={(e) => handleCategory(e)}>Contacto</div></div>
+              <div className={style.fondoText}><div style={category === "contacto" ? { backgroundColor: "#0c4c6b", color: "#ffffff" } : {}} className={style.texto} id={"contacto"} onClick={(e) => window.open("https://www.navalmotor.com/contacto", '_blank')}>Contacto</div></div>
             </Slider>
           </div>
         </div>

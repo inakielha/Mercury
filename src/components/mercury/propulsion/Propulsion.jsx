@@ -7,6 +7,7 @@ import cuatroTiempos from "../../../assets/mercury/motores/cuatroTempos/manual/s
 import verado from "../../../assets/mercury/motores/verado/manual/sipm-verado.pdf"
 import seaPro from "../../../assets/mercury/motores/seaPro/manual/sipm-seapro.pdf"
 import racing from "../../../assets/mercury/motores/racing/manual/sipm-racing.pdf"
+import { pathImages } from "../../../pathImages";
 
 export default function Propulsion({mobileMenu,setMobileMenu}) {
 
@@ -14,7 +15,7 @@ export default function Propulsion({mobileMenu,setMobileMenu}) {
     const fileName = `${nombre} Manual.pdf`
     // Crear un enlace temporal para la descarga
     const link = document.createElement('a');
-    link.href = pdf;
+    link.href = pathImages+pdf;
     link.target = '_blank'; // Abrir el enlace en una nueva pestaña (opcional)
     link.download = fileName;
     link.click();
@@ -27,25 +28,25 @@ export default function Propulsion({mobileMenu,setMobileMenu}) {
         <div className={s.grid}>
           <div className={s.card}>
             <div className={s.imgContainer}>
-              <img src={img} alt="fto" />
+              <img src={pathImages+img} alt="fto" />
             </div>
             <button onClick={()=> handleDownload(cuatroTiempos, "Cuatro Tiempos")}>4 TIEMPOS</button>
           </div>
           <div className={s.card}>
             <div className={s.imgContainer}>
-              <img src={img2} alt="fto" />
+              <img src={pathImages+img2} alt="fto" />
             </div>
             <button onClick={()=> handleDownload(verado, "Verado")}>VERADO</button>
           </div>
           <div className={s.card}>
             <div className={s.imgContainer}>
-              <img src={img3} alt="fto" />
+              <img src={pathImages+img3} alt="fto" />
             </div>
             <button onClick={()=> handleDownload(seaPro, "Sea Pro")}>SEA PRO</button>
           </div> 
           <div className={s.card}>
             <div className={s.imgContainer}>
-              <img src={img4} alt="fto" />
+              <img src={pathImages+img4} alt="fto" />
             </div>
             <button onClick={()=> handleDownload(racing, "Racing")}>RACING</button>
           </div>

@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import Hamburger from "./hamburger/Hamburger";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import { pathImages } from "../../../pathImages";
 
 
 
@@ -43,7 +44,7 @@ export default function NavMobileEcooter({isMobile,landing}) {
             <LuMenu onClick={() => setMobileMenu("show")} />
           </IconContext.Provider>
           <div className={style.imgContainer}>
-            <img onClick={() => window.location.href = "https://www.navalmotor.com/"} src={logo} alt="logo" />
+            <img onClick={() => window.location.href = "https://www.navalmotor.com/"} src={pathImages+logo} alt="logo" />
           </div>
           <div>
             <div className={style.contenedorLupa}>
@@ -68,7 +69,7 @@ export default function NavMobileEcooter({isMobile,landing}) {
 
             <span>Home</span>
           </div>
-          <div className={j.imgContainer}><img src={ecooterLogo} alt="logo" /></div>
+          <div className={j.imgContainer}><img src={pathImages+ecooterLogo} alt="logo" /></div>
           <span>ss</span>
         </div>
       </div>

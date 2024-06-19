@@ -1,0 +1,132 @@
+.section {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 10vh;
+  width: 80%;
+  height: 50vh;
+  margin: auto;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  z-index: 50;
+  /* background-color: orange; */
+}
+.form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+.form button {
+  border: none;
+  background-color: #0c4c6b;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0.6em 0;
+  font-size: 14px;
+  font-weight: bold;
+  width: 100%;
+  cursor: pointer;
+}
+.imgCont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+.imgCont img {
+  width: 100%;
+}
+.inputMaterial {
+  width: 100%;
+}
+.form span {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.back {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: red; */
+}
+
+.registrar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* background-color: green; */
+  gap: 1em;
+}
+.registrar span {
+  font-size: 10px;
+  font-weight: 500;
+}
+.registrar a {
+  font-size: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  color: #0c4c6b;
+}
+.terminos {
+  margin-top: 3em;
+  border-top: 1px solid #707070;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 10px;
+}
+.terminos span {
+  color: #0c4c6b;
+}
+
+@media (min-width: 768px) {
+  .section {
+    top: 1em;
+    width: 40%;
+    height: 70vh;
+    justify-content: space-between;
+  }
+  .form {
+    gap: 1em;
+    justify-content: space-between;
+    /* background-color: red; */
+    gap: 2em;
+  }
+  .imgCont {
+    padding: 2em 0;
+  }
+  .imgCont img {
+    width: 50%;
+  }
+  .form span {
+    font-size: 24px;
+  }
+  .registrar span {
+    font-size: 17px;
+  }
+  .registrar a {
+    font-size: 17px;
+  }
+  .terminos {
+    cursor: pointer;
+    font-size: 17px;
+  }
+  .icon {
+    font-size: 40px;
+    cursor: pointer;
+  }
+}

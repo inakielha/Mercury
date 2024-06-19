@@ -16,6 +16,9 @@ import cuatroTempos115elptct from "../../../../../assets/mercury/motores/cuatroT
 import cuatroTempos115elptpro from "../../../../../assets/mercury/motores/cuatroTempos/detalles/115-elpt-4s-efi-pro-xs.png"
 import cuatroTempos150xl from "../../../../../assets/mercury/motores/cuatroTempos/detalles/150-l-xl-4s-efi.png"
 import cuatroTempos150xl4sefipro from "../../../../../assets/mercury/motores/cuatroTempos/detalles/150-l-xl-4s-efi-pro-xs.png"
+import cuatroTempos200 from "../../../../../assets/mercury/motores/cuatroTempos/detalles/PB 200 V6 CMS R3_4 Port_matteBlack.png"
+import cuatroTempos250 from "../../../../../assets/mercury/motores/cuatroTempos/detalles/PB 250 V8 CMS R3_4 Port_matteBlack.png"
+import cuatroTempos300 from "../../../../../assets/mercury/motores/cuatroTempos/detalles/300hp_V8_PB_CMS_FS_Port_Rear_3-4.png"
 
 import seapro from "../../../../../assets/mercury/motores/seaPro/detalles/Imagen 314.png"
 import seapro60elpt from "../../../../../assets/mercury/motores/seaPro/detalles/60-elpt-4s-sp.png"
@@ -25,8 +28,17 @@ import seapro115 from "../../../../../assets/mercury/motores/seaPro/detalles/115
 import seapro90 from "../../../../../assets/mercury/motores/seaPro/detalles/90-elpt-4s-sp.png"
 import seapro1 from "../../../../../assets/mercury/motores/seaPro/detalles/Imagen 313.png"
 import seapro2 from "../../../../../assets/mercury/motores/seaPro/detalles/Imagen -1.png"
+import seapro200 from "../../../../../assets/mercury/motores/seaPro/detalles/200hp_SP_FS_V6_XL_RP3-4.png"
+import seapro500 from "../../../../../assets/mercury/motores/seaPro/detalles/V12_500HP_SeaPro_Rear_3-4_PORT.png"
 import verado from "../../../../../assets/mercury/motores/verado/detalle/verado.png"
 import verado2 from "../../../../../assets/mercury/motores/verado/detalle/NoPath - copia.png"
+
+import verado250hp from "../../../../../assets/mercury/motores/verado/detalle/250hp_V8_PB_AMS_FS_Port_Rear_3-4.png"
+import verado300hp from "../../../../../assets/mercury/motores/verado/detalle/300hp_V8_PB_AMS_FS_Port_Rear_3-4.png"
+import veradoV12_600 from "../../../../../assets/mercury/motores/verado/detalle/V12_600HP_PB_Rear_3-4_PORT.png"
+import verado10_port_b_400 from "../../../../../assets/mercury/motores/verado/detalle/V10-Verado_Rear_3_4_Port_B_400.png"
+import verado10_port_b_350 from "../../../../../assets/mercury/motores/verado/detalle/V10-Verado_Rear_3_4_Port_B_350.png"
+
 // import dosTempos from "../../../../../assets/mercury/motores/dosTempos/detalles/NoPath - copia (3).png"
 import dosTempos33m from "../../../../../assets/mercury/motores/dosTempos/detalles/3.3-m.png"
 import dosTempos5mml from "../../../../../assets/mercury/motores/dosTempos/detalles/5-m-ml.png"
@@ -38,7 +50,8 @@ import dosTempos40eoelo from "../../../../../assets/mercury/motores/dosTempos/de
 import dosTempos40elpto from "../../../../../assets/mercury/motores/dosTempos/detalles/40-elpto.png"
 import dosTempos50elpto from "../../../../../assets/mercury/motores/dosTempos/detalles/50-elpto.png"
 import dosTempos2 from "../../../../../assets/mercury/motores/dosTempos/detalles/NoPath - copia (4).png"
-import racing from "../../../../../assets/mercury/motores/racing/detalles/motor.png"
+
+import racing from "../../../../../assets/mercury/motores/racing/detalles/NoPath - copia (10).png"
 
 import fichaTresPuntoCinco from "../../../../../assets/mercury/motores/cuatroTempos/fichas/3.5-m-ml-4s.pdf"
 import fichaCincom from "../../../../../assets/mercury/motores/cuatroTempos/fichas/5m-ml-4s.pdf"
@@ -96,60 +109,60 @@ import ficha_racing_cuatrocientoscincuenta from "../../../../../assets/mercury/m
 
 
 export const cuatroTemposInfo = [
-    [
+    // [
 
-        {
-            id: "3.5 M 4S",
-            nombre: "3.5 M 4S",
-            caracteristicas: `hp / kW: 3.5 / 2.6\n Tipo de motor: 1 cilindro\nDesplazamiento (CID/ CC): 	5.2 / 85\nEmpuje total (RPM): 5000-6000\nLongitud de pata: 15" / 381 mm | 20" / 508 mm\nProporción de la caja de engranajes: 2.15:1`,
-            imagen: motor1,
-            imagenDimension: "80%",
-            slides: 3,
-            pdf: fichaTresPuntoCinco
-        },
-        {
-            id: "5M/ ML 4S",
-            nombre: "5 M 4S",
-            caracteristicas: `hp / kW:5/3.7\n
-        Tipo de motor: 1 cilindro\n
-        Desplazamiento (CID/ CC): 	7.5 / 123\n 
-        Empuje total (RPM): 4500 - 5500\n
-        Longitud de pata: 15" / 381mm | 25" / 635mm\n
-        Proporción de la caja de engranajes: 2.15:1\n
-        `,
-            imagen: motor2,
-            imagenDimension: "80%",
-            pdf: fichaCincom
-        },
-        {
-            id: "9.9 M/ ML 4S",
-            nombre: "9.9 M/ ML 4S",
-            caracteristicas: `hp / kW:5/3.7\n
-        Tipo de motor: 1 cilindro\n
-        Desplazamiento (CID/ CC): 	7.5 / 123\n 
-        Empuje total (RPM): 4500 - 5500\n
-        Longitud de pata: 15" / 381mm | 25" / 635mm\n
-        Proporción de la caja de engranajes: 2.15:1\n
-        `,
-            imagen: motor2,
-            imagenDimension: "80%",
-            pdf: fichaNuevePuntoNueve
-        },
-        {
-            id: "15 M/ ML 4S",
-            nombre: "15 M/ ML 4S",
-            caracteristicas: `hp / kW:5/3.7\n
-        Tipo de motor: 1 cilindro\n
-        Desplazamiento (CID/ CC): 	7.5 / 123\n 
-        Empuje total (RPM): 4500 - 5500\n
-        Longitud de pata: 15" / 381mm | 25" / 635mm\n
-        Proporción de la caja de engranajes: 2.15:1\n
-        `,
-            imagen: motor2,
-            imagenDimension: "80%",
-            pdf: fichaQuinceM
-        },
-    ],
+    //     {
+    //         id: "3.5 M 4S",
+    //         nombre: "3.5 M 4S",
+    //         caracteristicas: `hp / kW: 3.5 / 2.6\n Tipo de motor: 1 cilindro\nDesplazamiento (CID/ CC): 	5.2 / 85\nEmpuje total (RPM): 5000-6000\nLongitud de pata: 15" / 381 mm | 20" / 508 mm\nProporción de la caja de engranajes: 2.15:1`,
+    //         imagen: motor1,
+    //         imagenDimension: "80%",
+    //         slides: 3,
+    //         pdf: fichaTresPuntoCinco
+    //     },
+    //     {
+    //         id: "5M/ ML 4S",
+    //         nombre: "5 M 4S",
+    //         caracteristicas: `hp / kW:5/3.7\n
+    //     Tipo de motor: 1 cilindro\n
+    //     Desplazamiento (CID/ CC): 	7.5 / 123\n 
+    //     Empuje total (RPM): 4500 - 5500\n
+    //     Longitud de pata: 15" / 381mm | 25" / 635mm\n
+    //     Proporción de la caja de engranajes: 2.15:1\n
+    //     `,
+    //         imagen: motor2,
+    //         imagenDimension: "80%",
+    //         pdf: fichaCincom
+    //     },
+    //     {
+    //         id: "9.9 M/ ML 4S",
+    //         nombre: "9.9 M/ ML 4S",
+    //         caracteristicas: `hp / kW:5/3.7\n
+    //     Tipo de motor: 1 cilindro\n
+    //     Desplazamiento (CID/ CC): 	7.5 / 123\n 
+    //     Empuje total (RPM): 4500 - 5500\n
+    //     Longitud de pata: 15" / 381mm | 25" / 635mm\n
+    //     Proporción de la caja de engranajes: 2.15:1\n
+    //     `,
+    //         imagen: motor2,
+    //         imagenDimension: "80%",
+    //         pdf: fichaNuevePuntoNueve
+    //     },
+    //     {
+    //         id: "15 M/ ML 4S",
+    //         nombre: "15 M/ ML 4S",
+    //         caracteristicas: `hp / kW:5/3.7\n
+    //     Tipo de motor: 1 cilindro\n
+    //     Desplazamiento (CID/ CC): 	7.5 / 123\n 
+    //     Empuje total (RPM): 4500 - 5500\n
+    //     Longitud de pata: 15" / 381mm | 25" / 635mm\n
+    //     Proporción de la caja de engranajes: 2.15:1\n
+    //     `,
+    //         imagen: motor2,
+    //         imagenDimension: "80%",
+    //         pdf: fichaQuinceM
+    //     },
+    // ],
     [
         [
 
@@ -172,7 +185,8 @@ export const cuatroTemposInfo = [
             `,
                 imagen: motor3m,
                 imagenDimension: "45%",
-                pdf: fichaTresPuntoCinco
+                pdf: fichaTresPuntoCinco,
+                slides: 9
 
             },
             {
@@ -216,7 +230,7 @@ export const cuatroTemposInfo = [
             `,
                 imagen: m994s,
                 imagenDimension: "30%",
-                pdf: fichaNuevePuntoNueve    
+                pdf: fichaNuevePuntoNueve
             },
             {
 
@@ -386,7 +400,8 @@ export const cuatroTemposInfo = [
         `,
                 imagen: cuatroTempos75elpt,
                 imagenDimension: "28%",
-                pdf: ficha_cuatroTiempos_Setenta
+                pdf: ficha_cuatroTiempos_Setenta,
+                slides: 7
             },
             {
 
@@ -532,9 +547,10 @@ export const cuatroTemposInfo = [
                 Sistema de corte	Power Trim and Tilt
                 Dirección	Hidráulico
         `,
-                imagen: elpt60,
+                imagen: cuatroTempos200,
                 imagenDimension: "28%",
-                pdf: ficha_cuatroTiempos_Doscientos
+                pdf: ficha_cuatroTiempos_Doscientos,
+                slides: 3
             },
             {
 
@@ -553,7 +569,7 @@ export const cuatroTemposInfo = [
                 Sistema de corte	Power Trim and Tilt
                 Dirección	Hidráulico
         `,
-                imagen: elpt60,
+                imagen: cuatroTempos250,
                 imagenDimension: "28%",
                 pdf: ficha_cuatroTiempos_DoscientosCincuenta
             },
@@ -574,7 +590,7 @@ export const cuatroTemposInfo = [
                 Sistema de corte	Power Trim and Tilt
                 Dirección	Hidráulico
         `,
-                imagen: elpt60,
+                imagen: cuatroTempos300,
                 imagenDimension: "28%",
                 pdf: ficha_cuatroTiempos_Tresientos
             }
@@ -597,66 +613,66 @@ export const cuatroTemposInfo = [
 ]
 // -------------------------------------------------------SEA PRO-------------------------------------------------
 export const seaProInfo = [
-    [
+    // [
 
-        {
-            id: "60 ELPT 4S SP",
-            nombre: "60 ELPT 4S SP",
-            caracteristicas: `hp / kW: 60 / 45\n
-        Tipo de motor: en línea 4\n
-        Desplazamiento (CID/ CC): 	61 / 995\n
-        Empuje total (RPM): 4500 - 5500\n
-        Longitud de pata: 20" / 508mm | 22.5" 572mm\n
-        Proporción de la caja de engranajes: 2.33:1`,
-            imagen: seapro2
-            ,
-            imagenDimension: "50%",
-            slides: 2.9,
-            pdf: ficha_seapro_sesenta_elpcuatro
-        },
-        {
-            id: "60 ELPT 4S BT SP",
-            nombre: "60 ELPT 4S BT SP",
-            caracteristicas: `hp / kW: 60 / 45\n
-        Tipo de motor: en línea 4\n
-        Desplazamiento (CID/ CC): 	61 / 995\n
-        Empuje total (RPM): 4500 - 5500\n
-        Longitud de pata: 20" / 508mm | 22.5" 572mm\n
-        Proporción de la caja de engranajes: 2.33:1\n
-        `,
-            imagen: seapro1,
-            imagenDimension: "50%",
-            pdf: ficha_seapro_sesenta_elptcuatros
-        },
-        {
-            id: "75 ELPT 4S SP",
-            nombre: "75 ELPT 4S SP",
-            caracteristicas: `hp / kW: 75 / 56\n
-        Tipo de motor: en línea 4\n
-        Desplazamiento (CID/ CC): 	2.1 L\n
-        Empuje total (RPM): 5000 - 5500\n
-        Longitud de pata: 20" / 508mm\n
-        Proporción de la caja de engranajes: 2.38:1
-        `,
-            imagen: seapro,
-            imagenDimension: "50%",
-            pdf: ficha_seapro_setentaCinco
-        },
-        {
-            id: "75 ELPT 4S SP",
-            nombre: "75 ELPT 4S SP",
-            caracteristicas: `hp / kW: 75 / 56\n
-        Tipo de motor: en línea 4\n
-        Desplazamiento (CID/ CC): 	2.1 L\n
-        Empuje total (RPM): 5000 - 5500\n
-        Longitud de pata: 20" / 508mm\n
-        Proporción de la caja de engranajes: 2.38:1
-        `,
-            imagen: seapro,
-            imagenDimension: "50%",
-            pdf: ficha_seapro_setentaCincoCopia
-        },
-    ],
+    //     {
+    //         id: "60 ELPT 4S SP",
+    //         nombre: "60 ELPT 4S SP",
+    //         caracteristicas: `hp / kW: 60 / 45\n
+    //     Tipo de motor: en línea 4\n
+    //     Desplazamiento (CID/ CC): 	61 / 995\n
+    //     Empuje total (RPM): 4500 - 5500\n
+    //     Longitud de pata: 20" / 508mm | 22.5" 572mm\n
+    //     Proporción de la caja de engranajes: 2.33:1`,
+    //         imagen: seapro2
+    //         ,
+    //         imagenDimension: "50%",
+    //         slides: 2.9,
+    //         pdf: ficha_seapro_sesenta_elpcuatro
+    //     },
+    //     {
+    //         id: "60 ELPT 4S BT SP",
+    //         nombre: "60 ELPT 4S BT SP",
+    //         caracteristicas: `hp / kW: 60 / 45\n
+    //     Tipo de motor: en línea 4\n
+    //     Desplazamiento (CID/ CC): 	61 / 995\n
+    //     Empuje total (RPM): 4500 - 5500\n
+    //     Longitud de pata: 20" / 508mm | 22.5" 572mm\n
+    //     Proporción de la caja de engranajes: 2.33:1\n
+    //     `,
+    //         imagen: seapro1,
+    //         imagenDimension: "50%",
+    //         pdf: ficha_seapro_sesenta_elptcuatros
+    //     },
+    //     {
+    //         id: "75 ELPT 4S SP",
+    //         nombre: "75 ELPT 4S SP",
+    //         caracteristicas: `hp / kW: 75 / 56\n
+    //     Tipo de motor: en línea 4\n
+    //     Desplazamiento (CID/ CC): 	2.1 L\n
+    //     Empuje total (RPM): 5000 - 5500\n
+    //     Longitud de pata: 20" / 508mm\n
+    //     Proporción de la caja de engranajes: 2.38:1
+    //     `,
+    //         imagen: seapro,
+    //         imagenDimension: "50%",
+    //         pdf: ficha_seapro_setentaCinco
+    //     },
+    //     {
+    //         id: "75 ELPT 4S SP",
+    //         nombre: "75 ELPT 4S SP",
+    //         caracteristicas: `hp / kW: 75 / 56\n
+    //     Tipo de motor: en línea 4\n
+    //     Desplazamiento (CID/ CC): 	2.1 L\n
+    //     Empuje total (RPM): 5000 - 5500\n
+    //     Longitud de pata: 20" / 508mm\n
+    //     Proporción de la caja de engranajes: 2.38:1
+    //     `,
+    //         imagen: seapro,
+    //         imagenDimension: "50%",
+    //         pdf: ficha_seapro_setentaCincoCopia
+    //     },
+    // ],
     [
         // --------------------------------------------------------ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA------------------------------------------------
         [{
@@ -678,7 +694,8 @@ export const seaProInfo = [
             `,
             imagen: seapro60elpt,
             imagenDimension: "28%",
-            pdf: ficha_seapro_sesenta_elpcuatro
+            pdf: ficha_seapro_sesenta_elpcuatro,
+            slides: 8
 
         },
         {
@@ -836,13 +853,13 @@ export const seaProInfo = [
             pdf: ficha_seapro_ciento_cincuenta
 
         },
-    ],
-    [
-        {
+        ],
+        [
+            {
 
-            id: "200 L/XL 4S SP",
-            nombre: "200 L/XL 4S SP",
-            caracteristicas: `
+                id: "200 L/XL 4S SP",
+                nombre: "200 L/XL 4S SP",
+                caracteristicas: `
             hp / kW	200 / 149\n
             Tipo de motor	V6\n
             Desplazamiento (CID/ CC)	209 CID/ 3.4 L\n
@@ -856,17 +873,18 @@ export const seaProInfo = [
             Sistema de corte	Power Trim and Tilt\n
             Dirección	Hydraulic/ Electro-Hydraulic
             `,
-            imagen: seapro150sp,
-            imagenDimension: "28%",
-            pdf: ficha_seapro_doscientos_unico
+                imagen: seapro200,
+                imagenDimension: "28%",
+                pdf: ficha_seapro_doscientos_unico,
+                slides: 1
 
-        },
-    ],[
-        {
+            },
+        ], [
+            {
 
-            id: "500 HP",
-            nombre: "500 HP",
-            caracteristicas: `
+                id: "500 HP",
+                nombre: "500 HP",
+                caracteristicas: `
             hp / kW	500\n
             Tipo de motor	V12\n
             Desplazamiento (CID/ CC)	461\n
@@ -881,12 +899,13 @@ export const seaProInfo = [
             Dirección	Integrated Electro-Hydraulic Power-Steering\n
             Desplazamiento (L)	7.6L
             `,
-            imagen: seapro150sp,
-            imagenDimension: "28%",
-            pdf: ficha_seapro_quinientos_unico
+                imagen: seapro500,
+                imagenDimension: "28%",
+                pdf: ficha_seapro_quinientos_unico,
+                slides: 1
 
-        },
-    ]
+            },
+        ]
     ],
     [
         {
@@ -907,53 +926,53 @@ export const seaProInfo = [
 
 // -------------------------------VERADO--------------------------------------
 export const veradoInfo = [
-    [
-        {
-            id: "250-300 Hp",
-            nombre: "250-300 Hp",
-            caracteristicas: `hp / kW: 250 Hp\n
-            Tipo de motor: V8\n
-            Desplazamiento (CID/ CC): 279 CID/ 4.6 L\n
-            Empuje total (RPM): 5200 - 6000\n
-            Longitud de pata:20" /508mm |25" /635mm  30" /762mm\n
-            Proporción de la caja de engranajes:	1.85:1`,
-            imagen: verado2
-            ,
-            imagenDimension: "50%",
-            slides: 2.9
-        },
-        {
-            id: "350-400 Hp",
-            nombre: "350-400 Hp",
-            caracteristicas: `hp / kW: 350\n
-            Empuje total RPM: 5300-5900\n
-            Tipo de motor: V10\n
-            Amperaje: 150 amp\n
-            Longitud de Pata: 20" / 508 mm | 25" / 635 mm |  30" / 762 mm | 35" / 889mm
-        `,
-            imagen: verado2,
-            imagenDimension: "50%",
-        },
-        {
-            id: "600 Hp",
-            nombre: "600 HP",
-            caracteristicas: `hp / kW: 600'n
-            Tipo de motor: V12'n
-            Desplazamiento (CID/ CC): 461'n
-            Empuje total (RPM): 5600-6400'n
-            Longitud de pata: 20" / 508 mm | 25" / 635 mm | 30" / 762 mm | 35" / 889mm
-        `,
-            imagen: verado2,
-            imagenDimension: "50%"
-        },
-    ],
+    // [
+    //     {
+    //         id: "250-300 Hp",
+    //         nombre: "250-300 Hp",
+    //         caracteristicas: `hp / kW: 250 Hp\n
+    //         Tipo de motor: V8\n
+    //         Desplazamiento (CID/ CC): 279 CID/ 4.6 L\n
+    //         Empuje total (RPM): 5200 - 6000\n
+    //         Longitud de pata:20" /508mm |25" /635mm  30" /762mm\n
+    //         Proporción de la caja de engranajes:	1.85:1`,
+    //         imagen: verado2
+    //         ,
+    //         imagenDimension: "50%",
+    //         slides: 2.9
+    //     },
+    //     {
+    //         id: "350-400 Hp",
+    //         nombre: "350-400 Hp",
+    //         caracteristicas: `hp / kW: 350\n
+    //         Empuje total RPM: 5300-5900\n
+    //         Tipo de motor: V10\n
+    //         Amperaje: 150 amp\n
+    //         Longitud de Pata: 20" / 508 mm | 25" / 635 mm |  30" / 762 mm | 35" / 889mm
+    //     `,
+    //         imagen: verado2,
+    //         imagenDimension: "50%",
+    //     },
+    //     {
+    //         id: "600 Hp",
+    //         nombre: "600 HP",
+    //         caracteristicas: `hp / kW: 600'n
+    //         Tipo de motor: V12'n
+    //         Desplazamiento (CID/ CC): 461'n
+    //         Empuje total (RPM): 5600-6400'n
+    //         Longitud de pata: 20" / 508 mm | 25" / 635 mm | 30" / 762 mm | 35" / 889mm
+    //     `,
+    //         imagen: verado2,
+    //         imagenDimension: "50%"
+    //     },
+    // ],
     [
         [
 
             {
                 id: "250 Hp",
-            nombre: "VERADO 250 Hp",
-            caracteristicas: `hp / kW: 250 Hp\n
+                nombre: "VERADO 250 Hp",
+                caracteristicas: `hp / kW: 250 Hp\n
             Tipo de motor: V8\n
             Desplazamiento (CID/ CC): 279 CID/ 4.6 L\n
             Empuje total (RPM): 5200 - 6000\n
@@ -965,14 +984,15 @@ export const veradoInfo = [
             Encendido: SmartStart Electric	\n
             SmartStart Electric: Power Trim and Tilt
         `,
-            imagen: verado2,
-            imagenDimension: "28%",
-            pdf: ficha_verado_doscincuenta
-        },
-        {
-            id: "300 Hp",
-            nombre: "VERADO 300 Hp",
-            caracteristicas: `hp / kW  300 / 224\n
+                imagen: verado250hp,
+                imagenDimension: "28%",
+                pdf: ficha_verado_doscincuenta,
+                slides: 2
+            },
+            {
+                id: "300 Hp",
+                nombre: "VERADO 300 Hp",
+                caracteristicas: `hp / kW  300 / 224\n
             Tipo de motor V8\n
             Desplazamiento (CID/ CC)	279 CID/ 4.6 L\n
             Empuje total (RPM)	5200 - 6000\n
@@ -985,17 +1005,17 @@ export const veradoInfo = [
             Sistema de corte	Power Trim and Tilt\n
             Dirección	Integrated Electro-Hydraulic
         `,
-            imagen: verado2,
-            imagenDimension: "28%",
-            pdf: ficha_verado_trescientos
-        },
-    ],
+                imagen: verado300hp,
+                imagenDimension: "28%",
+                pdf: ficha_verado_trescientos
+            },
+        ],
 
-    [
-        {
-            id: "350 hp",
-            nombre: "Verado 350 hp",
-            caracteristicas: `hp / kW: 350\n
+        [
+            {
+                id: "350 hp",
+                nombre: "Verado 350 hp",
+                caracteristicas: `hp / kW: 350\n
             Empuje total RPM: 5300-5900\n
             Tipo de motor: V10\n
             Cilindrada: 5,7L (349 CID)\n
@@ -1007,15 +1027,16 @@ export const veradoInfo = [
             Dirección: Dirección electrohidráulica\n
             Longitud de Pata: 20" / 508 mm | 25" / 635 mm |  30" / 762 mm | 35" / 889mm
         `,
-            imagen: verado2,
-            imagenDimension: "28%",
-            pdf: ficha_verado_tresCincuenta_and_cuatrocientos
-        },
+                imagen: verado10_port_b_350,
+                imagenDimension: "28%",
+                pdf: ficha_verado_tresCincuenta_and_cuatrocientos,
+                slides: 2
+            },
 
-        {
-            id: "400 hp",
-            nombre: "Verado 400 hp",
-            caracteristicas: `hp / kW: 400\n
+            {
+                id: "400 hp",
+                nombre: "Verado 400 hp",
+                caracteristicas: `hp / kW: 400\n
             Empuje total RPM: 5300-5900\n
             Tipo de motor: V10\n
             Cilindrada: 5,7L (349 CID)\n
@@ -1028,18 +1049,18 @@ export const veradoInfo = [
             Dirección: Dirección electrohidráulica\n
             Longitud eje xxl / cxxl: 762 mm (30 in)\n
         `,
-            imagen: verado2,
-            imagenDimension: "28%",
-            pdf: ficha_verado_tresCincuenta_and_cuatrocientos
-        },
+                imagen: verado10_port_b_400,
+                imagenDimension: "28%",
+                pdf: ficha_verado_tresCincuenta_and_cuatrocientos
+            },
 
-    ],
+        ],
 
-    [
-        {
-            id: "Verado 600hp",
-            nombre: "Verado 600hp",
-            caracteristicas: `hp / kW	600\n
+        [
+            {
+                id: "Verado 600hp",
+                nombre: "Verado 600hp",
+                caracteristicas: `hp / kW	600\n
             Tipo de motor	V12\n
             Desplazamiento (CID/ CC)	461\n
             Empuje total (RPM)	5600-6400\n
@@ -1053,15 +1074,16 @@ export const veradoInfo = [
             Dirección	Integrated Electro-Hydraulic Power-Steering\n
             Desplazamiento (L)	7.6L
         `,
-            imagen: verado2,
-            imagenDimension: "28%",
-            pdf: ficha_verado_seiscientos
-        },
-    ]
+                imagen: veradoV12_600,
+                imagenDimension: "28%",
+                pdf: ficha_verado_seiscientos,
+                slides: 1
+            },
+        ]
     ],
     [
-        { name: "250-300 Hp" ,id: "uno"},
-        { name: "350-400 Hp" ,id: "dos"},
+        { name: "250-300 Hp", id: "uno" },
+        { name: "350-400 Hp", id: "dos" },
         { name: "600 Hp", id: "tres" }
 
     ]
@@ -1069,35 +1091,35 @@ export const veradoInfo = [
 
 // --------------------------------DOS TEMPOS-------------------
 export const dosTemposInfo = [
-    [
-        {
-            id: "3.3 M",
-            nombre: "3.3 M",
-            caracteristicas: `hp / kW: 3.3 / 2.5\n
-        Encendido: Manual\n
-        Configuración del cilindro: 	1\n
-        Empuje total (RPM): 4500 - 5500\n
-        Longitud de pata: 15" / 381mm\n
-        Proporción de la caja de engranajes: 2.15:1`,
-            imagen: dosTempos33m,
-            imagenDimension: "50%",
-            slides: 2,
-            pdf: ficha_dosTiempos_tres_tres
-        },
-        {
-            id: "5M/ ML",
-            nombre: "5M/ ML",
-            caracteristicas: `hp / kW: 5/3.7\n
-        Encendido: Manual\n
-        Configuración del cilindro: 	1\n
-        Empuje total (RPM): 4000 - 5000\n
-        Longitud de pata: 15" / 381mm | 20" / 508mm\n
-        Proporción de la caja de engranajes: 2.15:1`,
-            imagen: dosTempos2,
-            imagenDimension: "50%",
-            pdf: ficha_dosTiempos_cinco
-        },
-    ],
+    // [
+    //     {
+    //         id: "3.3 M",
+    //         nombre: "3.3 M",
+    //         caracteristicas: `hp / kW: 3.3 / 2.5\n
+    //     Encendido: Manual\n
+    //     Configuración del cilindro: 	1\n
+    //     Empuje total (RPM): 4500 - 5500\n
+    //     Longitud de pata: 15" / 381mm\n
+    //     Proporción de la caja de engranajes: 2.15:1`,
+    //         imagen: dosTempos33m,
+    //         imagenDimension: "50%",
+    //         slides: 2,
+    //         pdf: ficha_dosTiempos_tres_tres
+    //     },
+    //     {
+    //         id: "5M/ ML",
+    //         nombre: "5M/ ML",
+    //         caracteristicas: `hp / kW: 5/3.7\n
+    //     Encendido: Manual\n
+    //     Configuración del cilindro: 	1\n
+    //     Empuje total (RPM): 4000 - 5000\n
+    //     Longitud de pata: 15" / 381mm | 20" / 508mm\n
+    //     Proporción de la caja de engranajes: 2.15:1`,
+    //         imagen: dosTempos2,
+    //         imagenDimension: "50%",
+    //         pdf: ficha_dosTiempos_cinco
+    //     },
+    // ],
     [
         [{
             id: "3.3 M",
@@ -1113,7 +1135,9 @@ export const dosTemposInfo = [
             Encendido	manual`,
             imagen: dosTempos33m,
             imagenDimension: "28%",
-            pdf: ficha_dosTiempos_tres_tres
+            pdf: ficha_dosTiempos_tres_tres,
+            slides: 9
+
         },
         {
             id: "5 M/ML",
@@ -1243,7 +1267,7 @@ export const dosTemposInfo = [
             imagenDimension: "28%",
             pdf: ficha_dosTiempos_cincuenta_elpto
         },
-    ],
+        ],
     ],
 
     [
@@ -1254,23 +1278,23 @@ export const dosTemposInfo = [
 
 
 export const racinInfo = [
-    [
+    // [
 
-        {
-            id: "450R hp",
-            nombre: "450R hp",
-            caracteristicas: `hp / kW: 450\n
-        Desplazamiento (CID/ CC): 279 CID / 4.6L\n
-        Empuje total (RPM): 5800-6400\n
-        Proporción de la caja de engranajes: 1.60:1\n
-        Ignición: SmartCraft PCM 112 Digital Inductive\n
-        Encendido: SmartStart Electric`,
-            imagen: racing,
-            imagenDimension: "50%",
-            slides: 1,
-            pdf: ficha_racing_cuatrocientoscincuenta
-        }
-    ],
+    //     {
+    //         id: "450R hp",
+    //         nombre: "450R hp",
+    //         caracteristicas: `hp / kW: 450\n
+    //     Desplazamiento (CID/ CC): 279 CID / 4.6L\n
+    //     Empuje total (RPM): 5800-6400\n
+    //     Proporción de la caja de engranajes: 1.60:1\n
+    //     Ignición: SmartCraft PCM 112 Digital Inductive\n
+    //     Encendido: SmartStart Electric`,
+    //         imagen: racing,
+    //         imagenDimension: "50%",
+    //         slides: 1,
+    //         pdf: ficha_racing_cuatrocientoscincuenta
+    //     }
+    // ],
     [
         [{
             id: "450R hp",
@@ -1287,11 +1311,12 @@ export const racinInfo = [
         Encendido	SmartStart Electric\n
         Sistema de inducción	Supercharged with Charge Air Cooling and Electronic Boost Control\n
         Pata de transmisión	450R: 5.44” HD | 450R Sport Master`,
-            imagen: dosTempos50elpto,
+            imagen: racing,
             imagenDimension: "30%",
-            pdf: ficha_racing_cuatrocientoscincuenta
+            pdf: ficha_racing_cuatrocientoscincuenta,
+            slides: 1
         },
-    ]
+        ]
     ],
     [
         { name: "450R Hp", id: "uno" }

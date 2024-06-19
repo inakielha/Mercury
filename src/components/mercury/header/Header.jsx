@@ -4,6 +4,7 @@ import { IconContext } from "react-icons";
 // import logo from "../../../assets/mercury.svg"
 // import logo from "../../../assets/logo-naval.png"
 import mercury from "../../../assets/mercury/Logos Mercury blanco.png"
+import { pathImages } from "../../../pathImages";
 
 
 
@@ -18,7 +19,7 @@ export default function Header() {
 
           <span>Home</span>
         </div>
-        <div className={s.imgContainer}><img src={mercury} alt="logo" /></div>
+        <div className={s.imgContainer}><img src={pathImages+mercury} alt="logo" /></div>
         <span>ss</span>
       </div>
     </div>

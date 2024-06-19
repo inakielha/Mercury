@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import SelectMotor from "../selectMotor/Selectmotor";
 import { veradoInfo } from "../helper";
 import { useState } from "react";
+import { pathImages } from "../../../../../../pathImages";
 
 export default function Verado({ info }) {
   const [detalle, setDetalle] = useState(false)
@@ -29,7 +30,7 @@ export default function Verado({ info }) {
         <div className={s.mobile}>
           <div className={s.borde}>
             <div className={s.imgContainer}>
-              <img src={img1} alt="promo" />
+              <img src={pathImages+img1} alt="promo" />
             </div>
             <div className={s.MotoresInfo}>
               <h4>250 - 300 HP</h4>
@@ -43,7 +44,7 @@ export default function Verado({ info }) {
           <div className={s.test}>
                 <div className={s.borde}>
                   <div className={s.imgContainer}>
-                    <img src={img2} alt="promo" />
+                    <img src={pathImages+img2} alt="promo" />
                   </div>
                   <div className={s.MotoresInfo}>
                     <h4>350-400 hp</h4>
@@ -57,7 +58,7 @@ export default function Verado({ info }) {
 
           <div className={s.borde}>
             <div className={s.imgContainer}>
-              <img src={img2} alt="promo" />
+              <img src={pathImages+img2} alt="promo" />
             </div>
             <div className={s.MotoresInfo}>
               <h4>600 HP</h4>
@@ -76,7 +77,7 @@ export default function Verado({ info }) {
               <div className={s.test}>
                 <div className={s.borde}>
                   <div className={s.imgContainer}>
-                    <img src={img1} alt="promo" />
+                    <img src={pathImages+img1} alt="promo" />
                   </div>
                   <div className={s.MotoresInfo}>
                     <h4>250 - 300 HP</h4>
@@ -91,7 +92,7 @@ export default function Verado({ info }) {
               <div className={s.test}>
                 <div className={s.borde}>
                   <div className={s.imgContainer}>
-                    <img src={img2} alt="promo" />
+                    <img src={pathImages+img2} alt="promo" />
                   </div>
                   <div className={s.MotoresInfo}>
                     <h4>350-400 hp</h4>
@@ -106,7 +107,7 @@ export default function Verado({ info }) {
               <div className={s.test}>
                 <div className={s.borde}>
                   <div className={s.imgContainer}>
-                    <img src={img2} alt="promo" />
+                    <img src={pathImages+img2} alt="promo" />
                   </div>
                   <div className={s.MotoresInfo}>
                     <h4>600 hp</h4>

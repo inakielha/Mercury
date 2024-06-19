@@ -1,4 +1,5 @@
-import img2 from "../../../../../../assets/mercury/motores/racing/Imagen 277.png";
+import img2 from "../../../../../../assets/mercury/motores/dosTempos/detalles/motor-mercury-1.png";
+// import img2 from "../../../../../../assets/mercury/motores/dosTempos/detalles/motor-mercury-40-hp-2-tiempos-.png";
 
 import s from "../verado/Verado.module.css";
 import "slick-carousel/slick/slick.css";
@@ -7,6 +8,7 @@ import Slider from "react-slick";
 import SelectMotor from "../selectMotor/Selectmotor";
 import { veradoInfo } from "../helper";
 import { useState } from "react";
+import { pathImages } from "../../../../../../pathImages";
 
 export default function DosTempos({ info }) {
     const [detalle, setDetalle] = useState(false)
@@ -18,7 +20,7 @@ export default function DosTempos({ info }) {
                 <div className={s.mobile}>
                     <div className={s.borde}>
                         <div className={s.imgContainer}>
-                            <img src={img2} alt="promo" />
+                            <img src={pathImages+img2} alt="promo" />
                         </div>
                         <div className={s.MotoresInfo}>
                             <h4>3.3-90 hp</h4>
@@ -34,7 +36,7 @@ export default function DosTempos({ info }) {
             <div className={s.web}>
                 <div className={s.borde}>
                     <div className={s.imgContainer}>
-                        <img src={img2} alt="promo" />
+                        <img src={pathImages+img2} alt="promo" />
                     </div>
                     <div className={s.MotoresInfo}>
                         <h4>3.3-90 hp</h4>
@@ -47,7 +49,7 @@ export default function DosTempos({ info }) {
 
             </div>
             }
-            {detalle && <SelectMotor info={info} />}
+            {detalle && <SelectMotor info={info} modeloSelected = {detalle} setDetalle = {setDetalle}/>}
         </>
     );
 }

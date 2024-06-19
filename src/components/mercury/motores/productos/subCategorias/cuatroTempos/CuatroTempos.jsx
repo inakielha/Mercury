@@ -1,7 +1,10 @@
 import s from "../../ProductosMotores.module.css";
-import img1 from "../../../../../../assets/mercury/motor.svg";
+// import img1 from "../../../../../../assets/mercury/motor.svg";
+import img1 from "../../../../../../assets/mercury/motores/cuatroTempos/detalles/Imagen 279.png";
+// import img1 from "../../../../../../assets/mercury/motores/cuatroTempos/detalles/portada.png";
 import img2 from "../../../../../../assets/mercury/motores/cuatroTempos/Imagen 280.png";
-import img3 from "../../../../../../assets/mercury/motores/cuatroTempos/Imagen 281.png";
+// import img3 from "../../../../../../assets/mercury/motores/cuatroTempos/Imagen 281.png";
+import img3 from "../../../../../../assets/mercury/motores/cuatroTempos/detalles/portada.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -10,6 +13,7 @@ import motor1 from "../../../../../../assets/mercury/motores/cuatroTempos/detall
 import Card from "../card/card";
 import SelectMotor from "../selectMotor/Selectmotor";
 import { cuatroTemposInfo } from "../helper";
+import { pathImages } from "../../../../../../pathImages";
 export default function CuatroTempos({ info }) {
   const [detalle, setDetalle] = useState(false)
   const settings = {
@@ -30,38 +34,38 @@ export default function CuatroTempos({ info }) {
         <div className={s.mobile}>
           <div className={s.borde}>
             <div className={s.imgContainer}>
-              <img src={img1} alt="promo" />
+              <img src={pathImages+img1} alt="promo" />
             </div>
             <div className={s.MotoresInfo}>
               <h4>3.5-60 hp</h4>
               <span>
                 El fueraborda más popular en el agua. Sin comparación.
               </span>
-              <button onClick={() => setDetalle(true)}>VER MÁS</button>
+              <button onClick={() => setDetalle(1)}>VER MÁS</button>
             </div>
           </div>
           <div className={s.borde}>
             <div className={s.imgContainer}>
-              <img src={img2} alt="promo" />
+              <img src={pathImages+img2} alt="promo" />
             </div>
             <div className={s.MotoresInfo}>
               <h4>75-150 hp</h4>
               <span>
                 Innova constantemente y establece las pautas para lograr un rendimiento silencioso y un bajo consumo de combustible.
               </span>
-              <button onClick={() => setDetalle(true)}>VER MÁS</button>
+              <button onClick={() => setDetalle(2)}>VER MÁS</button>
             </div>
           </div>
           <div className={s.borde}>
             <div className={s.imgContainer}>
-              <img src={img3} alt="promo" />
+              <img src={pathImages+img3} alt="promo" />
             </div>
             <div className={s.MotoresInfo}>
               <h4>200-300 hp</h4>
               <span>
                 Fiabilidad, flexibilidad, potencia y eficiencia. Todo a tu alcance.
               </span>
-              <button onClick={() => setDetalle(true)}>VER MÁS</button>
+              <button onClick={() => setDetalle(3)}>VER MÁS</button>
             </div>
           </div>
         </div>
@@ -74,14 +78,14 @@ export default function CuatroTempos({ info }) {
               <div className={s.test}>
                 <div className={s.borde}>
                   <div className={s.imgContainer}>
-                    <img src={img1} alt="promo" />
+                    <img src={pathImages+img1} alt="promo" />
                   </div>
                   <div className={s.MotoresInfo}>
                     <h4>3.5-60 hp</h4>
                     <span>
                       El fueraborda más popular en el agua. Sin comparación.
                     </span>
-                    <button onClick={() => setDetalle(true)}>VER MÁS</button>
+                    <button onClick={() => setDetalle(1)}>VER MÁS</button>
                   </div>
                 </div>
               </div>
@@ -89,28 +93,28 @@ export default function CuatroTempos({ info }) {
               <div className={s.test}>
                 <div className={s.borde}>
                   <div className={s.imgContainer}>
-                    <img src={img2} alt="promo" />
+                    <img src={pathImages+img2} alt="promo" />
                   </div>
                   <div className={s.MotoresInfo}>
                     <h4>75-150 hp</h4>
                     <span>
                       Innova constantemente y establece las pautas para lograr un rendimiento silencioso y un bajo consumo de combustible.
                     </span>
-                    <button onClick={() => setDetalle(true)}>VER MÁS</button>
+                    <button onClick={() => setDetalle(2)}>VER MÁS</button>
                   </div>
                 </div>
               </div>
               <div className={s.test}>
                 <div className={s.borde}>
                   <div className={s.imgContainer}>
-                    <img src={img3} alt="promo" />
+                    <img src={pathImages+img3} alt="promo" />
                   </div>
                   <div className={s.MotoresInfo}>
                     <h4>200-300 hp</h4>
                     <span>
                       Fiabilidad, flexibilidad, potencia y eficiencia. Todo a tu alcance.
                     </span>
-                    <button onClick={() => setDetalle(true)}>VER MÁS</button>
+                    <button onClick={() => setDetalle(3)}>VER MÁS</button>
                   </div>
                 </div>
               </div>
@@ -118,7 +122,7 @@ export default function CuatroTempos({ info }) {
           </div>
         </div>
       }
-      {detalle && <SelectMotor info={info} />}
+      {detalle && <SelectMotor info={info} modeloSelected = {detalle} setDetalle = {setDetalle}/>}
     </>
   );
 }

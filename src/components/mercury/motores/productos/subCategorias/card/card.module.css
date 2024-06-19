@@ -4,7 +4,7 @@
     justify-content: center;
     width: 90%;
     padding: 2em;
-    /* background-color: green; */
+    /* background-color: orange; */
 }
 
 .card h4 {
@@ -37,7 +37,7 @@
 }
 
 .info button {
-    background-color: #DF0404;
+    background-color: #0c4c6b;
     border: none;
     color: #EDF0F2;
     font-size: 10px;
@@ -94,7 +94,7 @@
 
     }
     .modelos span:hover {
-        color: #DF0404;
+        color: #0c4c6b;
     }
     .imgContainer {
         display: flex;

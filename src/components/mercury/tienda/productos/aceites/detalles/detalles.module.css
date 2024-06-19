@@ -33,9 +33,9 @@
         gap: 3em;
     }
     .imagenContainer img {
-        height: 530px;
+        height: 265px;
         height: auto;
-        width: 200px;
+        width: 150px;
     }
     .info h3 {
         font-size: 32px;

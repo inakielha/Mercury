@@ -7,6 +7,7 @@ import { AiOutlineClose } from "react-icons/ai"
 // import navalMenu from "../../../../../../assets/mercury/logo-naval.png"
 import navalMenu from "../../../../../assets/mercury/logo-naval.png"
 import Drawer from '@mui/material/Drawer';
+import { pathImages } from '../../../../../pathImages';
 
 
 
@@ -18,17 +19,17 @@ export default function MenuMobile({ setMobileMenu, show }) {
             <ul className={s.nav_mobile + " " + s[show]}>
                 <li className={s.closeLogos}>
                     <AiOutlineClose size={"2em"} onClick={() => setMobileMenu("hide")} />
-                    <div className={s.logoMenu}><img onClick={() => window.location.href = "https://www.navalmotor.com/"} src={navalMenu} alt="logo" /></div>
+                    <div className={s.logoMenu}><img onClick={() => window.location.href = "https://www.navalmotor.com/"} src={pathImages+navalMenu} alt="logo" /></div>
                 </li>
                 <div className={j.container}>
                     <Accordion id={1} isOpen={isOpen} setIsOpen={setIsOpen} titulo={"PROPULSIÓN FUERA DE BORDA"} arrlink={[{ text: "MERCURY", url: "https://www.navalmotor.com/mercury" }]} />
                     <Accordion id={2} isOpen={isOpen} setIsOpen={setIsOpen} titulo={"PROPULSIÓN INTERNA"} arrlink={[{ text: "VOLVO PENTA", url: "https://www.navalmotor.com/volvo-penta-propulsion" }, { text: "MITSUBISHI", url: "https://www.navalmotor.com/mitsubishi" }, { text: "kongsberg", url: "https://www.kongsberg.com/" }]} />
                     <Accordion id={3} isOpen={isOpen} setIsOpen={setIsOpen} titulo={"MOVILIDAD"} arrlink={[{ text: "POLARIS", url: "https://www.navalmotor.com/polaris" }, { text: "CLUB CAR", url: "https://www.navalmotor.com/clubcar" }]} />
                     <Accordion id={4} isOpen={isOpen} setIsOpen={setIsOpen} titulo={"EMBARCACIONES"} arrlink={embarcaciones} />
-                    <div className={j.tituloText}>CLUB YATES</div>
-                    <div className={j.tituloText}>NOVEDADES</div>
-                    <div className={j.tituloText}>SOLUCIONES</div>
-                    <div className={j.tituloText}>GARANTIA</div>
+                    <div className={j.tituloText} onClick={() => window.open("https://www.clubdeyatesnaval.com/","_blank")}>CLUB YATES</div>
+                    <div className={j.tituloText} onClick={() => window.location.href = "https://www.navalmotor.com/novedades"}>NOVEDADES</div>
+                    <div className={j.tituloText} onClick={() => window.location.href = "https://www.navalmotor.com/#soluciones"}>SOLUCIONES</div>
+                    <div className={j.tituloText} onClick={() => window.location.href = "https://www.navalmotor.com/#garantias"}>GARANTIA</div>
                 </div>
 
             </ul>

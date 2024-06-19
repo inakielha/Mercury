@@ -8,6 +8,7 @@
     gap: 1em;
     padding-top: 1em;
 }
+
 .web {
     display: none;
 }
@@ -55,7 +56,7 @@
 .MotoresInfo button {
     font-size: 0.75rem;
     font-weight: bold;
-    background-color: #df0404;
+    background-color: #0c4c6b;
     border: none;
     color: #fff;
     /* padding: 0.7em 0; */
@@ -68,6 +69,7 @@
     .mobile {
         display: none;
     }
+
     .web {
         width: 90%;
         display: flex;
@@ -81,38 +83,49 @@
         height: 25vh;
         padding: 2em 0;
         gap: 0;
+        justify-content: center;
     }
 
     .imgContainer {
         height: 100%;
         width: 50%;
-      }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     
-      .imgContainer img {
-        max-width: 100%;
+    .imgContainer img {
+        /* height: 100%; */
         width: 223px;
         height: 245px;
-      }
+
+        width: 207px;
+        height: 245px;
+
+        /* height: 100%;
+        width: auto; */
+    }
+
     .MotoresInfo {
         justify-content: space-around;
         gap: 0;
         height: 100%;
         padding-left: 1em;
-      }
-    
-      .MotoresInfo h4 {
+    }
+
+    .MotoresInfo h4 {
         font-size: 32px;
         font-weight: bold;
-      }
-    
-      .MotoresInfo span {
+    }
+
+    .MotoresInfo span {
         font-size: 18px;
         padding: 0;
         text-align: start;
         line-height: 1.2;
-      }
-    
-      .MotoresInfo button {
+    }
+
+    .MotoresInfo button {
         font-size: 24px;
         width: 45%;
         margin-top: 0;
@@ -120,5 +133,5 @@
         padding: 0.2em 0;
         height: 58px;
         cursor: pointer;
-      }
+    }
 }
