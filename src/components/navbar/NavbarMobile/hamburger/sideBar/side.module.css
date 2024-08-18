@@ -1,32 +1,58 @@
+
 .container {
-    padding-top: 4em;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    width: 15vw;
-    
+    justify-content: flex-start;
+    background-color: #a4a4a4;
+    width: 250px;
+    overflow-x: hidden;
+
 }
 
 .tituloText {
-    width: 90%;
+    cursor: pointer;
+    width: 100%;
     text-align: start;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.7rem;
+    font-size: 12px;
     border: none;
-    padding: 0;
-    margin: 0;
     color: #666666;
+    color: white;
+    background-color: #a4a4a4;
     font-weight: 500;
-    cursor: pointer;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
+.tituloText span {
+    padding: 0 16px;
+}
+
+.sidebar {
+    width: 250px;
+}
+
+.crossIconCont {
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.crossIcon {
+    cursor: pointer;
+    color: white;
+    font-size: 25px;
+    padding-right: 16px;
+}
 
 @media (max-width: 768px) {
-    .mobile{
-        display: none;
-    }
+
     .container {
         box-shadow: 0 0 10px 10px #ffffff;
         height: auto;
@@ -36,7 +62,9 @@
     }
     .tituloText {
         font-size: 0.93rem;
+        font-size: 12px;
     }
     
 
 }
+

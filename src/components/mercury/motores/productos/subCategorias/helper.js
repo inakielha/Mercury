@@ -52,6 +52,7 @@ import dosTempos50elpto from "../../../../../assets/mercury/motores/dosTempos/de
 import dosTempos2 from "../../../../../assets/mercury/motores/dosTempos/detalles/NoPath - copia (4).png"
 
 import racing from "../../../../../assets/mercury/motores/racing/detalles/NoPath - copia (10).png"
+import avator from "../../../../../assets/mercury/motores/avator/detalles/Avator7.5eC.png"
 
 import fichaTresPuntoCinco from "../../../../../assets/mercury/motores/cuatroTempos/fichas/3.5-m-ml-4s.pdf"
 import fichaCincom from "../../../../../assets/mercury/motores/cuatroTempos/fichas/5m-ml-4s.pdf"
@@ -105,6 +106,8 @@ import ficha_dosTiempos_cuarenta_ml_super from "../../../../../assets/mercury/mo
 import ficha_dosTiempos_cincuenta_elpto from "../../../../../assets/mercury/motores/dosTempos/fichas/3.3 90/50-elpto.pdf"
 
 import ficha_racing_cuatrocientoscincuenta from "../../../../../assets/mercury/motores/racing/fichas/450/racing-450hp.pdf"
+
+import ficha_avator_siete_cinco from "../../../../../assets/mercury/motores/avator/fichas/Avator.7.5eFicha.pdf"
 
 
 
@@ -1320,5 +1323,36 @@ export const racinInfo = [
     ],
     [
         { name: "450R Hp", id: "uno" }
+    ]
+]
+
+export const avatorInfo = [
+
+    [
+        [{
+            id: "7.5E",
+            nombre: "7.5E",
+            caracteristicas: `Potencia de entrada: 1000w\n
+                    Potencia nominal eje hélice: 750w\n
+                    Tensión nominal: 48v \n
+                    Cargador (estándar): 110w\n
+                    *Peso total (sin incluir la batería y la placa del espejo de popa): 16,7 kg (37lbs)\n
+                    *Peso total (sin incluir la batería):  19,5 kg (43lbs)\n
+                    Batería: Integrada 1 kWh\n
+                    Tipo de batería: Ión litio \n
+                    Clasificación IP batería: IP67\n
+                    Peso de la batería (1 kWh):  7,6 kg (17lbs)\n
+                    Dirección:  Mando popero o remoto\n
+                    Hélice de serie: Paso 12,7 in x 7\n
+                    Longitud eje: 381 mm (15 in) / 20 mm (20 in) / 635 mm (25 in)`,
+            imagen: avator,
+            imagenDimension: "30%",
+            pdf: ficha_avator_siete_cinco,
+            slides: 1
+        },
+        ]
+    ],
+    [
+        { name: "7.5E", id: "uno" }
     ]
 ]

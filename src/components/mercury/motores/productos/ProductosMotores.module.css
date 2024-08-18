@@ -154,12 +154,14 @@
   font-weight: bold;
   color: #0c4c6b;
 }
+
 .mobile {
   /* display: flex;
   align-items: center;
   justify-content: center; */
   width: 95%;
 }
+
 .web {
   display: none;
 }
@@ -236,52 +238,48 @@
   }
 
   .MotoresInfo h4 {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: bold;
   }
 
   .MotoresInfo span {
-    font-size: 18px;
+    font-size: 15px;
     padding: 0;
     text-align: start;
     line-height: 1.2;
   }
 
   .MotoresInfo button {
-    font-size: 24px;
-    width: 60%;
+    font-size: 20px;
     margin-top: 0;
-    padding: 0;
-    padding: 0.2em 0;
-    height: 58px;
     cursor: pointer;
+    width: 150px;
+    height: auto;
+    padding: 10px 0;
   }
 
   .imgContainer {
-    height: 100%;
-    width: 50%;
-
     width: 207px;
     height: 245px;
-
-    /* width: auto;
-    height: 100%; */
   }
 
   .imgContainer img {
+    object-fit: contain;
     width: 100%;
+
+
   }
 
   .informacion h3 {
     padding: 0.5em 0;
-    font-size: 52px;
+    font-size: 48px;
     /* margin: 0; */
     margin-bottom: 0.2em;
   }
 
   .informacion h4 {
     padding: 0;
-    font-size: 32px;
+    font-size: 28px;
 
   }
 
@@ -292,10 +290,50 @@
   }
 
   .informacion p {
-    font-size: 25px;
+    font-size: 23px;
   }
 
   .informacion span {
+    font-size: 23px;
+  }
+}
+
+
+@media screen and (min-width:768px) and (max-width: 1550px) {
+  .informacion h3 {
+    font-size: 40px;
+  }
+
+  .informacion h4 {
     font-size: 25px;
+
+  }
+
+  .informacion ul li {
+    font-size: 15px;
+  }
+
+  .informacion p {
+    font-size: 20px;
+  }
+
+  .informacion span {
+    font-size: 20px;
+  }
+
+  .MotoresInfo h4 {
+    font-size: 25px;
+  }
+
+  .MotoresInfo span {
+    font-size: 13px;
+
+  }
+
+  .MotoresInfo button {
+    font-size: 15px;
+    width: 110px;
+    height: auto;
+    padding: 10px 0;
   }
 }

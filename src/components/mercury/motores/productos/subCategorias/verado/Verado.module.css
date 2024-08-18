@@ -92,18 +92,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-    
-    .imgContainer img {
-        /* height: 100%; */
-        width: 223px;
-        height: 245px;
-
         width: 207px;
         height: 245px;
 
-        /* height: 100%;
-        width: auto; */
+    }
+
+    .imgContainer img {
+        object-fit: contain;
+        width: 100%;
     }
 
     .MotoresInfo {
@@ -127,11 +123,54 @@
 
     .MotoresInfo button {
         font-size: 24px;
-        width: 45%;
         margin-top: 0;
-        padding: 0;
-        padding: 0.2em 0;
-        height: 58px;
         cursor: pointer;
+        height: 58px;
+        width: 45%;
+
+        width: 150px;
+        height: auto;
+        padding: 10px 0;
+    }
+}
+
+
+
+@media screen and (min-width:768px) and (max-width: 1550px) {
+    .informacion h3 {
+        font-size: 40px;
+    }
+
+    .informacion h4 {
+        font-size: 25px;
+
+    }
+
+    .informacion ul li {
+        font-size: 15px;
+    }
+
+    .informacion p {
+        font-size: 20px;
+    }
+
+    .informacion span {
+        font-size: 20px;
+    }
+
+    .MotoresInfo h4 {
+        font-size: 25px;
+    }
+
+    .MotoresInfo span {
+        font-size: 13px;
+
+    }
+
+    .MotoresInfo button {
+        font-size: 15px;
+        width: 110px;
+        height: auto;
+        padding: 10px 0;
     }
 }

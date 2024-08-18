@@ -7,10 +7,11 @@ import CuatroTempos from "./subCategorias/cuatroTempos/CuatroTempos";
 import MercuryUniversity from "./subCategorias/mercuryUniversity/mercuryUniversity";
 import Seapro from "./subCategorias/seaPro/seaPro";
 import Verado from "./subCategorias/verado/Verado";
-import { cuatroTemposInfo, dosTemposInfo, racinInfo, seaProInfo, veradoInfo } from "./subCategorias/helper";
+import { avatorInfo, cuatroTemposInfo, dosTemposInfo, racinInfo, seaProInfo, veradoInfo } from "./subCategorias/helper";
 import Racing from "./subCategorias/racing/Racing";
 import DosTempos from "./subCategorias/dosTempos/DosTempos";
 import VeradoTest from "./subCategorias/verado/VeradoTest";
+import Avator from "./subCategorias/avator/Avator";
 
 export default function ProductosMotores() {
   const [category, setCategory] = useState("cuatro tiempos");
@@ -92,6 +93,18 @@ export default function ProductosMotores() {
           >
             Racing
           </span>
+          <span
+            onClick={(e) => handleCategory(e)}
+            style={
+              category === "avator"
+                ? {
+                  color: "#0c4c6b",
+                }
+                : {}
+            }
+          >
+            Avator
+          </span>
         </div>
       </div>
       <div className={s.motoresContainer}>
@@ -102,6 +115,7 @@ export default function ProductosMotores() {
         {category === "verado" && <VeradoTest info = {veradoInfo} />}
         {category === "dos tiempos" && <DosTempos info = {dosTemposInfo} />}
         {category === "racing" && <Racing info = {racinInfo} />}
+        {category === "avator" && <Avator info = {avatorInfo} />}
       </div>
 
 

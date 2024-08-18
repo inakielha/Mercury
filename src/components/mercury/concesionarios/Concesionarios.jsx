@@ -10,17 +10,116 @@ import jsonCordenadas from "./mapa/coordenadas/mercury_concesionarios.json"
 import InfiniteScroll from "react-infinite-scroll-component";
 import portada from "../../../assets/mercury/concesionario/portada.jpg"
 import { pathImages } from "../../../pathImages";
+import MenuItem from '@mui/material/MenuItem';
+import { opcionesSelect } from "./mapa/coordenadas/select_options";
+import axios from "axios"
+
+
 
 export default function Concesionarios({ mobileMenu, setMobileMenu }) {
-  let coordinates = Object.values(jsonCordenadas);
-  const [ordenConcesionarios, setOrdenConcesionarios] = useState(coordinates)
+  // let coordinates = Object.values(jsonCordenadas);
+  let coordinatesExample = Object.values(jsonCordenadas);
+
+  const [ordenConcesionarios, setOrdenConcesionarios] = useState([])
   const [colorBtn, setColorBtn] = useState("all")
   const inputRef = useRef(null);
   const inputRefTwo = useRef(null);
   const [items, setItems] = useState()
   const [page, setPage] = useState(0)
-  const [filterZone, setFilterZone] = useState("");
+  const [filterZone, setFilterZone] = useState({ provincia: "Seleccione la zona", value: "" });
   const [filterName, setFilterName] = useState("");
+  const mapRefMobile = useRef(null)
+  const mapRef = useRef(null)
+  const [select, setSelect] = useState("");
+  const [coordinates, setCoordinates] = useState([]);
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const handleSelect = (event) => {
+    let value = event.currentTarget.dataset.value;
+    const provincia = event.target.innerText
+    // console.log({provincia})
+    // console.log({value})
+    if (value == "All") value = ""
+    setFilterZone({ provincia, value })
+    if (colorBtn === "all") {
+      // Filtrar la lista de elementos en base a la entrada del usuario
+      if (provincia.includes("Bs. As") || provincia.includes("Interior")) {
+        const filteredItems = coordinates.filter((item) =>
+          (!value || item.localidad_filter.includes(value.toLowerCase())) &&
+          (!filterName || item.nombre.toLowerCase().includes(filterName))
+        );
+        setOrdenConcesionarios(filteredItems);
+        console.log(51)
+      } else {
+
+        const filteredItems = coordinates.filter((item) =>
+          (!value || item.provincia.toLowerCase() === value.toLowerCase()) &&
+          (!filterName || item.nombre.toLowerCase().includes(filterName))
+        );
+        setOrdenConcesionarios(filteredItems);
+        console.log(59)
+      }
+    } else if (colorBtn === "concesionarios") {
+      if (provincia.includes("Bs. As") || provincia.includes("Interior")) {
+        const filteredItems = coordinates.filter((item) => {
+          return item.concesionario &&
+            (!value || item.localidad_filter.includes(value.toLowerCase())) &&
+            (!filterName || item.nombre.toLowerCase().includes(filterName))
+        });
+        setOrdenConcesionarios(filteredItems);
+        console.log(69)
+      } else {
+
+        const filteredItems = coordinates.filter((item) => {
+          return item.concesionario &&
+            (!value || item.provincia.toLowerCase() === value.toLowerCase()) &&
+            (!filterName || item.nombre.toLowerCase().includes(filterName))
+        });
+
+        setOrdenConcesionarios(filteredItems);
+        console.log(79)
+      }
+    } else {
+      console.log("entre aca", provincia, !filterName, !value, value)
+      if (provincia.includes("Bs. As") || provincia.includes("Interior")) {
+        const filteredItems = coordinates?.filter((item) => {
+          return item.servicio &&
+            (!value || item.localidad_filter.includes(value.toLowerCase())) &&
+            (!filterName || item.nombre.toLowerCase().includes(filterName))
+        });
+        setOrdenConcesionarios(filteredItems);
+        console.log(89)
+      } else {
+
+        const filteredItems = coordinates?.filter((item) => {
+          return item.servicio && (!value || item?.provincia.toLowerCase() == value.toLowerCase()) && (!filterName || item?.nombre.toLowerCase().includes(filterName))
+        });
+        console.log(filteredItems)
+        setOrdenConcesionarios(filteredItems);
+        console.log(98)
+      }
+    }
+
+    // ZOOM CUANDO CLICKEA LA PROVINCIA 
+    let lat = event.currentTarget.dataset.lat;
+    let lng = event.currentTarget.dataset.lng;
+
+    const map = mapRef.current;
+    const mapMobile = mapRefMobile.current;
+    let latLng = new window.google.maps.LatLng(lat, lng); //Makes a latlng
+    map.panTo(latLng); //Make map global
+    mapMobile.panTo(latLng); //Make map global
+    if (provincia == "Todas las zonas") {
+      map?.setZoom(5)
+      mapMobile?.setZoom(5)
+    }
+    else {
+      map?.setZoom(6)
+      mapMobile?.setZoom(6)
+    }
+  }
 
   const handleInputChange = (event) => {
     const inputValue = event.target.value;
@@ -78,15 +177,31 @@ export default function Concesionarios({ mobileMenu, setMobileMenu }) {
 
   const handleConcesionarios = (type) => {
     setColorBtn(type)
+    let concesionarios;
+    let servicio;
+    let all = coordinates
     if (type === "all") {
-      setOrdenConcesionarios(coordinates)
+      if (filterZone?.provincia.includes("Bs. As") || filterZone?.provincia.includes("Interior")) {
+        all = coordinates.filter(concesionaria => (concesionaria?.localidad_filter.includes(filterZone.value.toLowerCase()) || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
+      } else {
+        all = coordinates.filter(concesionaria => (concesionaria?.provincia.toLowerCase() == filterZone.value.toLowerCase() || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
+      }
+      setOrdenConcesionarios(all)
     }
     else if (type === "concesionarios") {
-      let concesionarios = coordinates.filter(concesionaria => concesionaria.concesionario === "1" && concesionaria.ciudad.toLowerCase().includes(filterZone) && concesionaria.nombre.toLowerCase().includes(filterName))
+      if (filterZone?.provincia.includes("Bs. As") || filterZone?.provincia.includes("Interior")) {
+        concesionarios = coordinates.filter(concesionaria => concesionaria.concesionario && (concesionaria?.localidad_filter.includes(filterZone.value.toLowerCase()) || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
+      } else {
+        concesionarios = coordinates.filter(concesionaria => concesionaria.concesionario && (concesionaria?.provincia.toLowerCase() == filterZone.value.toLowerCase() || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
+      }
       setOrdenConcesionarios(concesionarios)
     }
     else if (type === "servicios") {
-      let servicio = coordinates.filter(concesionaria => concesionaria.servicio === "1" && concesionaria.ciudad.toLowerCase().includes(filterZone) && concesionaria.nombre.toLowerCase().includes(filterName))
+      if (filterZone?.provincia.includes("Bs. As") || filterZone?.provincia.includes("Interior")) {
+        servicio = coordinates.filter(concesionaria => concesionaria.servicio && (concesionaria?.localidad_filter.includes(filterZone.value.toLowerCase()) || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
+      } else {
+        servicio = coordinates.filter(concesionaria => concesionaria.servicio && (concesionaria?.provincia.toLowerCase() == filterZone.value.toLowerCase() || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
+      }
       setOrdenConcesionarios(servicio)
     }
   }
@@ -97,7 +212,17 @@ export default function Concesionarios({ mobileMenu, setMobileMenu }) {
     );
   }
 
+  const handleZoomMap = (lat, lng) => {
+    const map = mapRef.current;
+    const mapMobile = mapRefMobile.current;
+    // inside the map instance you can call any google maps method
+    let latLng = new window.google.maps.LatLng(lat, lng); //Makes a latlng
+    map.panTo(latLng); //Make map global
+    map?.setZoom(5)
 
+    mapMobile.panTo(latLng); //Make map global
+    mapMobile?.setZoom(5)
+  }
   // console.log(ordenConcesionarios)
   const fetchMoreData = () => {
     // a fake async api call like which sends
@@ -106,15 +231,33 @@ export default function Concesionarios({ mobileMenu, setMobileMenu }) {
     setPage((prev) => prev++)
   };
 
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://www.navalmotor.com/api/mercury/concesionarios');
+      setCoordinates(response.data)
+      setOrdenConcesionarios(response.data);
+      // console.log(response)
+      // setOrdenConcesionarios(coordinatesExample);
+      // setCoordinates(coordinatesExample)
+
+      // console.log("orden",ordenConcesionarios)
+      setLoading(false);
+    } catch (error) {
+      console.log("error:", error)
+      setError(error);
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const chunked = chunkArray(ordenConcesionarios, 3);
-  }, [ordenConcesionarios])
+    fetchData()
+  }, [])
 
   return (
     <section className={s.section}>
       {mobileMenu === "show" && <div onClick={() => setMobileMenu("hide")} style={{ zIndex: "2", position: "absolute", width: "100%", height: "100%", backgroundColor: "#000000a3" }}></div>}
       <div className={s.imgContainer}>
-        <img src={pathImages+portada} alt="barco" />
+        <img src={pathImages + portada} alt="barco" />
       </div>
       <div className={s.texto}>
         <h3>LOS MEJORES PRODUCTOS TIENEN A LOS MEJORES VENDEDORES. </h3>
@@ -130,52 +273,70 @@ export default function Concesionarios({ mobileMenu, setMobileMenu }) {
       <div className={s.mobile}>
         <div className={s.tienda}>
           <h3>Bienvenidos a la tienda Mercury.</h3>
+          <div className={s.search_inputs}>
+            {/* <BasicSelect/> */}
+            <div
+              className={s.input_container}
+              onClick={() => setSelect(!select)}
+            >
 
-          <div className={s.inputCont} onClick={() => inputRef.current.focus()}>
-            <IconContext.Provider value={{ className: s.icon, size: "0.7em" }}>
-              <BiSearch />
-            </IconContext.Provider>
-            <input
-              ref={inputRef}
-              type="text"
-              placeholder=" Ingrese la zona"
-              onChange={(e) => handleInputChange(e)}
-              value={filterZone}
-              id="zona"
-            />
-          </div>
-
-          <div className={s.inputCont} onClick={() => inputRefTwo.current.focus()}>
-            <IconContext.Provider value={{ className: s.icon, size: "0.7em" }}>
-              <BiSearch />
-            </IconContext.Provider>
-            <input
-              ref={inputRefTwo}
-              type="text"
-              placeholder=" Ingrese el nombre"
-              id="nombre"
-              onChange={(e) => handleInputChange(e)}
-              value={filterName}
-            />
+              <IconContext.Provider
+                value={{ className: s.icon, size: "0.7em" }}
+              >
+                {!select && <BiSearch />}
+              </IconContext.Provider>
+              <div className={s.divInput}>
+                {filterZone.provincia}
+              </div>
+              {select &&
+                <div className={s.select} >
+                  {opcionesSelect.length && opcionesSelect.map((options, index) => {
+                    return (
+                      <MenuItem key={index} className={s.fontsize} style={{ fontSize: "inherit" }} data-lng={options.lng} data-lat={options.lat} data-value={options.value} onClick={(e) => handleSelect(e)}>{options.provincia}</MenuItem>
+                    )
+                  })}
+                </div>
+              }
+            </div>
+            <div
+              className={s.input_container}
+              onClick={() => inputRefTwo.current.focus()}
+            >
+              <IconContext.Provider
+                value={{ className: s.icon, size: "0.7em" }}
+              >
+                <BiSearch />
+              </IconContext.Provider>
+              <input
+                ref={inputRefTwo}
+                type="text"
+                placeholder=" Ingrese el nombre"
+                id="nombre"
+                onChange={(e) => handleInputChange(e)}
+                value={filterName}
+              />
+            </div>
           </div>
         </div>
         <div className={s.map}>
           <div className={s.botones}>
-            <button>Toda la red</button>
-            <button>Concesionarios</button>
-            <button>Servicios</button>
+            <button onClick={() => handleConcesionarios("all")} style={colorBtn === "all" ? { color: "#FFFFFF", backgroundColor: "#0c4c6b" } : {}}>Toda la red</button>
+            <button onClick={() => handleConcesionarios("concesionarios")} style={colorBtn === "concesionarios" ? { color: "#FFFFFF", backgroundColor: "#0c4c6b" } : {}}>Concesionarios</button>
+            <button onClick={() => handleConcesionarios("servicios")} style={colorBtn === "servicios" ? { color: "#FFFFFF", backgroundColor: "#0c4c6b" } : {}}>Servicios</button>
           </div>
-          <MapaDos />
+          <MapaDos concesionarios={ordenConcesionarios} setOrdenConcesionarios={setOrdenConcesionarios} mapRef={mapRefMobile} />
           <InfiniteScroll
             dataLength={chunkArray.length}
             next={fetchMoreData}
             hasMore={true}
             height={"50vh"}
             width={"100%"}
+            className={s.infinite}
+            style={{ width: "100%" }}
           >
             {ordenConcesionarios?.length && ordenConcesionarios.map((concecionario) => {
               return (
-                <Card email={concecionario.email} telefono={concecionario.tel1} direccion={concecionario.direccion} nombre={concecionario.nombre} />
+                <Card email={concecionario.email} telefono={concecionario.tel1} direccion={concecionario.direccion} nombre={concecionario.nombre} handleZoomMap={handleZoomMap} lat={concecionario.latitude} lng={concecionario.longitude} />
               )
             })}
           </InfiniteScroll>
@@ -194,50 +355,68 @@ export default function Concesionarios({ mobileMenu, setMobileMenu }) {
               </div>
 
 
-              <div className={s.inputCont} onClick={() => inputRef.current.focus()}>
-                <IconContext.Provider value={{ className: s.icon, size: "0.7em" }}>
-                  <BiSearch />
-                </IconContext.Provider>
-                <input
-                  ref={inputRef}
-                  type="text"
-                  placeholder=" Ingrese la zona"
-                  onChange={(e) => handleInputChange(e)}
-                  value={filterZone}
-                  id="zona"
-                />
+
+              {/* --------------------------ACAAA-------------------------------- */}
+              <div className={s.search_inputs}>
+                {/* <BasicSelect/> */}
+                <div
+                  className={s.input_container}
+                  // onClick={() => inputRef.current.focus()}
+                  onClick={() => setSelect(!select)}
+                >
+
+                  <IconContext.Provider
+                    value={{ className: s.icon, size: "0.7em" }}
+                  >
+                    {!select && <BiSearch />}
+                  </IconContext.Provider>
+                  <div className={s.divInput}>
+                    {filterZone.provincia}
+                  </div>
+                  {select &&
+                    <div className={s.select} >
+                      {opcionesSelect.length && opcionesSelect.map((options, index) => {
+                        return (
+                          <MenuItem key={index} className={s.fontsize} style={{ fontSize: "inherit" }} data-lng={options.lng} data-lat={options.lat} data-value={options.value} onClick={(e) => handleSelect(e)}>{options.provincia}</MenuItem>
+                        )
+                      })}
+                    </div>
+                  }
+                </div>
+                <div className={s.input_container} onClick={() => inputRefTwo.current.focus()} >
+                  <IconContext.Provider
+                    value={{ className: s.icon, size: "0.7em" }}
+                  >
+                    <BiSearch />
+                  </IconContext.Provider>
+                  <input
+                    ref={inputRefTwo}
+                    type="text"
+                    placeholder=" Ingrese el nombre"
+                    id="nombre"
+                    onChange={(e) => handleInputChange(e)}
+                    value={filterName}
+                  />
+                </div>
               </div>
 
-              <div className={s.inputCont} onClick={() => inputRefTwo.current.focus()}>
-                <IconContext.Provider value={{ className: s.icon, size: "0.7em" }}>
-                  <BiSearch />
-                </IconContext.Provider>
-                <input
-                  ref={inputRefTwo}
-                  type="text"
-                  placeholder=" Ingrese el nombre"
-                  id="nombre"
-                  onChange={(e) => handleInputChange(e)}
-                  value={filterName}
-                />
-              </div>
-              
               <InfiniteScroll
                 dataLength={chunkArray.length}
                 next={fetchMoreData}
                 hasMore={true}
                 height={"50vh"}
                 className={s.infinite}
+              // style={{ width: "100%" }}
               >
                 {ordenConcesionarios?.length && ordenConcesionarios.map((concecionario) => {
                   return (
-                    <Card email={concecionario.email} telefono={concecionario.tel1} direccion={concecionario.direccion} nombre={concecionario.nombre} />
+                    <Card email={concecionario.email} telefono={concecionario.tel1} direccion={concecionario.direccion} nombre={concecionario.nombre} handleZoomMap={handleZoomMap} lat={concecionario.latitude} lng={concecionario.longitude} />
                   )
                 })}
               </InfiniteScroll>
             </div>
             <div className={s.map}>
-              <MapaDos concesionarios={ordenConcesionarios} />
+              <MapaDos concesionarios={ordenConcesionarios} setOrdenConcesionarios={setOrdenConcesionarios} mapRef={mapRef} />
 
             </div>
           </div>

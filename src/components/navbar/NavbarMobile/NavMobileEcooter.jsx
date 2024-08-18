@@ -13,6 +13,7 @@ import Hamburger from "./hamburger/Hamburger";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { pathImages } from "../../../pathImages";
+import Sidebar from "./hamburger/sideBar/Sidebar";
 
 
 
@@ -57,7 +58,8 @@ export default function NavMobileEcooter({isMobile,landing}) {
             </div>
           </div>
         </div>
-        <Hamburger setMobileMenu={setMobileMenu} show={mobileMenu} />
+        <Sidebar open={mobileMenu} close={setMobileMenu}/>
+        {/* <Hamburger setMobileMenu={setMobileMenu} show={mobileMenu} /> */}
 
       </nav>
       <div className={j.section} style={scroll ? { margin: "0" } : { marginBottom: "0" }}>

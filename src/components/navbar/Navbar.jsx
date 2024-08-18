@@ -12,6 +12,10 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Hamburger from "./NavbarMobile/hamburger/Hamburger";
 import { pathImages } from "../../pathImages";
+import Sidebar from "./NavbarMobile/hamburger/sideBar/Sidebar";
+import { MdOutlineWhatsapp } from "react-icons/md";
+import { IoLogoWhatsapp } from "react-icons/io";
+
 
 
 export default function Navbar({setMobileMenu,mobileMenu}) {
@@ -37,6 +41,13 @@ export default function Navbar({setMobileMenu,mobileMenu}) {
     // value === "repuestos" ? navigate("/") : navigate("/" + value)
   }
 
+  const openWhatsApp = () => {
+    const url = "https://api.whatsapp.com/send?phone=01147961888&";
+    const windowFeatures = "width=400,height=600"; // Establece las dimensiones de la ventana
+
+    window.open(url, '_blank', windowFeatures);
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 0) {
@@ -57,7 +68,8 @@ export default function Navbar({setMobileMenu,mobileMenu}) {
             <LuMenu onClick={() => setMobileMenu("show")} />
           </IconContext.Provider>
           {mobileMenu === "show" &&
-            <Hamburger setMobileMenu={setMobileMenu} show={mobileMenu} />
+            // <Hamburger setMobileMenu={setMobileMenu} show={mobileMenu} />
+            <Sidebar open={mobileMenu} close={setMobileMenu} />
           }
           <div className={style.imgContainer} onClick={() => window.location.href = "https://www.navalmotor.com/"}>
             <img  src={pathImages+logo} alt="logo" />
@@ -68,6 +80,7 @@ export default function Navbar({setMobileMenu,mobileMenu}) {
                 <BiSearch />
               </IconContext.Provider>
             </div> */}
+            <IoLogoWhatsapp color="#25D366" className={style.iconWsp} onClick={()=>openWhatsApp()}/>
           </div>
         </div>
         <div className={style.navWeb}>

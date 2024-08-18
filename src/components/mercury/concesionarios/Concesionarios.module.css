@@ -72,10 +72,11 @@
     align-items: flex-start;
     align-items: center;
     justify-content: flex-start;
-    width: 70%;
-    padding: 0.4em 0;
+    width: 90%;
     background-color: #fff;
     border: 1px solid #6E6E6E;
+    padding: 0.4em 0;
+    padding: 10px 0;
 }
 
 .icon {
@@ -93,15 +94,19 @@ input:active {
     border: none;
     padding-bottom: 2%;
     width: 100%;
-
+    /* padding-left: 15%; */
+    font-size: 10px;
+    background-color: green;
 }
 
 .inputCont input::placeholder {
     border: none;
     font-size: 0.5rem;
+    font-size: 16px;
+    color: #00263E;
 }
 
-.map {
+/* .map {
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -109,10 +114,23 @@ input:active {
     align-items: center;
     gap: 1em;
     padding-bottom: 2em;
+} */
+
+.map {
+    position: relative;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* height: 90vh; */
+    gap: 1em;
+    padding-bottom: 2em;
 }
-.map div {
+
+/* .map div {
     width: 100%;
-}
+} */
 .botones {
     width: 100%;
     display: flex;
@@ -135,19 +153,96 @@ input:active {
     margin-top: 1em;
     cursor: pointer;
 }
+
 .web {
     display: none;
 }
 
+/* ---------nuevo----------------- */
+.search_inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.input_container {
+    width: 90%;
+    position: relative;
+    align-items: center;
+    gap: 20px;
+    display: flex;
+    justify-self: flex-start;
+    align-self: flex-start;
+    background-color: #fff;
+    border: 1px solid rgb(118, 118, 118);
+    background-color: orange;
+}
+
+.input_container svg {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 10px;
+    top: 40%;
+}
+
+.input_container input {
+    width: 90%;
+    /* height: 40px; */
+    padding: 10px 0;
+    font-size: 1rem;
+    border: none;
+    color: #00263E;
+    padding-left: 15%;
+    /* background-color: green; */
+}
+.input_container input::placeholder {
+    border: none;
+    color: #00263E;
+}
+
+.divInput {
+    background-color: #fff;
+    width: 90%;
+    /* height: 20px; */
+    padding: 10px 0;
+    padding-left: 15%;
+    font-size: 1rem;
+    font-size: 16px;
+    color: #00263E;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* background-color: red; */
+}
+
+.select {
+    background-color: #e2dfdf;
+    position: absolute;
+    z-index: 5;
+    top: 54px;
+    /* top: 50%;  Centrará verticalmente en el contenedor padre */
+    left: 0%; /* Centrará horizontalmente en el contenedor padre */
+}
+
+/* .infinite {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+} */
 
 @media (min-width: 768px) {
     .mobile {
         display: none;
     }
+
     .imgContainer {
         height: 40vh;
     }
-    
+
     .texto h3 {
         font-size: 32px;
     }
@@ -155,7 +250,7 @@ input:active {
     .texto span {
         font-size: 24px;
     }
-   
+
     .tienda h3 {
         font-size: 32px;
     }
@@ -187,6 +282,7 @@ input:active {
         align-items: flex-start;
         justify-content: flex-start;
         width: 100%;
+        gap: 50px;
     }
 
     .concesionarioInfo {
@@ -199,6 +295,11 @@ input:active {
         /* background-color: red; */
     }
 
+    .concesionarioInfo div {
+        width: 100%;
+    }
+
+
     .map {
         width: 100%;
         display: flex;
@@ -209,9 +310,13 @@ input:active {
         padding: 0;
         margin: 0;
     }
-    .infinite-scroll-component__outerdiv {
-        width: 90%;
+   
+
+    .map .infinite-scroll-component__outerdiv {
+        width: 100%;
+        background-color: green;
     }
+
     .botones {
         width: 90%;
         display: flex;
@@ -221,28 +326,111 @@ input:active {
         padding: 0;
         margin: 0;
     }
+
     .inputCont {
         margin: 0;
     }
+
     .botones button {
         font-size: 24px;
         margin: 0;
     }
-    /* @media (min-width: 768px) {
-    .infinite {
-        background-color: red;
+
+    
+
+    .search_inputs {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
     }
-        .concesionarioInfo div {
-            width: 95%;
-        }
+    
+    .input_container {
+        width: 90%;
+        position: relative;
+        align-items: center;
+        gap: 20px;
+        display: flex;
+        justify-self: flex-start;
+        align-self: flex-start;
+        background-color: #fff;
+        border: 1px solid rgb(118, 118, 118);
+    
+    }
+    
+    .input_container svg {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        left: 10px;
+        top: 40%;
+    }
+    
+    .input_container input {
+        width: 90%;
+        height: 40px;
+        padding: 6px 0;
+        font-size: 1rem;
+        border: none;
+        color: #00263E;
+        /* background-color: red; */
+        padding-left: 15%;
+    
+    }
+    .input_container input::placeholder {
+        border: none;
+        color: #00263E;
+    }
+    
+    .divInput {
+        background-color: #fff;
+        width: 90%;
+        height: 40px;
+        padding: 6px 0;
+        padding-left: 15%;
+        font-size: 1rem;
+        color: #00263E;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    .select {
+        background-color: #e2dfdf;
+        position: absolute;
+        z-index: 5;
+        top: 54px;
+        /* top: 50%;  Centrará verticalmente en el contenedor padre */
+        left: 0%; /* Centrará horizontalmente en el contenedor padre */
+    }
 
-        div .botones {
-            width: 90%;
-        }
+}
 
-        div .inputCont {
-            width: 70%;
-        }
-        
-    } */
+
+@media screen and (min-width:768px) and (max-width: 1550px) {
+    .texto h3 {
+        font-size: 25px;
+    }
+
+    .texto span {
+        font-size: 20px;
+    }
+
+    .tienda h3 {
+        font-size: 26px;
+    }
+
+    .inputCont input::placeholder {
+        font-size: 15px;
+    }
+
+    .icon {
+        font-size: 35px;
+    }
+
+    .botones button {
+        font-size: 20px;
+    }
 }
