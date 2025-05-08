@@ -17,7 +17,7 @@ export default function Footer({ color, setMobileMenu, mobileMenu }) {
             {/* <div className={s.wspContainer}>
               <img src={pathImages + whatsapp} alt="contact" />
             </div> */}
-            <span>011 4796 1888</span>
+            <span>+54 11 4796 1888</span>
           </div>
         </div>
         <div className={s.redes}>

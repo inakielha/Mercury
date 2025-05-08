@@ -10,15 +10,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Hamburger from "./NavbarMobile/hamburger/Hamburger";
 import { pathImages } from "../../pathImages";
 import Sidebar from "./NavbarMobile/hamburger/sideBar/Sidebar";
-import { MdOutlineWhatsapp } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
 
 
 
-export default function Navbar({setMobileMenu,mobileMenu}) {
+export default function Navbar({ setMobileMenu, mobileMenu }) {
   const [scroll, setScroll] = useState(false)
   const [category, setCategory] = useState("motores")
   // const [mobileMenu, setMobileMenu] = useState("hide")
@@ -42,7 +40,7 @@ export default function Navbar({setMobileMenu,mobileMenu}) {
   }
 
   const openWhatsApp = () => {
-    const url = "https://api.whatsapp.com/send?phone=01147961888&";
+    const url = "https://api.whatsapp.com/send?phone=5491126661777&";
     const windowFeatures = "width=400,height=600"; // Establece las dimensiones de la ventana
 
     window.open(url, '_blank', windowFeatures);
@@ -57,10 +55,10 @@ export default function Navbar({setMobileMenu,mobileMenu}) {
   }, [])
 
   return (
-    <div style={{position:"relative"}}>
-        {/* {mobileMenu === "show" && <div onClick={() => setMobileMenu("hide")} className={style.filtro}></div>} */}
+    <div style={{ position: "relative" }}>
+      {/* {mobileMenu === "show" && <div onClick={() => setMobileMenu("hide")} className={style.filtro}></div>} */}
 
-      <nav className={scroll && mobileMenu !="show" ? style.navbar : style.navbarNoScroll} >
+      <nav className={scroll && mobileMenu != "show" ? style.navbar : style.navbarNoScroll} >
         {mobileMenu === "show" && <div onClick={() => setMobileMenu("hide")} className={style.filtro}></div>}
 
         <div className={style.container} style={scroll && mobileMenu != "show" ? { display: "none" } : {}}>
@@ -72,7 +70,7 @@ export default function Navbar({setMobileMenu,mobileMenu}) {
             <Sidebar open={mobileMenu} close={setMobileMenu} />
           }
           <div className={style.imgContainer} onClick={() => window.location.href = "https://www.navalmotor.com/"}>
-            <img  src={pathImages+logo} alt="logo" />
+            <img src={pathImages + logo} alt="logo" />
           </div>
           <div>
             {/* <div className={style.contenedorLupa}>
@@ -80,11 +78,11 @@ export default function Navbar({setMobileMenu,mobileMenu}) {
                 <BiSearch />
               </IconContext.Provider>
             </div> */}
-            <IoLogoWhatsapp color="#25D366" className={style.iconWsp} onClick={()=>openWhatsApp()}/>
+            <IoLogoWhatsapp color="#25D366" className={style.iconWsp} onClick={() => openWhatsApp()} />
           </div>
         </div>
         <div className={style.navWeb}>
-          <div className={style.mercuryLogo}><img onClick={() => window.location.href = "https://www.navalmotor.com/"} src={pathImages+logoMercury} alt="logoMercury" /></div>
+          <div className={style.mercuryLogo}><img onClick={() => window.location.href = "https://www.navalmotor.com/"} src={pathImages + logoMercury} alt="logoMercury" /></div>
           <div className={style.secciones}>
             <span style={category === "motores" ? { color: "#0c4c6b" } : {}} onClick={(e) => handleCategory(e)} id={"motores"}>Motores</span>
             <span style={category === "propulsion" ? { color: "#0c4c6b" } : {}} onClick={(e) => handleCategory(e)} id={"propulsion"}>Sist. Integral de Propulsión</span>

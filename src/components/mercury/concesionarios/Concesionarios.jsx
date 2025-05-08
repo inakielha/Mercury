@@ -51,15 +51,13 @@ export default function Concesionarios({ mobileMenu, setMobileMenu }) {
           (!filterName || item.nombre.toLowerCase().includes(filterName))
         );
         setOrdenConcesionarios(filteredItems);
-        console.log(51)
       } else {
 
         const filteredItems = coordinates.filter((item) =>
-          (!value || item.provincia.toLowerCase() === value.toLowerCase()) &&
+          (!value || item.localidad_filter.toLowerCase().includes(value.toLowerCase())) &&
           (!filterName || item.nombre.toLowerCase().includes(filterName))
         );
         setOrdenConcesionarios(filteredItems);
-        console.log(59)
       }
     } else if (colorBtn === "concesionarios") {
       if (provincia.includes("Bs. As") || provincia.includes("Interior")) {
@@ -69,17 +67,15 @@ export default function Concesionarios({ mobileMenu, setMobileMenu }) {
             (!filterName || item.nombre.toLowerCase().includes(filterName))
         });
         setOrdenConcesionarios(filteredItems);
-        console.log(69)
       } else {
 
         const filteredItems = coordinates.filter((item) => {
           return item.concesionario &&
-            (!value || item.provincia.toLowerCase() === value.toLowerCase()) &&
+            (!value || item.localidad_filter.toLowerCase().includes(value.toLowerCase())) &&
             (!filterName || item.nombre.toLowerCase().includes(filterName))
         });
 
         setOrdenConcesionarios(filteredItems);
-        console.log(79)
       }
     } else {
       console.log("entre aca", provincia, !filterName, !value, value)
@@ -90,19 +86,17 @@ export default function Concesionarios({ mobileMenu, setMobileMenu }) {
             (!filterName || item.nombre.toLowerCase().includes(filterName))
         });
         setOrdenConcesionarios(filteredItems);
-        console.log(89)
       } else {
 
         const filteredItems = coordinates?.filter((item) => {
-          return item.servicio && (!value || item?.provincia.toLowerCase() == value.toLowerCase()) && (!filterName || item?.nombre.toLowerCase().includes(filterName))
+          return item.servicio && (!value || item?.localidad_filter.toLowerCase().includes(value.toLowerCase())) && (!filterName || item?.nombre.toLowerCase().includes(filterName))
         });
         console.log(filteredItems)
         setOrdenConcesionarios(filteredItems);
-        console.log(98)
       }
     }
 
-    // ZOOM CUANDO CLICKEA LA PROVINCIA 
+    // ZOOM CUANDO CLIKEA LA PROVINCIA 
     let lat = event.currentTarget.dataset.lat;
     let lng = event.currentTarget.dataset.lng;
 
@@ -151,28 +145,38 @@ export default function Concesionarios({ mobileMenu, setMobileMenu }) {
       setFilterName(inputValue);
 
       if (colorBtn === "all") {
+        console.log("entre")
         // Filtrar la lista de elementos en base a la entrada del usuario
         const filteredItems = coordinates.filter((item) =>
-          item.nombre.toLowerCase().includes(inputValue.toLowerCase())
+          item.nombre.toLowerCase().includes(inputValue.toLowerCase()) && (!filterZone.value || item.localidad_filter.includes(filterZone.value.toLowerCase()))
+
+
+        // (!value || item.localidad_filter.includes(value.toLowerCase())) &&
+        //   (!filterName || item.nombre.toLowerCase().includes(filterName))
+
+
         );
         setOrdenConcesionarios(filteredItems);
 
       } else if (colorBtn === "concesionarios") {
         const filteredItems = coordinates.filter((item) => {
-          if (item.nombre.toLowerCase().includes(inputValue.toLowerCase()) && item.concesionario == 1) return 1
+          if (item.nombre.toLowerCase().includes(inputValue.toLowerCase()) && item.concesionario == 1 && (!filterZone.value || item.localidad_filter.includes(filterZone.value.toLowerCase()))) return 1
         }
         );
         setOrdenConcesionarios(filteredItems);
       } else {
-        const filteredItems = coordinates.filter((item) => {
-          if (item.nombre.toLowerCase().includes(inputValue.toLowerCase()) && item.servicio == 1) return 1
-        }
-        );
-        setOrdenConcesionarios(filteredItems);
-      }
+        // const filteredItems = coordinates.filter((item) => {
+        //   if (item.nombre.toLowerCase().includes(inputValue.toLowerCase()) && item.servicio == 1 && (!filterZone.value || item.localidad_filter.includes(filterZone.value.toLowerCase()))) return 1
+        // }
+        const filteredItems = coordinates.filter((item) => 
+          item.nombre.toLowerCase().includes(inputValue.toLowerCase()) && item.servicio == 1 && (!filterZone.value || item.localidad_filter.includes(filterZone.value.toLowerCase()))
+        
+      );
+      setOrdenConcesionarios(filteredItems);
     }
-
-  };
+  }
+  
+};
 
 
   const handleConcesionarios = (type) => {
@@ -181,27 +185,35 @@ export default function Concesionarios({ mobileMenu, setMobileMenu }) {
     let servicio;
     let all = coordinates
     if (type === "all") {
-      if (filterZone?.provincia.includes("Bs. As") || filterZone?.provincia.includes("Interior")) {
-        all = coordinates.filter(concesionaria => (concesionaria?.localidad_filter.includes(filterZone.value.toLowerCase()) || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
-      } else {
-        all = coordinates.filter(concesionaria => (concesionaria?.provincia.toLowerCase() == filterZone.value.toLowerCase() || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
-      }
+      // if (filterZone?.provincia.includes("Bs. As") || filterZone?.provincia.includes("Interior")) {
+      //   all = coordinates.filter(concesionaria => (concesionaria?.localidad_filter.includes(filterZone.value.toLowerCase()) || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
+      // } else {
+      //   all = coordinates.filter(concesionaria => (concesionaria?.provincia.toLowerCase() == filterZone.value.toLowerCase() || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
+      // }
+
+      all = coordinates.filter(concesionaria => (concesionaria?.localidad_filter.includes(filterZone.value.toLowerCase()) || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
+
       setOrdenConcesionarios(all)
     }
     else if (type === "concesionarios") {
-      if (filterZone?.provincia.includes("Bs. As") || filterZone?.provincia.includes("Interior")) {
-        concesionarios = coordinates.filter(concesionaria => concesionaria.concesionario && (concesionaria?.localidad_filter.includes(filterZone.value.toLowerCase()) || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
-      } else {
-        concesionarios = coordinates.filter(concesionaria => concesionaria.concesionario && (concesionaria?.provincia.toLowerCase() == filterZone.value.toLowerCase() || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
-      }
+      // if (filterZone?.provincia.includes("Bs. As") || filterZone?.provincia.includes("Interior")) {
+      //   concesionarios = coordinates.filter(concesionaria => concesionaria.concesionario && (concesionaria?.localidad_filter.includes(filterZone.value.toLowerCase()) || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
+      // } else {
+      //   concesionarios = coordinates.filter(concesionaria => concesionaria.concesionario && (concesionaria?.provincia.toLowerCase() == filterZone.value.toLowerCase() || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
+      // }
+
+      concesionarios = coordinates.filter(concesionaria => concesionaria.concesionario && (concesionaria?.localidad_filter.includes(filterZone.value.toLowerCase()) || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
       setOrdenConcesionarios(concesionarios)
     }
     else if (type === "servicios") {
-      if (filterZone?.provincia.includes("Bs. As") || filterZone?.provincia.includes("Interior")) {
-        servicio = coordinates.filter(concesionaria => concesionaria.servicio && (concesionaria?.localidad_filter.includes(filterZone.value.toLowerCase()) || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
-      } else {
-        servicio = coordinates.filter(concesionaria => concesionaria.servicio && (concesionaria?.provincia.toLowerCase() == filterZone.value.toLowerCase() || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
-      }
+      // if (filterZone?.provincia.includes("Bs. As") || filterZone?.provincia.includes("Interior")) {
+      //   servicio = coordinates.filter(concesionaria => concesionaria.servicio && (concesionaria?.localidad_filter.includes(filterZone.value.toLowerCase()) || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
+      // } else {
+      //   servicio = coordinates.filter(concesionaria => concesionaria.servicio && (concesionaria?.provincia.toLowerCase() == filterZone.value.toLowerCase() || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
+      // }
+
+      servicio = coordinates.filter(concesionaria => concesionaria.servicio && (concesionaria?.localidad_filter.includes(filterZone.value.toLowerCase()) || !filterZone.value) && (concesionaria.nombre.toLowerCase().includes(filterName) || !filterName))
+
       setOrdenConcesionarios(servicio)
     }
   }
@@ -218,10 +230,10 @@ export default function Concesionarios({ mobileMenu, setMobileMenu }) {
     // inside the map instance you can call any google maps method
     let latLng = new window.google.maps.LatLng(lat, lng); //Makes a latlng
     map.panTo(latLng); //Make map global
-    map?.setZoom(5)
+    map?.setZoom(15)
 
     mapMobile.panTo(latLng); //Make map global
-    mapMobile?.setZoom(5)
+    mapMobile?.setZoom(15)
   }
   // console.log(ordenConcesionarios)
   const fetchMoreData = () => {
@@ -233,12 +245,17 @@ export default function Concesionarios({ mobileMenu, setMobileMenu }) {
 
   const fetchData = async () => {
     try {
+      // PRD=====================
       const response = await axios.get('https://www.navalmotor.com/api/mercury/concesionarios');
       setCoordinates(response.data)
       setOrdenConcesionarios(response.data);
-      // console.log(response)
+      console.log(response)
+      // ========================
+      // QAS=====================
       // setOrdenConcesionarios(coordinatesExample);
       // setCoordinates(coordinatesExample)
+      // ========================
+      
 
       // console.log("orden",ordenConcesionarios)
       setLoading(false);
@@ -344,7 +361,7 @@ export default function Concesionarios({ mobileMenu, setMobileMenu }) {
       </div>
 
       <div className={s.web}>
-        <div className={s.tienda}>
+        <div className={s.tienda} >
           <h3>Bienvenidos a la tienda Mercury.</h3>
           <div className={s.tiendaContainer}>
             <div className={s.concesionarioInfo}>
@@ -408,11 +425,11 @@ export default function Concesionarios({ mobileMenu, setMobileMenu }) {
                 className={s.infinite}
               // style={{ width: "100%" }}
               >
-                {ordenConcesionarios?.length && ordenConcesionarios.map((concecionario) => {
+                {ordenConcesionarios?.length ?  ordenConcesionarios.map((concecionario) => {
                   return (
                     <Card email={concecionario.email} telefono={concecionario.tel1} direccion={concecionario.direccion} nombre={concecionario.nombre} handleZoomMap={handleZoomMap} lat={concecionario.latitude} lng={concecionario.longitude} />
                   )
-                })}
+                }) : <span>No se encuentran resultados</span>}
               </InfiniteScroll>
             </div>
             <div className={s.map}>

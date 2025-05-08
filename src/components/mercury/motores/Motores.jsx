@@ -5,13 +5,13 @@ import ProductosMotores from "./productos/ProductosMotores";
 import portada from "../../../assets/mercury/motores/Enmascarar grupo 244.jpg"
 import { pathImages } from "../../../pathImages";
 
-export default function Motores({mobileMenu, setMobileMenu}) {
+export default function Motores({ mobileMenu, setMobileMenu }) {
   return (
-    <div style={{position:"relative"}}>
-      {mobileMenu === "show" && <div onClick={() => setMobileMenu("hide")} style={{zIndex:"2",position:"absolute",width:"100%",height:"100%",backgroundColor:"#000000a3"}}></div>}
+    <div style={{ position: "relative" }}>
+      {mobileMenu === "show" && <div onClick={() => setMobileMenu("hide")} style={{ zIndex: "2", position: "absolute", width: "100%", height: "100%", backgroundColor: "#000000a3" }}></div>}
       <section className={s.section}>
         <div className={s.imgContainer}>
-          <img src={pathImages+portada} alt="barco" />
+          <img src={pathImages + portada} alt="barco" />
         </div>
         <div className={s.texto}>
           <h4>CALIDAD, RENDIMIENTO, INNOVACIÓN, FIABILIDAD.</h4>
@@ -28,7 +28,7 @@ export default function Motores({mobileMenu, setMobileMenu}) {
           </span>
         </div>
       </section>
-      <ProductosMotores/>
+      <ProductosMotores />
     </div>
   );
 }

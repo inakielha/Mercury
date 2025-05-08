@@ -1,0 +1,163 @@
+.concesionarios_container {
+  width: 100%;
+}
+
+.concesionarios_title {
+  width: 90%;
+  margin: auto;
+  padding: 2rem 0 2rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.concesionarios_title h2 {
+  color: #DD6E1D;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-family: "Swiss921BT-RegularA";
+
+}
+
+.concesionario_layout {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.concersionarios_content {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  /* background-color: gray; */
+}
+
+.concesionario_img {
+  width: 100%;
+}
+
+.search {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search_inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.input_container {
+  width: 100%;
+  position: relative;
+}
+
+.input_container svg {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 10px;
+  top: 40%;
+}
+
+.input_container input {
+  width: 100%;
+  height: 40px;
+  padding: 6px 30px;
+  font-size: 1rem;
+  border: 1px solid rgb(118,118,118);
+  color: #00263E;
+}
+
+.divInput {
+  width: 100%;
+  height: 40px;
+  padding: 6px 32px;
+  font-size: 1rem;
+  border: 1px solid rgb(118,118,118);
+  color: #00263E;
+}
+
+.select {
+  background-color: #e2dfdf;
+  position: absolute;
+  z-index: 5;
+}
+.search_buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.search_buttons button {
+  width: 185px;
+  height: 40px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.concersionarios_list {
+  width: 100%;
+}
+
+.concersionarios_content div {
+  width: 100%;
+
+}
+
+@media screen and (max-width:900px) {
+  .concersionarios_list {
+    width: 100%;
+    background-color: blue;
+    overflow-x: hidden;
+  }
+
+  .infinite {
+    width: 100%;
+    padding: 0;
+    /* background-color: red; */
+  }
+
+  .concersionarios_content {
+    width: 100%;
+    justify-content: space-between;
+    gap: 500px;
+  }
+  .concesionarios_title h2 {
+    font-size: 18px;  
+  }
+
+  .concesionarios_title p {
+    display: none;
+  }
+
+  .search {
+    flex-direction: column;
+  }
+
+  .search_inputs input {
+    font-size: .8rem;
+  }
+
+  .search_buttons button {
+    font-size: .8rem;
+  }
+}

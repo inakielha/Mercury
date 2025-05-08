@@ -37,13 +37,13 @@ export const opcionesSelect = [
     },
     {
         "provincia": "Córdoba",
-        "value": "Córdoba",
+        "value": "Cordoba",
         "lat": "-31.4324",
         "lng": "-64.2418"
     },
     {
         "provincia": "Entre Ríos",
-        "value": "Entre Ríos",
+        "value": "entre_rios",
         "lat": "-31.747293",
         "lng": "-60.510562"
     },
@@ -55,7 +55,7 @@ export const opcionesSelect = [
     },
     {
         "provincia": "Neuquén",
-        "value": "Neuquén",
+        "value": "neuquen",
         "lat": "-40.134930",
         "lng": "-71.289161"
     },
@@ -67,13 +67,13 @@ export const opcionesSelect = [
     },
     {
         "provincia": "Tierra del Fuego",
-        "value": "Tierra del Fuego",
+        "value": "tierra_fuego",
         "lat": "-53.79803",
         "lng": "-67.740728"
     },
     {
         "provincia": "Río Negro",
-        "value": "Río Negro",
+        "value": "rio_negro",
         "lat": "-41.152534",
         "lng": "-71.405773"
     },

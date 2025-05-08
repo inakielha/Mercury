@@ -61,6 +61,7 @@
 
 .tienda h3 {
     font-size: 0.625rem;
+    font-size: 18px;
     text-transform: uppercase;
     font-weight: 500;
     /* padding-bottom: 1.5em; */
@@ -96,7 +97,7 @@ input:active {
     width: 100%;
     /* padding-left: 15%; */
     font-size: 10px;
-    background-color: green;
+    /* background-color: green; */
 }
 
 .inputCont input::placeholder {
@@ -178,7 +179,7 @@ input:active {
     align-self: flex-start;
     background-color: #fff;
     border: 1px solid rgb(118, 118, 118);
-    background-color: orange;
+    /* background-color: orange; */
 }
 
 .input_container svg {
@@ -199,6 +200,7 @@ input:active {
     padding-left: 15%;
     /* background-color: green; */
 }
+
 .input_container input::placeholder {
     border: none;
     color: #00263E;
@@ -225,7 +227,8 @@ input:active {
     z-index: 5;
     top: 54px;
     /* top: 50%;  Centrará verticalmente en el contenedor padre */
-    left: 0%; /* Centrará horizontalmente en el contenedor padre */
+    left: 0%;
+    /* Centrará horizontalmente en el contenedor padre */
 }
 
 /* .infinite {
@@ -243,16 +246,29 @@ input:active {
         height: 40vh;
     }
 
+    .texto {
+        width: 80%;
+    }
+
     .texto h3 {
         font-size: 32px;
     }
 
     .texto span {
         font-size: 24px;
+        font-size: 16px;
+    }
+
+    .tienda {
+        width: 80%;
     }
 
     .tienda h3 {
         font-size: 32px;
+    }
+
+    .inputCont {
+        width: 80%;
     }
 
     .inputCont input::placeholder {
@@ -283,10 +299,12 @@ input:active {
         justify-content: flex-start;
         width: 100%;
         gap: 50px;
+        gap: 2rem;
     }
 
     .concesionarioInfo {
         width: 100%;
+        width: 70%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -310,7 +328,7 @@ input:active {
         padding: 0;
         margin: 0;
     }
-   
+
 
     .map .infinite-scroll-component__outerdiv {
         width: 100%;
@@ -333,10 +351,11 @@ input:active {
 
     .botones button {
         font-size: 24px;
+        font-size: 16px;
         margin: 0;
     }
 
-    
+
 
     .search_inputs {
         width: 100%;
@@ -346,7 +365,7 @@ input:active {
         justify-content: center;
         gap: 1rem;
     }
-    
+
     .input_container {
         width: 90%;
         position: relative;
@@ -357,9 +376,9 @@ input:active {
         align-self: flex-start;
         background-color: #fff;
         border: 1px solid rgb(118, 118, 118);
-    
+
     }
-    
+
     .input_container svg {
         position: absolute;
         width: 15px;
@@ -367,7 +386,7 @@ input:active {
         left: 10px;
         top: 40%;
     }
-    
+
     .input_container input {
         width: 90%;
         height: 40px;
@@ -377,13 +396,14 @@ input:active {
         color: #00263E;
         /* background-color: red; */
         padding-left: 15%;
-    
+
     }
+
     .input_container input::placeholder {
         border: none;
         color: #00263E;
     }
-    
+
     .divInput {
         background-color: #fff;
         width: 90%;
@@ -396,22 +416,29 @@ input:active {
         align-items: center;
         justify-content: flex-start;
     }
-    
+
     .select {
         background-color: #e2dfdf;
         position: absolute;
         z-index: 5;
         top: 54px;
         /* top: 50%;  Centrará verticalmente en el contenedor padre */
-        left: 0%; /* Centrará horizontalmente en el contenedor padre */
+        left: 0%;
+        /* Centrará horizontalmente en el contenedor padre */
     }
 
 }
 
 
-@media screen and (min-width:768px) and (max-width: 1550px) {
+/* @media screen and (min-width:768px) and (max-width: 1550px) { */
+@media (min-width:1550px) {
+
+    .concesionarioInfo {
+        width: 53%;
+    }
+
     .texto h3 {
-        font-size: 25px;
+        font-size: 32px;
     }
 
     .texto span {
@@ -419,7 +446,7 @@ input:active {
     }
 
     .tienda h3 {
-        font-size: 26px;
+        font-size: 32px;
     }
 
     .inputCont input::placeholder {
@@ -432,5 +459,6 @@ input:active {
 
     .botones button {
         font-size: 20px;
+        font-size: 16px;
     }
 }

@@ -1,0 +1,67 @@
+.container {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #a4a4a4;
+    width: 250px;
+    overflow-x: hidden;
+
+}
+
+.tituloText {
+    cursor: pointer;
+    width: 100%;
+    text-align: start;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.7rem;
+    font-size: 12px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: #666666;
+    color: white;
+    background-color: #a4a4a4;
+
+    font-weight: 500;
+    padding: 20px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.sidebar {
+    width: 250px;
+}
+
+.crossIconCont {
+    width: 100%;
+    padding: 15px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.crossIcon {
+    cursor: pointer;
+    color: white;
+    font-size: 25px;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        box-shadow: 0 0 10px 10px #ffffff;
+        height: auto;
+        gap: 1em;
+        padding: 0;
+        margin: 0;
+    }
+    .tituloText {
+        font-size: 0.93rem;
+        font-size: 12px;
+    }
+    
+
+}
+

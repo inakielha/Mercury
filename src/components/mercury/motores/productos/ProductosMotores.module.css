@@ -177,7 +177,7 @@
 
   .web {
     display: flex;
-    width: 90%;
+    width: 80%;
     align-items: flex-start;
     justify-content: flex-start;
   }
@@ -218,10 +218,12 @@
     height: 25vh;
     padding: 2em 0;
     justify-content: center;
+    width: 80%;
   }
 
   .categorias {
     gap: 5em;
+    width: 80%;
   }
 
   .categorias span {
@@ -268,6 +270,9 @@
     width: 100%;
 
 
+  }
+  .informacion {
+    width: 80%;
   }
 
   .informacion h3 {

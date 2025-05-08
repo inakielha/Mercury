@@ -1,0 +1,67 @@
+.footer {
+  width: 100%;
+  /* border-top: 1px solid #707070; */
+  width: 95%;
+  padding: 1rem 0;
+  margin: 2rem auto 0;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_content{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.footer_content h6 {
+  font-size: 1rem;
+  color: #0c4c6b;
+}
+
+.footer_content p {
+  font-weight: bold;
+}
+
+.footer_social{
+  margin-top: 0;
+  display: flex;
+  gap:1rem;
+}
+.footer_social img{
+  pointer-events: all;
+  width: 20%;
+  cursor: pointer;
+}
+.followUs {
+  font-size: 1rem;
+  color: #0c4c6b;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+.whatsapp {
+  display: flex;
+  align-items: center;
+}
+.whatsapp img {
+  width: 29px;
+}
+
+@media (min-width: 768px) {
+  .footer{
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  .followUs {
+    display: none;
+  }
+  
+  .footer_social img{
+    width: 40%;
+  }
+}

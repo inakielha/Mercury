@@ -1,0 +1,25 @@
+/* .fontsize {
+    font-size: 10px;
+}
+.fontsizeLabel {
+    font-size: 15px;
+} */
+
+.labelWeb {
+    display: none;
+}
+@media (min-width: 750px)  {
+    .labelMobile {
+        display: none;
+    }
+    .labelWeb {
+        display: block;
+    }
+}
+/* @media (min-width: 2000px)  {
+    .fontsize {
+        font-size: 21px;
+        font-size: 10px;
+    }
+
+} */
